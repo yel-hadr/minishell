@@ -6,7 +6,7 @@
 /*   By: elakhfif <elakhfif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 17:08:50 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/05/07 01:20:10 by elakhfif         ###   ########.fr       */
+/*   Updated: 2023/05/07 23:23:41 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,27 +114,27 @@ char	**ultimate_split(char const *str, char c)
 	return (cmd);
 }
 
-static int	*check_delimiter(char *cmd, int i)
+static int	*check_quotes(char *cmd, int i)
 {
-	int	delimiter;
+	int	quotes;
 
-	delimiter = 0;
+	quotes = 0;
 	while (cmd[i])
 	{
 		if (cmd[i] == '\'' || cmd[i] == '\"')
 		{
 			i = next_quote(cmd, i, cmd[i]);
-			delimiter = 1;
+			quotes = 1;
 		}
 		else if (cmd[i] == ' ' || cmd[i] == '\t')
 		{
 			while (cmd[i] == ' ' || cmd[i] == '\t')
 				i++;
-			delimiter = 1;
+			quotes = 1;
 		}
 		else
 			i++;
-		if (delimiter == 1)
+		if (quotes == 1)
 			break ;
 	}
 	return (0);
@@ -149,25 +149,6 @@ static int	*split_input(char *input)
 	i = 0;
 	j = 0;
 	tab = (int *)malloc(sizeof(int) * 2);
-	while (input[i])
-	{
-		if (input[i] == '\'' || input[i] == '\"')
-		{
-			i = next_quote(input, i, input[i]);
-			tab[j] = i;
-			j++;
-		}
-		else if (input[i] == ' ' || input[i] == '\t')
-		{
-			while (input[i] == ' ' || input[i] == '\t')
-				i++;
-			tab[j] = i;
-			j++;
-		}
-		else
-			i++;
-	}
-	return (tab);
 }
 
 int main()
