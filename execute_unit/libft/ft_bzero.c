@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   execute_unit.c                                     :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
+/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/07 19:54:26 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/05/07 22:02:22 by yel-hadr         ###   ########.fr       */
+/*   Created: 2022/10/01 19:55:28 by yel-hadr          #+#    #+#             */
+/*   Updated: 2022/10/17 12:28:53 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "execute_unit.h"
+#include "libft.h"
 
-int main()
+void	ft_bzero(void *s, size_t n)
 {
-	char *str;
-	int i;
-	i = 9;
-	str = calloc(100, 1);
-	while (i--)
-	{
-		getwd(str);
-		printf("%s\t%d\n", str, chdir(NULL));
-	}
+	while (n != 0)
+		((unsigned char *)s)[--n] = 0;
 }

@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   execute_unit.c                                     :+:      :+:    :+:   */
+/*   ft_echo.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/07 19:54:26 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/05/07 22:02:22 by yel-hadr         ###   ########.fr       */
+/*   Created: 2023/05/05 18:35:40 by yel-hadr          #+#    #+#             */
+/*   Updated: 2023/05/08 21:55:36 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "execute_unit.h"
 
-int main()
+int ft_echo(int ac, char **av)
 {
-	char *str;
 	int i;
-	i = 9;
-	str = calloc(100, 1);
-	while (i--)
+	
+	i = 1;
+	if (!ft_strncmp("-n", av[1], ft_strlen("-n")))
+		i = 2;
+	while (i < ac)
 	{
-		getwd(str);
-		printf("%s\t%d\n", str, chdir(NULL));
+		write (1, av[i], ft_strlen(av[i]));
+		if (i != ac - 1);
+			write (1, " ", 1);
+		i++;
 	}
+	if (ft_strncmp("-n", av[1], ft_strlen("-n")))
+		write (1, "\n", 1);
 }

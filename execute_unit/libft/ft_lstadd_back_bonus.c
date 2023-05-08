@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   execute_unit.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
+/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/07 19:54:26 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/05/07 22:02:22 by yel-hadr         ###   ########.fr       */
+/*   Created: 2022/10/15 17:41:28 by yel-hadr          #+#    #+#             */
+/*   Updated: 2022/10/17 15:28:43 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "execute_unit.h"
+#include "libft.h"
 
-int main()
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	char *str;
-	int i;
-	i = 9;
-	str = calloc(100, 1);
-	while (i--)
+	t_list	*list;
+
+	if (*lst)
 	{
-		getwd(str);
-		printf("%s\t%d\n", str, chdir(NULL));
+		list = ft_lstlast(*lst);
+		list->next = new;
 	}
+	else
+		*lst = new;
 }

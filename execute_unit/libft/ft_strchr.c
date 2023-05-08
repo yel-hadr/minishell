@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   execute_unit.c                                     :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
+/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/07 19:54:26 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/05/07 22:02:22 by yel-hadr         ###   ########.fr       */
+/*   Created: 2022/09/29 17:45:58 by yel-hadr          #+#    #+#             */
+/*   Updated: 2022/10/01 17:55:24 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "execute_unit.h"
+#include "libft.h"
 
-int main()
+char	*ft_strchr(const char *s, int c)
 {
-	char *str;
-	int i;
-	i = 9;
-	str = calloc(100, 1);
-	while (i--)
+	int	i;
+
+	i = 0;
+	while (i <= (int)ft_strlen(s))
 	{
-		getwd(str);
-		printf("%s\t%d\n", str, chdir(NULL));
+		if (s[i] == (char)c)
+			return ((char *)s + (i));
+		i++;
 	}
+	return (NULL);
 }

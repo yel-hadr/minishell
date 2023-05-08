@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   execute_unit.c                                     :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
+/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/07 19:54:26 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/05/07 22:02:22 by yel-hadr         ###   ########.fr       */
+/*   Created: 2022/10/13 22:04:10 by yel-hadr          #+#    #+#             */
+/*   Updated: 2022/10/17 15:38:37 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "execute_unit.h"
+#include "libft.h"
 
-int main()
+t_list	*ft_lstnew(void *content)
 {
-	char *str;
-	int i;
-	i = 9;
-	str = calloc(100, 1);
-	while (i--)
-	{
-		getwd(str);
-		printf("%s\t%d\n", str, chdir(NULL));
-	}
+	t_list	*head;
+
+	head = malloc(sizeof(t_list));
+	if (!head)
+		return (NULL);
+	head -> content = content;
+	head ->next = NULL;
+	return (head);
 }

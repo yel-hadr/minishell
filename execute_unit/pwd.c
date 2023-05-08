@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   execute_unit.c                                     :+:      :+:    :+:   */
+/*   pwd.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/07 19:54:26 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/05/07 22:02:22 by yel-hadr         ###   ########.fr       */
+/*   Created: 2023/05/07 22:35:30 by yel-hadr          #+#    #+#             */
+/*   Updated: 2023/05/08 17:22:40 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "execute_unit.h"
 
-int main()
+int ft_pwd(void)
 {
 	char *str;
-	int i;
-	i = 9;
-	str = calloc(100, 1);
-	while (i--)
-	{
-		getwd(str);
-		printf("%s\t%d\n", str, chdir(NULL));
-	}
+	
+	str = ft_calloc(OPEN_MAX, sizeof(char));
+	getcwd(str, OPEN_MAX);
+	printf ("%s\n", str);
+	return (0);
 }

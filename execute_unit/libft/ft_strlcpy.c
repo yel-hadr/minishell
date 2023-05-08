@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   execute_unit.c                                     :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
+/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/07 19:54:26 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/05/07 22:02:22 by yel-hadr         ###   ########.fr       */
+/*   Created: 2022/10/03 14:16:41 by yel-hadr          #+#    #+#             */
+/*   Updated: 2022/10/17 13:16:04 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "execute_unit.h"
+#include "libft.h"
 
-int main()
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	char *str;
-	int i;
-	i = 9;
-	str = calloc(100, 1);
-	while (i--)
+	size_t	i;
+
+	i = 0;
+	while (i + 1 < dstsize && src[i] != '\0')
 	{
-		getwd(str);
-		printf("%s\t%d\n", str, chdir(NULL));
+		dst[i] = src[i];
+		i++;
 	}
+	if (dstsize)
+		dst[i] = '\0';
+	return (ft_strlen(src));
 }
