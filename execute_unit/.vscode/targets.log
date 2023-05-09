@@ -6,9 +6,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
- 
 
-# Make data base, printed on Mon May  8 21:42:21 2023
+# Make data base, printed on Tue May  9 18:43:33 2023
 
 # Variables
 
@@ -39,23 +38,19 @@ CFLAGS = -Wall -Wextra -Werror
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # environment
-VSCODE_CWD = /Users/yel-hadr/Desktop/minishell/execute_unit
+VSCODE_CWD = /
 # environment
-PATH = /Users/yel-hadr/goinfre/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
-# environment
-LSCOLORS = Gxfxcxdxbxegedabagacad
+PATH = /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 # makefile (from `Makefile', line 4)
 utile = libft/libft.a
 # environment
-LaunchInstanceID = 9198FBE1-F387-4DCC-8A0D-162297119AEC
+LaunchInstanceID = 38601680-7257-4405-AB42-FEB6769E234A
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-LS_COLORS = di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43
-# environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.FCi996MJJh/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.iygUHl6Y9O/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -75,21 +70,17 @@ LOGNAME = yel-hadr
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
-ZSH = /Users/yel-hadr/.oh-my-zsh
-# environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
 XPC_FLAGS = 0x0
-# environment
-COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
 # environment
-LC_TERMINAL = iTerm2
-# environment
-SHLVL = 2
+SHLVL = 1
 # makefile (from `Makefile', line 2)
 CC = cc
 # default
@@ -98,20 +89,12 @@ MAKE_VERSION := 3.81
 USER = yel-hadr
 # makefile
 .DEFAULT_GOAL := all
-# default
-MAKECMDGOALS := all
-# environment
-TERM_SESSION_ID = w0t0p0:1B9DB549-B388-4A63-998C-969B4EA89D64
 # makefile (from `Makefile', line 1)
 NAME = minishell
-# environment
-LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
 MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
-# environment
-TERM_PROGRAM = iTerm.app
 # default
 .VARIABLES := 
 # environment
@@ -129,19 +112,11 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-TERM_PROGRAM_VERSION = 3.4.13
-# environment
-XPC_SERVICE_NAME = com.microsoft.VSCode.4320.63805F92-0F15-4F4E-97C4-87EEA23B1E58
-# environment
-LC_TERMINAL_VERSION = 3.4.13
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000001.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
-# environment
-ITERM_SESSION_ID = w0t0p0:1B9DB549-B388-4A63-998C-969B4EA89D64
-# environment
-COLORFGBG = 15;0
 # environment
 __CF_USER_TEXT_ENCODING = 0x18ABA:0x0:0x0
 # environment
@@ -150,10 +125,6 @@ COMMAND_MODE = unix2003
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
-# environment
-ITERM_PROFILE = Default
-# environment
-PAGER = less
 # environment
 LC_ALL = C
 # environment
@@ -167,15 +138,11 @@ SUFFIXES :=
 # environment
 MAKELEVEL := 0
 # environment
-CLICOLOR = 1
-# environment
 LANG = C
 # environment
-TERM = xterm-256color
-# environment
-VSCODE_PID = 10826
+VSCODE_PID = 5580
 # variable set hash-table stats:
-# Load=81/1024=8%, Rehash=0, Collisions=6/111=5%
+# Load=65/1024=6%, Rehash=0, Collisions=3/95=3%
 
 # Pattern-specific Variable Values
 
@@ -183,9 +150,9 @@ VSCODE_PID = 10826
 
 # Directories
 
-# . (device 16777225, inode 5607193): 11 files, no impossibilities.
+# . (device 16777225, inode 5746277): 10 files, no impossibilities.
 
-# 11 files, no impossibilities in 1 directories.
+# 10 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -217,7 +184,7 @@ all: minishell
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2023-05-07 19:57:56
+#  Last modified 2023-05-08 23:44:32
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -304,6 +271,6 @@ clean:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Mon May  8 21:42:21 2023
+# Finished Make data base on Tue May  9 18:43:33 2023
 
  
