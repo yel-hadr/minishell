@@ -11,7 +11,7 @@ $(NAME) : utile $(OBJ)
 	$(CC) $(CFLAGS) -O3 $(utile) $(OBJ) -o $(NAME)
 
 utile	:
-	make -C libft
+	make -C libft bonus
 
 clean	:
 	@rm -f $(OBJ)

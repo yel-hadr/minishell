@@ -23,7 +23,7 @@ $(NAME) : $(OBJ)
 	@ar rcs $(NAME) $^
 
 bonus : $(NAME) $(OBJBONUS)
-	ar rcs $(NAME) $^
+	@ar rcs $(NAME) $^
 
 .o : $(SRC) $(BONUS)
 	$(CC) $(FLAGS) -c $^

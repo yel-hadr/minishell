@@ -6,21 +6,31 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 19:54:26 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/05/07 22:02:22 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/05/10 13:30:12 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "execute_unit.h"
 
-int main()
+t_cmd	*ft_pipe(t_cmd cmd)
 {
-	char *str;
-	int i;
-	i = 9;
-	str = calloc(100, 1);
-	while (i--)
+	int file;
+	file = open("output.txt", O_RDWR | O_CREAT, 777);
+	
+	while (!ft_strncmp(cmd.delimiter, "|", ft_strlen(cmd.delimiter)))
 	{
-		getwd(str);
-		printf("%s\t%d\n", str, chdir(NULL));
+		
+	}
+}
+
+int execute_unit(t_cmd *cmd, t_env env)
+{
+	t_cmd *head;
+	head = cmd;
+	while (cmd)
+	{
+		if (cmd->delimiter == '|')
+		{		
+		}
 	}
 }

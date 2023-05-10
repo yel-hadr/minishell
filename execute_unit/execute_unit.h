@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 18:12:30 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/05/08 15:52:59 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/05/10 13:15:55 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <errno.h>
 #include <stdlib.h>
+#include <fcntl.h>
 #include <stdio.h>
 #include <readline/readline.h>
 #include <readline/history.h>
@@ -33,4 +34,12 @@ typedef struct s_cmd
 	int		errors;					//errors counter (syntax or semantic) !
 	struct s_cmd	*next;			//next command in the linked list !
 }	t_cmd;
+
+typedef struct s_env
+{
+	char *name;
+	char *value;
+	struct s_env	*next;
+}	t_env;
+
 #endif
