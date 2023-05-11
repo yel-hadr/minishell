@@ -1,5 +1,8 @@
 {
 	"files.associations": {
-		"libft.h": "c"
+		"libft.h": "c",
+		"execute_unit.h": "c",
+		"limits.h": "c",
+		"history.h": "c"
 	}
 }

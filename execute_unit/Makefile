@@ -2,7 +2,7 @@ NAME = minishell
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 utile = libft/libft.a
-SRC = execute_unit.c
+SRC = execute_unit.c search_env.c fill_env_list.c
 OBJ = $(SRC:.c=.o)
 
 all		: $(NAME)

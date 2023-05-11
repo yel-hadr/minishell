@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   execute_unit.c                                     :+:      :+:    :+:   */
+/*   search_env.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/07 19:54:26 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/05/11 20:17:47 by yel-hadr         ###   ########.fr       */
+/*   Created: 2023/05/11 18:46:48 by yel-hadr          #+#    #+#             */
+/*   Updated: 2023/05/11 20:19:58 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "execute_unit.h"
 
-
-int main (int ac, char *av[], char *aenv[])
+char *search_env(char *variable, t_list *env)
 {
-	(void)av;
-	(void)ac;
-	t_list *env;
-
-	env = ft_creat_env(aenv);
-	printf("%s\n", search_env(av[1], env));
+	if (!variable)
+		return (NULL);
+	while (env)
+	{
+		if (!ft_strncmp(variable, env->content, ft_strlen(variable)) && ((char *)env->content)[ft_strlen(variable)] == '=')
+			return ((char *)env->content);
+		env = env->next;
+	}
+	return (NULL);
 }
