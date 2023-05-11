@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 18:12:30 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/05/10 13:15:55 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/05/11 17:58:52 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ typedef struct s_cmd
 	char	**redirection_type;		//redirection type (input or output) !
 	char	*delimiter;				//delimiter (semicolon or pipe) !
 	int		errors;					//errors counter (syntax or semantic) !
+	int		exit_status;
 	struct s_cmd	*next;			//next command in the linked list !
 }	t_cmd;
 
 typedef struct s_env
 {
-	char *name;
-	char *value;
+	char *variable;
 	struct s_env	*next;
 }	t_env;
 

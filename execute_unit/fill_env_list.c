@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   execute_unit.c                                     :+:      :+:    :+:   */
+/*   fill_env_list.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/07 19:54:26 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/05/11 18:18:05 by yel-hadr         ###   ########.fr       */
+/*   Created: 2023/05/11 18:17:44 by yel-hadr          #+#    #+#             */
+/*   Updated: 2023/05/11 18:18:38 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "execute_unit.h"
 
-
-int main (int ac, char *av[], char *aenv[])
+t_list *ft_creat_env(char **env)
 {
-	(void)av;
-	(void)ac;
-	t_list *env;
-
-	env = ft_creat_env(aenv);
+	int i = 0;
+	char *str; 
+	t_list *head;
+	
+	while (env[i])
+	{
+		str = ft_calloc(sizeof(char), ft_strlen(env[i]) + 1);
+		if (!str)
+			return (NULL);
+		ft_memmove(str, env[i],ft_strlen(env[i]));
+		ft_lstadd_back(&head, ft_lstnew((void *)str));
+		i++;
+	}
+	return (head);
 }
