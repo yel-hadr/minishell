@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 18:12:30 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/05/11 19:02:05 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/05/13 18:32:32 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@
 #include <readline/readline.h>
 #include <readline/history.h>
 #include <unistd.h>
+#include <string.h>
 #include <limits.h>
+
+#define PATH "PATH"
 
 typedef struct s_cmd
 {
@@ -44,5 +47,6 @@ typedef struct s_env
 
 char *search_env(char *variable, t_list *env);
 t_list *ft_creat_env(char **env);
+int	ft_pipe(t_cmd **ptr, t_env env);
 
 #endif

@@ -6,51 +6,45 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 19:54:26 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/05/13 01:12:25 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/05/15 17:05:44 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "execute_unit.h"
 
-#define READ_END 0
-#define WRITE_END 1
-
-int	ft_pipe(t_cmd **ptr, t_env env)
+static char	*ft_join_to_path(char const *s1, char const *s2)
 {
-	(void)env;
-	int e_status;
-	t_cmd *cmd;
-	int pid;
-	int tmp_fd;
-	int fd[2];
-	
-	e_status = 0;
-	tmp_fd = -1;
-	cmd = *ptr;
-	while (cmd)
-	{
-		pipe(fd);
-		pid = fork();
-		if (pid == 0)
-		{
-			if (tmp_fd == -1)
-			{
-				dup2(tmp_fd, STDIN_FILENO);
-				close(tmp_fd);
-			}
-			dup2(fd[1], STDOUT_FILENO);
-			close(fd[1]);
-			//excut()
-		}
-		else
-		{
-			wait(NULL);			
-			tmp_fd = fd[0];
-		}
-	}
-		cmd = cmd->next;
-	return (e_status);
+	char	*p;
+
+	if (!s1 || !s2)
+		return (NULL);
+	p = ft_calloc((ft_strlen(s1) + ft_strlen(s2)) + 2, sizeof(char));
+	if (!p)
+		return (NULL);
+	ft_memmove(p, s1, ft_strlen(s1));
+	p[ft_strlen(s1)] = '/';
+	ft_memmove(p + ft_strlen(s1)+1, s2, ft_strlen(s2));
+	return (p);
 }
+
+char *search_for_cmd(char *str, char **path)
+{
+	while (*path)
+	{
+		*path = ft_join_to_path(*path, str);
+		printf ("%s\n", *path);
+		path++;
+	}
+	return (NULL);
+}
+
+// int ft_execute_cmd(t_cmd *cmd, t_list *env)
+// {
+// 	(void)cmd;
+// 	char *path;
+// 	path = search_for_cmd(cmd, ft_split(search_env(PATH, env), ':'));
+// 	return (0);
+// }
 
 int execute_unit(t_list *env, t_cmd *cmd)
 {
@@ -75,5 +69,7 @@ int main (int ac, char *av[], char *aenv[])
 	t_list *env;
 
 	env = ft_creat_env(aenv);
-	printf("%s\n", search_env(av[1], env));
+	char **str = ft_split(search_env(PATH, env), ':');
+	char *ptr = ft_strdup("ls");
+	search_for_cmd(ptr, str);
 }

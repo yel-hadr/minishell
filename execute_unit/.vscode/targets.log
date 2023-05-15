@@ -6,9 +6,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
- 
 
-# Make data base, printed on Fri May 12 23:53:54 2023
+# Make data base, printed on Mon May 15 15:39:24 2023
 
 # Variables
 
@@ -47,7 +46,7 @@ LSCOLORS = Gxfxcxdxbxegedabagacad
 # makefile (from `Makefile', line 4)
 utile = libft/libft.a
 # environment
-LaunchInstanceID = 8D70684B-CCCC-4674-B288-2B4225A53ACA
+LaunchInstanceID = 58CB0ED5-B5AB-45FC-8EB7-248068514637
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
@@ -55,7 +54,7 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 LS_COLORS = di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.PWvzVuLqWf/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.PhHzdUnZui/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -101,7 +100,7 @@ USER = yel-hadr
 # default
 MAKECMDGOALS := all
 # environment
-TERM_SESSION_ID = w0t0p0:8EB16166-7355-479B-9242-B7249AA211F2
+TERM_SESSION_ID = w0t0p0:13A0E928-41E6-44EC-BFD1-CCB7A3EF27F0
 # makefile (from `Makefile', line 1)
 NAME = minishell
 # environment
@@ -131,7 +130,7 @@ MFLAGS = -Rrqp
 # environment
 TERM_PROGRAM_VERSION = 3.4.13
 # environment
-XPC_SERVICE_NAME = com.microsoft.VSCode.4320.D908B9A0-AC6C-43B8-AE71-A1A3DF2D14ED
+XPC_SERVICE_NAME = com.microsoft.VSCode.4320.E4B8BDE1-E063-4EFE-BFF4-C56F23674AE0
 # environment
 LC_TERMINAL_VERSION = 3.4.13
 # automatic
@@ -139,7 +138,7 @@ LC_TERMINAL_VERSION = 3.4.13
 # automatic
 +F = $(notdir $+)
 # environment
-ITERM_SESSION_ID = w0t0p0:8EB16166-7355-479B-9242-B7249AA211F2
+ITERM_SESSION_ID = w0t0p0:13A0E928-41E6-44EC-BFD1-CCB7A3EF27F0
 # environment
 COLORFGBG = 15;0
 # environment
@@ -155,7 +154,6 @@ ITERM_PROFILE = Default
 # environment
 PAGER = less
 # environment
- 
 LC_ALL = C
 # environment
 SECURITYSESSIONID = 186a7
@@ -174,7 +172,7 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 8794
+VSCODE_PID = 66128
 # variable set hash-table stats:
 # Load=81/1024=8%, Rehash=0, Collisions=6/111=5%
 
@@ -184,9 +182,9 @@ VSCODE_PID = 8794
 
 # Directories
 
-# . (device 16777225, inode 5773624): 16 files, no impossibilities.
+# . (device 16777225, inode 5773624): 13 files, no impossibilities.
 
-# 16 files, no impossibilities in 1 directories.
+# 13 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -254,7 +252,7 @@ utile:
 
 minishell: utile execute_unit.o search_env.o fill_env_list.o
 #  Implicit rule search has not been done.
-#  Last modified 2023-05-12 21:14:38
+#  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -317,6 +315,6 @@ search_env.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Fri May 12 23:53:54 2023
+# Finished Make data base on Mon May 15 15:39:24 2023
 
  
