@@ -17,16 +17,17 @@ OBJBONUS = $(BONUS:.c=.o)
 
 OBJ = $(SRC:.c=.o)
 
+
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	@ar rcs $(NAME) $^
+	ar rcs $(NAME) $^
 
 bonus : $(NAME) $(OBJBONUS)
-	@ar rcs $(NAME) $^
+	ar rcs $(NAME) $^
 
-.o : $(SRC) $(BONUS)
-	$(CC) $(FLAGS) -c $^
+%.o : %.c $(DEPS)
+	$(CC) $(FLAG) -c $<
 
 clean :
 	rm -f *.o

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:54:32 by yel-hadr          #+#    #+#             */
-/*   Updated: 2022/10/17 13:10:59 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/06/10 22:41:27 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	result = (char **)malloc(sizeof(char *) * (ft_count(s, c) + 1));
+	result = (char **)ft_calloc(sizeof(char *) , (ft_count(s, c) + 1));
 	if (!result)
 		return (NULL);
 	split(result, s, c);

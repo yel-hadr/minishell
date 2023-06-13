@@ -1,9 +1,6 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/yel-hadr/Desktop/minishell/execute_unit'
-make -C libft bonus
-cc -Wall -Wextra -Werror   -c -o execute_unit.o execute_unit.c
-cc -Wall -Wextra -Werror   -c -o search_env.o search_env.c
-cc -Wall -Wextra -Werror   -c -o fill_env_list.o fill_env_list.c
-cc -Wall -Wextra -Werror -O3 libft/libft.a execute_unit.o search_env.o fill_env_list.o -o minishell
 make: Leaving directory `/Users/yel-hadr/Desktop/minishell/execute_unit'
  
+make: *** No targets specified and no makefile found.  Stop.
+

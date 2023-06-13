@@ -7,7 +7,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
 
-# Make data base, printed on Mon May 15 15:39:24 2023
+# Make data base, printed on Tue Jun 13 20:31:23 2023
 
 # Variables
 
@@ -15,10 +15,6 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
-# makefile (from `Makefile', line 6)
-OBJ = $(SRC:.c=.o)
-# makefile (from `Makefile', line 5)
-SRC = execute_unit.c search_env.c fill_env_list.c
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -33,20 +29,14 @@ SHELL = /bin/sh
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
 _ = /usr/bin/make
-# makefile (from `Makefile', line 3)
-CFLAGS = -Wall -Wextra -Werror
-# makefile (from `Makefile', line 1)
-MAKEFILE_LIST :=  Makefile
+# makefile
+MAKEFILE_LIST := 
 # environment
 VSCODE_CWD = /Users/yel-hadr/Desktop/minishell/execute_unit
 # environment
 PATH = /Users/yel-hadr/goinfre/homebrew/bin:/Users/yel-hadr/goinfre/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
-# makefile (from `Makefile', line 4)
-utile = libft/libft.a
-# environment
-LaunchInstanceID = 58CB0ED5-B5AB-45FC-8EB7-248068514637
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
@@ -54,7 +44,7 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 LS_COLORS = di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.PhHzdUnZui/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.6270lkh1hN/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -89,20 +79,16 @@ MAKE = $(MAKE_COMMAND)
 LC_TERMINAL = iTerm2
 # environment
 SHLVL = 2
-# makefile (from `Makefile', line 2)
-CC = cc
 # default
 MAKE_VERSION := 3.81
 # environment
 USER = yel-hadr
 # makefile
-.DEFAULT_GOAL := all
+.DEFAULT_GOAL := 
 # default
 MAKECMDGOALS := all
 # environment
-TERM_SESSION_ID = w0t0p0:13A0E928-41E6-44EC-BFD1-CCB7A3EF27F0
-# makefile (from `Makefile', line 1)
-NAME = minishell
+TERM_SESSION_ID = w0t0p0:85FDB67F-516D-4498-9A61-9DA31709146B
 # environment
 LESS = -R
 # automatic
@@ -130,7 +116,7 @@ MFLAGS = -Rrqp
 # environment
 TERM_PROGRAM_VERSION = 3.4.13
 # environment
-XPC_SERVICE_NAME = com.microsoft.VSCode.4320.E4B8BDE1-E063-4EFE-BFF4-C56F23674AE0
+XPC_SERVICE_NAME = com.microsoft.VSCode.4320.98C75B0F-3538-471A-A830-3F83FAACA668
 # environment
 LC_TERMINAL_VERSION = 3.4.13
 # automatic
@@ -138,13 +124,11 @@ LC_TERMINAL_VERSION = 3.4.13
 # automatic
 +F = $(notdir $+)
 # environment
-ITERM_SESSION_ID = w0t0p0:13A0E928-41E6-44EC-BFD1-CCB7A3EF27F0
+ITERM_SESSION_ID = w0t0p0:85FDB67F-516D-4498-9A61-9DA31709146B
 # environment
 COLORFGBG = 15;0
 # environment
 __CF_USER_TEXT_ENCODING = 0x18ABA:0x0:0x0
-# environment
-COMMAND_MODE = unix2003
 # default
 MAKEFILES := 
 # automatic
@@ -155,8 +139,6 @@ ITERM_PROFILE = Default
 PAGER = less
 # environment
 LC_ALL = C
-# environment
-SECURITYSESSIONID = 186a7
 # automatic
 ^F = $(notdir $^)
 # default
@@ -172,9 +154,9 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 66128
+VSCODE_PID = 37375
 # variable set hash-table stats:
-# Load=81/1024=8%, Rehash=0, Collisions=6/111=5%
+# Load=72/1024=7%, Rehash=0, Collisions=4/93=4%
 
 # Pattern-specific Variable Values
 
@@ -182,9 +164,9 @@ VSCODE_PID = 66128
 
 # Directories
 
-# . (device 16777225, inode 5773624): 13 files, no impossibilities.
+# . (device 16777225, inode 6056706): 6 files, no impossibilities.
 
-# 13 files, no impossibilities in 1 directories.
+# 6 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -193,19 +175,13 @@ VSCODE_PID = 66128
 # Files
 
 # Not a target:
-execute_unit.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-all: minishell
+all:
 #  Command-line target.
 #  Implicit rule search has been done.
 #  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
+#  File has not been updated.
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/2=0%
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
 .SUFFIXES:
@@ -215,66 +191,23 @@ all: minishell
 
 # Not a target:
 Makefile:
+#  A default, MAKEFILES, or -include/sinclude makefile.
 #  Implicit rule search has been done.
-#  Last modified 2023-05-11 19:00:17
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Failed to be updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-utile:
-#  Implicit rule search has not been done.
-#  Implicit/static pattern stem: `'
-#  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := utile
-# automatic
-# % := 
-# automatic
-# * := 
-# automatic
-# + := 
-# automatic
-# | := 
-# automatic
-# < := 
-# automatic
-# ^ := 
-# automatic
-# ? := 
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/10=10%
-#  commands to execute (from `Makefile', line 14):
-	make -C libft bonus
-	
-
-minishell: utile execute_unit.o search_env.o fill_env_list.o
-#  Implicit rule search has not been done.
-#  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/2=0%
-#  commands to execute (from `Makefile', line 11):
-	$(CC) $(CFLAGS) -O3 $(utile) $(OBJ) -o $(NAME)
-	
-
-fclean: clean
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `Makefile', line 21):
-	@rm -rf $(NAME)
-	@make -C libft fclean 
-	
-
 # Not a target:
-fill_env_list.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+makefile:
+#  A default, MAKEFILES, or -include/sinclude makefile.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
 .DEFAULT:
@@ -282,39 +215,31 @@ fill_env_list.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-re: fclean all
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-clean:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `Makefile', line 17):
-	@rm -f $(OBJ)
-	@make -C libft clean
-	
-
 # Not a target:
-search_env.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+GNUmakefile:
+#  A default, MAKEFILES, or -include/sinclude makefile.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # files hash-table stats:
-# Load=12/1024=1%, Rehash=0, Collisions=0/34=0%
+# Load=6/1024=1%, Rehash=0, Collisions=0/17=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
 
 # No general (`VPATH' variable) search path.
 
-# # of strings in strcache: 1
-# # of strcache buffers: 1
-# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
-# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+# # of strings in strcache: 0
+# # of strcache buffers: 0
+# strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
+# strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Mon May 15 15:39:24 2023
+# Finished Make data base on Tue Jun 13 20:31:23 2023
 
  
+make: *** No rule to make target `all'.  Stop.
+

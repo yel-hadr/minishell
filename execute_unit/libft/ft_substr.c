@@ -6,7 +6,7 @@
 /*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 22:10:40 by yel-hadr          #+#    #+#             */
-/*   Updated: 2022/10/18 15:21:38 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2022/10/23 14:25:31 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ft_strdup(""));
 	if (!s)
 		return (NULL);
+	if (len > ft_strlen(s))
+		len = ft_strlen(s);
 	p = ft_calloc(len + 1, sizeof(char));
 	if (!p)
 		return (NULL);

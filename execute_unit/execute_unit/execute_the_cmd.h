@@ -11,18 +11,25 @@
 #include <limits.h>
 #include <sys/types.h>
 #include <string.h>
+#include <fcntl.h>
 #include "../libft/libft.h"
 
-typedef enum t_redaration
+typedef enum s_redir
 {
-	REDARATION_INPUT,
-	REDARATION_OUTPUT,
-	REDARATION_APPEND,
-	REDARATION_HEREDOC,
+	REDIR_INPUT,
+	REDIR_OUTPUT,
+	REDIR_APPEND,
+	REDIR_HEREDOC,
 	NONE
-}	t_redaration;
+}	t_redir;
 
-typedef enum t_type
+typedef struct s_redaraction
+{
+	t_redir redir;
+	char *file;
+}	t_redaraction;
+
+typedef enum s_type
 {
 	PIPE,
 	AND,
@@ -30,16 +37,18 @@ typedef enum t_type
 	END
 }	t_type;
 
+
 typedef struct s_cmd
 {
 	char *cmd;
 	char **args;
-	t_redaration redaration;
-	char *file;
+	t_redaraction redir_in;
+	t_redaraction redir_out;
 	t_type type;
 }	t_cmd;
 
-int execute_the_cmd(char **cmd, char **envp);
-
+int ft_error(char *cmd, char *error);
+int ft_execute(t_cmd cmd, char **envp);
+int ft_redaraction(char *file, t_redir redaraction);
 
 #endif

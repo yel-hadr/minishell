@@ -1,9 +1,9 @@
 {
 	"files.associations": {
+		"ft_pipe.h": "c",
+		"execute_the_cmd.h": "c",
 		"libft.h": "c",
-		"execute_unit.h": "c",
-		"limits.h": "c",
-		"history.h": "c",
+		"string.h": "c",
 		"fcntl.h": "c"
 	}
 }
