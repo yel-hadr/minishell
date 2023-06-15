@@ -6,11 +6,12 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 20:06:50 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/06/13 19:44:52 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/06/15 09:49:22 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "execute_the_cmd.h"
+#include "execute.h"
+
 
 /*
 	ft_redaraction: redaraction the input or the output
@@ -58,27 +59,27 @@ static int redaraction_append(char *file)
 	return (fd);
 }
 
-// char *redaraction_heredoc(char *str)
-// {
-// 	char *line;
-// 	char *herdoc;
+char *redaraction_heredoc(char *str)
+{
+	char *line;
+	char *herdoc;
 
 
-// 	while (1)
-// 	{
-// 		line = readline("> ");
-// 		if (!ft_strncmp(line, str, ft_strlen(str)))
-// 		{
-// 			free(line);
-// 			break ;
-// 		}
-// 		line = ft_strjoin(line, "\n");
-// 		herdoc = ft_strjoin(herdoc, line);
-// 		free(line);
-// 	}
+	while (1)
+	{
+		line = readline("> ");
+		if (!ft_strncmp(line, str, ft_strlen(str)))
+		{
+			free(line);
+			break ;
+		}
+		line = ft_strjoin(line, "\n");
+		herdoc = ft_strjoin(herdoc, line);
+		free(line);
+	}
 
-// 	return (herdoc);
-// }
+	return (herdoc);
+}
 
 int ft_redaraction(char *file, t_redir redaraction)
 {

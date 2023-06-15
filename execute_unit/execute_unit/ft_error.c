@@ -6,11 +6,11 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 19:12:52 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/06/13 19:13:14 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/06/15 09:50:12 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "execute_the_cmd.h"
+#include "execute.h"
 
 int ft_error(char *cmd, char *error)
 {

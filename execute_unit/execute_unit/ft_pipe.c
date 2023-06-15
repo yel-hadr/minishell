@@ -6,11 +6,11 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 16:08:43 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/06/13 20:32:24 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/06/15 21:35:50 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_pipe.h"
+#include "execute.h"
 
 /*
 	ft_pipe: execute the pipe and multiple pipe
@@ -19,8 +19,6 @@
 	return: 0 if success
 */
 
-
-
 int ft_pipe(t_list *cmds, char **envp)
 {
 	int pid;
@@ -28,7 +26,7 @@ int ft_pipe(t_list *cmds, char **envp)
 	int fd_in;
 	t_cmd *cmd;
 	t_list *tmp;
-	// int status;
+	int status;
 	
 	fd_in = 0;
 	tmp = cmds;
@@ -43,7 +41,7 @@ int ft_pipe(t_list *cmds, char **envp)
 			if (fd_in)
 				close(fd_in);				
 			close(fd[0]);
-			if (cmd->type == PIPE)
+			if (cmd->separator == PIPE)
 				dup2(fd[1], STDOUT_FILENO);
 			close(fd[1]);
 			if (ft_execute(*cmd , envp))
@@ -60,11 +58,25 @@ int ft_pipe(t_list *cmds, char **envp)
 		}
 	}
 	close(fd_in);
-	while (tmp)
+	waitpid(pid, &status, 0);
+	printf ("status: %d\n", status);
+	while (tmp->next)
 	{
 		waitpid(-1, NULL, 0);
 		tmp = tmp->next;
 	}
 	
-	return (0);
+	return (status);
 }
+
+// int main (int argc, char **argv, char **envp)
+// {
+// 	t_cmd cmd1 = {.args = (char *[]){"/bin/ls", 0}, .separator = PIPE};
+// 	t_cmd cmd2 = {.args = (char *[]){"/usr/bin/head", 0}, .separator = PIPE};
+// 	t_cmd cmd3 = {.args = (char *[]){"/usr/bin/wc", "-l", 0}, .separator = END};
+// 	t_list *cmds = ft_lstnew(&cmd1);
+// 	ft_lstadd_back(&cmds, ft_lstnew(&cmd2));
+// 	ft_lstadd_back(&cmds, ft_lstnew(&cmd3));
+// 	ft_pipe(cmds, envp);
+// 	return (0);
+// }

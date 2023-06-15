@@ -6,11 +6,11 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 16:10:37 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/06/09 18:00:33 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/06/15 09:50:36 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "execute_the_cmd.h"
+#include "execute.h"
 
 /*
 	is_cmd_exists: check if the cmd exists in the path

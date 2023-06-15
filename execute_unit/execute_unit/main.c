@@ -6,17 +6,17 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 17:37:26 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/06/13 17:38:30 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/06/15 09:51:21 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_pipe.h"
 
-int main(int argc, char **argv, char **envp)
-{
-	t_list cmds;
+// int main(int argc, char **argv, char **envp)
+// {
+// 	t_list cmds;
 
-	ft_parse(argv);
-	ft_pipe(cmds, envp);
-	return (0);
-}
+// 	ft_parse(argv);
+// 	ft_pipe(cmds, envp);
+// 	return (0);
+// }

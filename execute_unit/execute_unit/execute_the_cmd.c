@@ -6,12 +6,11 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 15:34:40 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/06/13 19:39:51 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/06/15 09:50:24 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "execute_the_cmd.h"
-
+#include "execute.h"
 
 
 int ft_execute(t_cmd cmd, char **envp)
