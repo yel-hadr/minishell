@@ -6,7 +6,7 @@
 /*   By: elakhfif <elakhfif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:41:52 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/06/16 19:49:13 by elakhfif         ###   ########.fr       */
+/*   Updated: 2023/06/16 20:17:59 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,18 +93,18 @@ char	**split_args(char *cmd)
 	return (args);
 }
 
-// int	main(int ac, char **av)
-// {
-// 	char	**args;
-// 	int		i;
-//
-// 	i = 0;
-// 	args = split_args(av[1]);
-// 	while (args[i])
-// 	{
-// 		printf("args[%i]:\t'%s'\n", i, args[i]);
-// 		printf("redir:\t[%i]\n", is_redir(args[i]));
-// 		i++;
-// 	}
-// 	return (0);
-// }
+int	main(int ac, char **av)
+{
+	char	**args;
+	int		i;
+
+	i = 0;
+	args = split_args(av[1]);
+	while (args[i])
+	{
+		printf("args[%i]:\t'%s'\n", i, args[i]);
+		printf("redir:\t[%i]\n", is_redir(args[i]));
+		i++;
+	}
+	return (0);
+}

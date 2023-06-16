@@ -45,7 +45,7 @@ int		ft_error(char *cmd, char *error);
 int		ft_execute(t_cmd cmd, char **envp);
 int		ft_redaraction(char *file, t_redir redaraction);
 int		ft_pipe(t_list *cmds, char **envp);
-char	**ft_lst_to_char(t_list *envp_list)
+char	**ft_lst_to_char(t_list *envp_list);
 char	*ft_getenv(char *var, t_list *envp_list);
 t_list	*ft_dupenvp(char **envp);
 

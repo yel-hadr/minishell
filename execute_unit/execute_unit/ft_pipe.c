@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 16:08:43 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/06/15 21:35:50 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/06/16 20:17:29 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int ft_pipe(t_list *cmds, char **envp)
 	}
 	close(fd_in);
 	waitpid(pid, &status, 0);
-	printf ("status: %d\n", status);
+	printf ("status: %d\n", status >> 8);
 	while (tmp->next)
 	{
 		waitpid(-1, NULL, 0);
@@ -69,14 +69,16 @@ int ft_pipe(t_list *cmds, char **envp)
 	return (status);
 }
 
-// int main (int argc, char **argv, char **envp)
-// {
-// 	t_cmd cmd1 = {.args = (char *[]){"/bin/ls", 0}, .separator = PIPE};
-// 	t_cmd cmd2 = {.args = (char *[]){"/usr/bin/head", 0}, .separator = PIPE};
-// 	t_cmd cmd3 = {.args = (char *[]){"/usr/bin/wc", "-l", 0}, .separator = END};
-// 	t_list *cmds = ft_lstnew(&cmd1);
-// 	ft_lstadd_back(&cmds, ft_lstnew(&cmd2));
-// 	ft_lstadd_back(&cmds, ft_lstnew(&cmd3));
-// 	ft_pipe(cmds, envp);
-// 	return (0);
-// }
+int main (int argc, char **argv, char **envp)
+{
+	(void)argc;
+	(void)argv;
+	t_cmd cmd1 = {.args = (char *[]){"/bin/ls", 0}, .separator = END};
+	// t_cmd cmd2 = {.args = (char *[]){"/ur/bin/head", 0}, .separator = PIPE};
+	// t_cmd cmd3 = {.args = (char *[]){"/usr/bin/wc", "-l", 0}, .separator = END};
+	t_list *cmds = ft_lstnew(&cmd1);
+	// ft_lstadd_back(&cmds, ft_lstnew(&cmd2));
+	// ft_lstadd_back(&cmds, ft_lstnew(&cmd3));
+	ft_pipe(cmds, envp);
+	return (0);
+}
