@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 20:06:50 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/06/15 09:49:22 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/06/15 21:45:06 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ char *redaraction_heredoc(char *str)
 			free(line);
 			break ;
 		}
-		line = ft_strjoin(line, "\n");
+		line = ft_strjoin_free(line, "\n");
 		herdoc = ft_strjoin(herdoc, line);
 		free(line);
 	}

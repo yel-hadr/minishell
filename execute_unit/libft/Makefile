@@ -30,10 +30,10 @@ bonus : $(NAME) $(OBJBONUS)
 	$(CC) $(FLAG) -c $<
 
 clean :
-	rm -f *.o
+	rm -f $(OBJ) $(OBJBONUS)
 
-fclean :
-	rm -rf *.o *.a
+fclean : clean
+	rm -rf $(NAME)
 
 re : fclean all
 
