@@ -1,0 +1,9 @@
+{
+	"files.associations": {
+		"execute.h": "c",
+		"libft.h": "c",
+		"fcntl.h": "c",
+		"builting.h": "c",
+		"string.h": "c"
+	}
+}

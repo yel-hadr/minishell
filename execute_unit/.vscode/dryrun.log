@@ -1,7 +1,14 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/yel-hadr/Desktop/minishell/execute_unit'
+cc -Wall -Wextra -Werror   -c -o execute_the_cmd.o execute_the_cmd.c
  
+cc -Wall -Wextra -Werror   -c -o check_the_cmd.o check_the_cmd.c
+cc -Wall -Wextra -Werror   -c -o ft_pipe.o ft_pipe.c
+cc -Wall -Wextra -Werror   -c -o ft_redaraction.o ft_redaraction.c
+cc -Wall -Wextra -Werror   -c -o ft_error.o ft_error.c
+cc -Wall -Wextra -Werror   -c -o ft_strjoin_free.o ft_strjoin_free.c
+ar rcs execute_one_cmd.a execute_the_cmd.o check_the_cmd.o ft_pipe.o ft_redaraction.o ft_error.o ft_strjoin_free.o
+make -C ../libft bonus
+cc -lreadline -o ft_pipe ft_pipe.c execute_one_cmd.a ../libft/libft.a
 make: Leaving directory `/Users/yel-hadr/Desktop/minishell/execute_unit'
  
-make: *** No targets specified and no makefile found.  Stop.
-

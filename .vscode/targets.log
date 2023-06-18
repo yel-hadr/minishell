@@ -7,8 +7,10 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
  
+make: *** No rule to make target `all'.  Stop.
 
-# Make data base, printed on Sun Jun 18 14:56:00 2023
+
+# Make data base, printed on Sat Jun 17 14:46:04 2023
 
 # Variables
 
@@ -16,10 +18,6 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
-# makefile (from `Makefile', line 10)
-OBJ = $(SRC:.c=.o)
-# makefile (from `Makefile', line 6)
-SRC = execute_the_cmd.c check_the_cmd.c ft_pipe.c ft_redaraction.c ft_error.c ft_strjoin_free.c
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -27,25 +25,23 @@ SRC = execute_the_cmd.c check_the_cmd.c ft_pipe.c ft_redaraction.c ft_error.c ft
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/yel-hadr/Desktop/minishell/execute_unit
+CURDIR := /Users/yel-hadr/Desktop/minishell
 # makefile
 SHELL = /bin/sh
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
 _ = /usr/bin/make
-# makefile (from `Makefile', line 4)
-CFLAGS = -Wall -Wextra -Werror
-# makefile (from `Makefile', line 1)
-MAKEFILE_LIST :=  Makefile
+# makefile
+MAKEFILE_LIST := 
 # environment
-VSCODE_CWD = /Users/yel-hadr/Desktop/minishell/execute_unit
+VSCODE_CWD = /Users/yel-hadr/Desktop/minishell
 # environment
 PATH = /Users/yel-hadr/goinfre/homebrew/bin:/Users/yel-hadr/goinfre/homebrew/bin:/Users/yel-hadr/goinfre/homebrew/bin:/Users/yel-hadr/goinfre/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-LaunchInstanceID = E869315C-679C-42BD-8555-AA57A9A8EB3B
+LaunchInstanceID = 41D0EE59-746A-495D-8314-99AF220DA579
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
@@ -53,11 +49,11 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 LS_COLORS = di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.4S3zGzfPXy/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.fvueih9yOq/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-PWD = /Users/yel-hadr/Desktop/minishell/execute_unit
+PWD = /Users/yel-hadr/Desktop/minishell
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
@@ -88,20 +84,16 @@ MAKE = $(MAKE_COMMAND)
 LC_TERMINAL = iTerm2
 # environment
 SHLVL = 2
-# makefile (from `Makefile', line 3)
-CC = cc
 # default
 MAKE_VERSION := 3.81
 # environment
 USER = yel-hadr
 # makefile
-.DEFAULT_GOAL := all
+.DEFAULT_GOAL := 
 # default
 MAKECMDGOALS := all
 # environment
-TERM_SESSION_ID = w0t0p0:340CCEDD-B8F8-4FF3-8A33-B54F0974024B
-# makefile (from `Makefile', line 1)
-NAME = execute_one_cmd.a
+TERM_SESSION_ID = w0t0p0:C9E4C965-E6E2-4991-9DF5-2789CB118114
 # environment
 LESS = -R
 # automatic
@@ -129,7 +121,7 @@ MFLAGS = -Rrqp
 # environment
 TERM_PROGRAM_VERSION = 3.4.13
 # environment
-XPC_SERVICE_NAME = com.microsoft.VSCode.4320.0B93A0FB-8FB1-442F-8FDD-34C8C8DE1C04
+XPC_SERVICE_NAME = com.microsoft.VSCode.4320.2DDFDF2A-8CEC-4D5D-86F2-9641C26F37D8
 # environment
 LC_TERMINAL_VERSION = 3.4.13
 # automatic
@@ -137,9 +129,7 @@ LC_TERMINAL_VERSION = 3.4.13
 # automatic
 +F = $(notdir $+)
 # environment
-ITERM_SESSION_ID = w0t0p0:340CCEDD-B8F8-4FF3-8A33-B54F0974024B
-# makefile (from `Makefile', line 5)
-UTILE = ../libft/libft.a
+ITERM_SESSION_ID = w0t0p0:C9E4C965-E6E2-4991-9DF5-2789CB118114
 # environment
 COLORFGBG = 15;0
 # environment
@@ -160,8 +150,6 @@ LC_ALL = C
 SECURITYSESSIONID = 186a7
 # automatic
 ^F = $(notdir $^)
-# makefile (from `Makefile', line 2)
-DEPS = execute_one_cmd.h
 # default
 SUFFIXES := 
 # default
@@ -175,9 +163,9 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 6538
+VSCODE_PID = 59022
 # variable set hash-table stats:
-# Load=82/1024=8%, Rehash=0, Collisions=6/115=5%
+# Load=75/1024=7%, Rehash=0, Collisions=4/96=4%
 
 # Pattern-specific Variable Values
 
@@ -185,65 +173,22 @@ VSCODE_PID = 6538
 
 # Directories
 
-# . (device 16777225, inode 6084556): 19 files, 1 impossibilities.
+# . (device 16777225, inode 6056576): 10 files, no impossibilities.
 
-# 19 files, 1 impossibilities in 1 directories.
+# 10 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
-%.o: %.c execute_one_cmd.h
-#  commands to execute (from `Makefile', line 20):
-	$(CC) $(CFLAGS) -c $< -o $@
-	
-
-# 1 implicit rules, 0 (0.0%) terminal.
+# No implicit rules.
 
 # Files
 
 # Not a target:
-check_the_cmd.o:
-#  Implicit rule search has been done.
-#  Last modified 2023-06-17 14:38:24
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-all: execute_one_cmd.a
+all:
 #  Command-line target.
-#  Implicit rule search has not been done.
-#  Implicit/static pattern stem: `'
-#  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := all
-# automatic
-# % := 
-# automatic
-# * := 
-# automatic
-# + := execute_one_cmd.a
-# automatic
-# | := 
-# automatic
-# < := execute_one_cmd.a
-# automatic
-# ^ := execute_one_cmd.a
-# automatic
-# ? := execute_one_cmd.a
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/12=8%
-#  commands to execute (from `Makefile', line 13):
-	cc -lreadline -o ft_pipe ft_pipe.c $(NAME) $(UTILE)
-	
-
-# Not a target:
-ft_strjoin_free.o:
 #  Implicit rule search has been done.
-#  Last modified 2023-06-17 14:38:24
-#  File has been updated.
-#  Successfully updated.
+#  File does not exist.
+#  File has not been updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
@@ -255,51 +200,23 @@ ft_strjoin_free.o:
 
 # Not a target:
 Makefile:
+#  A default, MAKEFILES, or -include/sinclude makefile.
 #  Implicit rule search has been done.
-#  Last modified 2023-06-17 09:22:24
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Failed to be updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-ft_redaraction.o:
+makefile:
+#  A default, MAKEFILES, or -include/sinclude makefile.
 #  Implicit rule search has been done.
-#  Last modified 2023-06-17 14:38:24
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Failed to be updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-# Not a target:
-ft_pipe.o:
-#  Implicit rule search has been done.
-#  Last modified 2023-06-17 14:38:24
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-execute_one_cmd.a: execute_the_cmd.o check_the_cmd.o ft_pipe.o ft_redaraction.o ft_error.o ft_strjoin_free.o
-#  Implicit rule search has not been done.
-#  Last modified 2023-06-17 14:38:24
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 16):
-	ar rcs $(NAME) $^
-	make -C ../libft bonus
-	
-
-fclean: clean
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `Makefile', line 27):
-	rm -rf $(NAME)
-	make -C ../libft fclean
-	
 
 # Not a target:
 .DEFAULT:
@@ -308,51 +225,28 @@ fclean: clean
 #  File has not been updated.
 
 # Not a target:
-execute_the_cmd.o:
+GNUmakefile:
+#  A default, MAKEFILES, or -include/sinclude makefile.
 #  Implicit rule search has been done.
-#  Last modified 2023-06-17 14:38:24
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-re: fclean all
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-clean:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `Makefile', line 23):
-	rm -f $(OBJ)
-	make -C ../libft clean
-	
-
-# Not a target:
-ft_error.o:
-#  Implicit rule search has been done.
-#  Last modified 2023-06-17 14:38:24
- 
-#  File has been updated.
-#  Successfully updated.
+#  Failed to be updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # files hash-table stats:
-# Load=14/1024=1%, Rehash=0, Collisions=0/47=0%
+# Load=6/1024=1%, Rehash=0, Collisions=0/17=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
 
 # No general (`VPATH' variable) search path.
 
-# # of strings in strcache: 1
-# # of strcache buffers: 1
-# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
-# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+# # of strings in strcache: 0
+# # of strcache buffers: 0
+# strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
+# strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Sun Jun 18 14:56:00 2023
+# Finished Make data base on Sat Jun 17 14:46:04 2023
 
  
