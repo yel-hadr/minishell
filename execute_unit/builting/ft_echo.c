@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 12:19:21 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/06/17 13:14:32 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/06/18 21:28:13 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,22 @@
 	return: 0 if success
 */
 
-int ft_echo(t_cmd cmd)
+int ft_echo(char **args)
 {
 	int flag;
 
 	flag = 0;
-	cmd.args++;
-	if (ft_memcmp(*cmd.args, "-n", ft_strlen(*cmd.args)) == 0)
+	args++;
+	if (ft_memcmp(*args, "-n", ft_strlen(*args)) == 0)
 	{
-		cmd.args++;
+		args++;
 		flag = 1;
 	}
-	while (*cmd.args)
+	while (*args)
 	{
-		ft_putstr_fd(*cmd.args, STDOUT_FILENO);
-		cmd.args++;
-		if (*cmd.args)
+		ft_putstr_fd(*args, STDOUT_FILENO);
+		args++;
+		if (*args)
 			ft_putchar_fd(' ', STDOUT_FILENO);
 	}
 	if (!flag)
