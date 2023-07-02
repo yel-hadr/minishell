@@ -1,6 +1,6 @@
 NAME = execute.a
 DEPS = execute.h
-CC = cc
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 UTILE = ../libft/libft.a builting/builting.a
 SRC = execute_the_cmd.c check_the_cmd.c ft_pipe.c ft_redaraction.c\
