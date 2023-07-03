@@ -49,7 +49,7 @@ int ft_pipe(t_list *cmds, t_list **envp)
 		{
 			if (!is_cmd_exists(&execute.cmd->args[0], ft_lst_to_char(*envp)))
 			{
-				printf ("command not found: %s\n", execute.cmd->args[0]);
+				ft_error(execute.cmd->args[0], "command not found");
 				exit(127);
 			}
 			dup2(execute.fd_in, STDIN_FILENO);
