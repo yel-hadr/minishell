@@ -42,9 +42,9 @@ int ft_echo(char **args)
 	return (0);
 }
 
-int	main(int ac, char **av)
-{
-	(void)ac;
-	ft_echo(av);
-	return (0);
-}
+// int	main(int ac, char **av)
+// {
+// 	(void)ac;
+// 	ft_echo(av);
+// 	return (0);
+// }

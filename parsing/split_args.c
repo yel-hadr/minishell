@@ -93,18 +93,18 @@ char	**split_args(char *cmd)
 	return (args);
 }
 
-int	main(int ac, char **av)
-{
-	char	**args;
-	int		i;
+// int	main(int ac, char **av)
+// {
+// 	char	**args;
+// 	int		i;
 
-	i = 0;
-	args = split_args(av[1]);
-	while (args[i])
-	{
-		printf("args[%i]:\t'%s'\n", i, args[i]);
-		printf("redir:\t[%i]\n", is_redir(args[i]));
-		i++;
-	}
-	return (0);
-}
+// 	i = 0;
+// 	args = split_args(av[1]);
+// 	while (args[i])
+// 	{
+// 		printf("args[%i]:\t'%s'\n", i, args[i]);
+// 		printf("redir:\t[%i]\n", is_redir(args[i]));
+// 		i++;
+// 	}
+// 	return (0);
+// }

@@ -12,18 +12,18 @@
 
 #include "execute.h"
 
-int ft_herdoc(t_execute *cmd)
-{
-	if (cmd->cmd->redir_in.redir == REDIR_HEREDOC)
-	{
-		pipe(cmd->herdoc_fd);
-		write(cmd->herdoc_fd[1], cmd->cmd->redir_in.file, ft_strlen(cmd->cmd->redir_in.file));
-		close(cmd->herdoc_fd[1]);
-		dup2(cmd->herdoc_fd[0], STDIN_FILENO);
-		close(cmd->herdoc_fd[0]);
-	}
-	return (0);
-}
+// int ft_herdoc(t_execute *cmd)
+// {
+// 	if (cmd->cmd->redir_in.redir == REDIR_HEREDOC)
+// 	{
+// 		pipe(cmd->herdoc_fd);
+// 		write(cmd->herdoc_fd[1], cmd->cmd->redir_in.file, ft_strlen(cmd->cmd->redir_in.file));
+// 		close(cmd->herdoc_fd[1]);
+// 		dup2(cmd->herdoc_fd[0], STDIN_FILENO);
+// 		close(cmd->herdoc_fd[0]);
+// 	}
+// 	return (0);
+// }
 
 int ft_execute(t_execute *cmd, char **envp)
 {

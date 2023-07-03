@@ -10,6 +10,7 @@
 #include <readline/history.h>
 #include <limits.h>
 #include <sys/types.h>
+#include <sys/wait.h>
 #include <string.h>
 #include <fcntl.h>
 #include "../libft/libft.h"
@@ -64,5 +65,6 @@ char	*ft_strjoin_free(char *s1, char *s2);
 int		ft_setenv(char *var, char *value, t_list *envp);
 int 	is_builting(char *cmd);
 t_list	*ft_dupenvp(char **envp);
-
+int ft_herdoc(t_execute *cmd);
+char *is_cmd_exists(char **exe, char **envp);
 #endif

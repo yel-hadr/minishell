@@ -47,6 +47,11 @@ int ft_pipe(t_list *cmds, t_list **envp)
 		execute.pid = fork();
 		if (execute.pid == 0)
 		{
+			if (!is_cmd_exists(&execute.cmd->args[0], ft_lst_to_char(*envp)))
+			{
+				printf ("command not found: %s\n", execute.cmd->args[0]);
+				exit(127);
+			}
 			dup2(execute.fd_in, STDIN_FILENO);
 			if (execute.fd_in)
 				close(execute.fd_in);				
@@ -88,34 +93,30 @@ int main(int argc, char **argv, char **env)
 	t_cmd *cmd;
 	t_cmd *cmd1;
 	t_cmd *cmd2;
-	t_cmd *cmd3;
 	t_list *envp;
 
-	envp = ft_dupenvp(env);
-	cmd = ft_calloc(1, sizeof(t_cmd));
-	cmd1 = ft_calloc(1, sizeof(t_cmd));
-	cmd2 = ft_calloc(1, sizeof(t_cmd));
-	cmd3 = ft_calloc(1, sizeof(t_cmd));
-	cmd->args = ft_split("cat", ' ');
-	cmd1->args = ft_split("grep", ' ');
-	cmd2->args = ft_split("grep", ' ');
-	cmd3->args = ft_split("grep", ' ');
+	cmd = malloc(sizeof(t_cmd));
+	cmd1 = malloc(sizeof(t_cmd));
+	cmd2 = malloc(sizeof(t_cmd));
+	cmd->args = malloc(sizeof(char *) * 3);
+	cmd1->args = malloc(sizeof(char *) * 3);
+	cmd2->args = malloc(sizeof(char *) * 3);
+	cmd->args[0] = strdup("ls");
+	cmd->args[1] = strdup("-l");
+	cmd->args[2] = NULL;
+	cmd1->args[0] = strdup("grep");
+	cmd1->args[1] = strdup("ft");
+	cmd1->args[2] = NULL;
+	cmd2->args[0] = strdup("wc");
+	cmd2->args[1] = strdup("-l");
+	cmd2->args[2] = NULL;
 	cmd->separator = PIPE;
 	cmd1->separator = PIPE;
-	cmd2->separator = PIPE;
-	cmd3->separator = PIPE;
-	cmd->redir_in.redir = REDIR_HEREDOC;
-	cmd->redir_in.file = ft_strdup("hello");
-	cmd1->redir_in.redir = REDIR_HEREDOC;
-	cmd1->redir_in.file = ft_strdup("hello");
-	cmd2->redir_in.redir = REDIR_HEREDOC;
-	cmd2->redir_in.file = ft_strdup("hello");
-	cmd3->redir_in.redir = REDIR_HEREDOC;
-	cmd3->redir_in.file = ft_strdup("hello");
+	cmd2->separator = END;
 	cmds = ft_lstnew(cmd);
 	ft_lstadd_back(&cmds, ft_lstnew(cmd1));
 	ft_lstadd_back(&cmds, ft_lstnew(cmd2));
-	ft_lstadd_back(&cmds, ft_lstnew(cmd3));
+	envp = ft_lstnew(ft_strdup("PATH=/bin"));
 	ft_pipe(cmds, &envp);
 	return (0);
 	
