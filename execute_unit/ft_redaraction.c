@@ -96,16 +96,3 @@ int ft_redaraction(char *file, t_redir redaraction)
 	return (fd);
 }
 
-int main()
-{
-  char *str;
-  int fd;
-  
-  str = redaraction_heredoc("yassine");
-  printf("%s\n", str);
-  fd = ft_redaraction("yassine", REDIR_APPEND);
-  printf("%d\n", fd);
-  return (0);
-}
-
-
