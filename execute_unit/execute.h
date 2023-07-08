@@ -14,6 +14,7 @@
 #include <string.h>
 #include <fcntl.h>
 #include "../libft/libft.h"
+#include "../parcing/parser.h"
 #include "builting/builting.h"
 
 typedef enum s_redir{

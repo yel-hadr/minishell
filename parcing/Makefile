@@ -10,13 +10,12 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	minishell
+NAME	=	parser.a
 CC	=	cc
 CFLAGS	=	-Werror -Wextra -Wall -O3
 LIBFT	=	../libft/libft.a
 
-SRCS	=	main.c\
-		split_cmd.c\
+SRCS	=	split_cmd.c\
 		struct_cmd.c\
 		split_args.c\
 		parser.c\
@@ -28,9 +27,7 @@ OBJS	=	$(SRCS:.c=.o)
 
 $(NAME): $(OBJS)
 	@printf "\033[1;36m Compiling \033[0m LIBFT \033[1;36m√\033[0m\n"
-	@$(MAKE) -s all -C ../libft
-	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -lreadline -o $(NAME)
-	@$(MAKE) -s clean -C ../libft
+	@ar rc $(NAME) $(OBJS)
 	@printf "\n\033[1;36m ───────────── Done ──────────── \033[0m\n\n"
 
 %.o: %.c parser.h
