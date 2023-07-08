@@ -17,10 +17,9 @@ $(NAME) : $(OBJ)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
-	@rm -f $(OBJ)
+	@rm -rf $(OBJ)
 
 fclean : clean
 	@rm -rf $(NAME)
 
 re : fclean all
-

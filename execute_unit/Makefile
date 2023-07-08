@@ -9,10 +9,12 @@ SRC = execute_the_cmd.c check_the_cmd.c ft_redaraction.c\
 
 OBJ = $(SRC:.c=.o)
 
-all : $(NAME)
+all : utils $(NAME)
 
 $(NAME) : $(OBJ)
 	@ar rcs $(NAME) $^
+	
+utils :
 	make -C ../libft bonus
 	make -C builting
 
@@ -20,13 +22,15 @@ $(NAME) : $(OBJ)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
-	rm -f $(OBJ)
-	make -C ../libft clean
-	make -C builting clean
+	@rm -rf $(OBJ)
+	@make -C ../libft clean
+	@make -C builting clean
 
 fclean : clean
 	@rm -rf $(NAME)
 	@make -C ../libft fclean
 	@make -C builting fclean
+
+
 re : fclean all
 
