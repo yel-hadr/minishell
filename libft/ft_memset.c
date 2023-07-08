@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: elakhfif <elakhfif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 22:20:41 by yel-hadr          #+#    #+#             */
-/*   Updated: 2022/10/01 11:53:11 by yel-hadr         ###   ########.fr       */
+/*   Created: 2022/10/05 15:09:02 by elakhfif          #+#    #+#             */
+/*   Updated: 2022/10/21 19:14:48 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,40 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	size_t	i;
+	size_t			a;
+	unsigned char	*s;
 
-	i = 0;
-	while (i < len)
-		((unsigned char *)b)[i++] = (unsigned char)c;
+	a = 0;
+	s = (unsigned char *) b;
+	while (a < len)
+	{
+		s[a] = c;
+		a++;
+	}
 	return (b);
 }
+/*
+int main()
+{
+	    int t[5] = {1,2,4,2,5};
+        int *r;
+        r = ft_memset(t,10,4);
+        int i = 0;
+        while (i < 5)
+        {
+                printf("%d\n",r[i]);
+                i++;
+        }
+
+    char str[50] = "Let us see a simple example in C";
+    printf("\nBefore memset(): %s\n", str);
+
+    // Fill 8 characters starting from str[13] with '.'
+    ft_memset(str, '.', 4*sizeof(char));
+
+    printf("After memset():  %s\n", str);
+
+    char str1[50] = "Let us see a simple example in C";
+    printf("\nBefore memset(): %s\n", str1);
+}
+*/

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: elakhfif <elakhfif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/13 22:04:10 by yel-hadr          #+#    #+#             */
-/*   Updated: 2022/10/17 15:38:37 by yel-hadr         ###   ########.fr       */
+/*   Created: 2022/10/25 06:58:55 by elakhfif          #+#    #+#             */
+/*   Updated: 2022/10/25 06:58:57 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,31 @@
 
 t_list	*ft_lstnew(void *content)
 {
+	t_list	*ptr;
+
+	ptr = (t_list *)(malloc(sizeof(t_list)));
+	if (!ptr)
+		return (NULL);
+	ptr->content = content;
+	ptr->next = NULL;
+	return (ptr);
+}
+/*
+int main()
+{
+	t_list	*a;
+	t_list	*b;
 	t_list	*head;
 
-	head = malloc(sizeof(t_list));
-	if (!head)
-		return (NULL);
-	head -> content = content;
-	head ->next = NULL;
-	return (head);
+	a = ft_lstnew("tarzan");
+	b = ft_lstnew("Houscein");
+
+	a->next = b;
+	head = a;
+	while (head)
+	{
+		printf("%s", head->content);
+		head = head->next;
+	}
 }
+*/

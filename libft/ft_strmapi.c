@@ -3,30 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: elakhfif <elakhfif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 17:29:11 by yel-hadr          #+#    #+#             */
-/*   Updated: 2022/10/17 13:17:49 by yel-hadr         ###   ########.fr       */
+/*   Created: 2022/10/19 22:20:46 by elakhfif          #+#    #+#             */
+/*   Updated: 2022/10/21 20:30:41 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f) (unsigned int, char))
 {
-	int		i;
-	char	*p;
+	unsigned int	index;
+	char			*str;
 
+	index = 0;
 	if (!s)
 		return (NULL);
-	i = 0;
-	p = ft_calloc(sizeof(char), ft_strlen(s) + 1);
-	if (!p)
+	str = (char *)malloc(ft_strlen(s) + 1);
+	if (str == NULL)
 		return (NULL);
-	while (s[i])
+	while (s[index] != '\0')
 	{
-		p[i] = f(i, s[i]);
-		i++;
+		str[index] = f(index, s[index]);
+		index++;
 	}
-	return (p);
+	str[index] = '\0';
+	return (str);
 }
+/*
+#include <stdio.h>
+
+
+char shift(unsigned int i, char c)
+{
+	return c + 1;
+}
+
+int main()
+{
+	char 	str[] = "absddzed";
+	printf("%s\n",ft_strmapi(str, shift));
+}
+*/

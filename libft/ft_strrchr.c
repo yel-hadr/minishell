@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: elakhfif <elakhfif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/01 18:45:44 by yel-hadr          #+#    #+#             */
-/*   Updated: 2022/10/01 19:15:00 by yel-hadr         ###   ########.fr       */
+/*   Created: 2022/10/05 15:39:02 by elakhfif          #+#    #+#             */
+/*   Updated: 2022/10/20 23:31:36 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,22 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
+	int	size;
 
-	i = ft_strlen(s);
-	while (i >= 0)
+	size = (int)ft_strlen(s);
+	i = size;
+	while (i > 0 || i == 0)
 	{
-		if ((unsigned char)s[i] == (unsigned char)c)
-			return ((char *)s + i);
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
 		i--;
 	}
 	return (NULL);
 }
+/*
+int main()
+{
+	char s1[20] = "fallahi ";
+    printf("fst occurence %s .\n", ft_strrchr(s1, 'f'));
+}
+*/

@@ -3,26 +3,54 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: elakhfif <elakhfif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/15 18:55:02 by yel-hadr          #+#    #+#             */
-/*   Updated: 2022/10/17 15:30:17 by yel-hadr         ###   ########.fr       */
+/*   Created: 2022/10/25 06:55:03 by elakhfif          #+#    #+#             */
+/*   Updated: 2022/10/25 06:55:06 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list	*list;
+	t_list	*temp;
 
-	if (!lst || !del || !*lst)
-		return ;
-	list = *lst;
-	while (list)
+	while (*lst)
 	{
-		list = list->next;
-		ft_lstdelone(*lst, del);
-		*lst = list;
+		del((*lst)->content);
+		temp = (*lst)->next;
+		free(*lst);
+		*lst = temp;
 	}
+	*lst = NULL;
 }
+/*
+void del(void *content){
+
+	printf("hadchi li mktoub: %s\n", content);
+	free(content);
+}
+
+#include <stdio.h>
+int main()
+{
+
+	t_list *finalnode = ft_lstnew(ft_strdup("TARZAN"));
+	t_list *secondnode = ft_lstnew(ft_strdup("there"));
+	t_list *firstnode = ft_lstnew(ft_strdup("hello"));
+	t_list *head;
+	t_list **lst;
+
+	firstnode->next = secondnode;
+	secondnode->next = finalnode;
+
+	head = finalnode;
+	lst = &head;
+
+	printf("%s\n", firstnode->content);
+	printf("%s\n", secondnode->content);
+	printf("%s\n", finalnode->content);
+	ft_lstclear(lst, del);
+}
+*/

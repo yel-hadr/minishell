@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: elakhfif <elakhfif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 19:52:34 by yel-hadr          #+#    #+#             */
-/*   Updated: 2022/10/17 13:12:25 by yel-hadr         ###   ########.fr       */
+/*   Created: 2022/10/05 15:10:42 by elakhfif          #+#    #+#             */
+/*   Updated: 2022/10/19 00:02:38 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,30 @@
 
 char	*ft_strdup(const char *s1)
 {
-	char	*p;
+	int		indx;
+	int		len;
+	char	*str;
 
-	p = ft_calloc(ft_strlen(s1) + 1, sizeof(char));
-	if (!p)
+	indx = 0;
+	len = ft_strlen(s1);
+	str = ((char *)malloc(sizeof(char) * (len +1)));
+	if (str == NULL)
 		return (NULL);
-	ft_memmove(p, s1, ft_strlen(s1));
-	return (p);
+	while (indx < len)
+	{
+		str[indx] = s1[indx];
+		indx++;
+	}
+	str[indx] = '\0';
+	return (str);
 }
+/*
+int main()
+{
+	char 	*str;
+	char	*tmp = "HAHAHA \0 tu me vois pas !";
+    int l = ft_strlen(tmp);
+	str = ft_strdup(tmp);
+	printf ("%d\n",ft_strncmp(str, tmp,l));
+}
+*/

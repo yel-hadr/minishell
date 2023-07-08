@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: elakhfif <elakhfif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 18:34:35 by yel-hadr          #+#    #+#             */
-/*   Updated: 2022/10/17 13:13:09 by yel-hadr         ###   ########.fr       */
+/*   Created: 2022/10/17 17:55:21 by elakhfif          #+#    #+#             */
+/*   Updated: 2022/10/19 00:06:10 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,19 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int	i;
+	size_t	index;
 
-	i = 0;
-	if (s)
-	{
-		while (s[i])
-		{
-			f(i, &s[i]);
-			i++;
-		}
-	}
+	index = -1;
+	if (!s || !f)
+		return ;
+	while (s[++index] != '\0')
+		(*f)(index, &s[index]);
 }
+/*
+int main()
+{
+        char    str[] ="aaaa";
+        ft_striteri(str,f1);
+        printf("%s\n",str);  
+}
+*/

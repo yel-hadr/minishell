@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: elakhfif <elakhfif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 11:30:50 by yel-hadr          #+#    #+#             */
-/*   Updated: 2022/09/29 11:39:05 by yel-hadr         ###   ########.fr       */
+/*   Created: 2022/10/05 14:54:43 by elakhfif          #+#    #+#             */
+/*   Updated: 2022/10/18 23:38:33 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,3 +18,13 @@ int	ft_isdigit(int c)
 		return (1);
 	return (0);
 }
+/*
+int main()
+{
+	printf("%d\n",ft_isdigit('5'));
+    printf("%d\n",ft_isdigit('H'));
+    printf("%d\n",ft_isdigit('&'));
+    printf("%d\n",ft_isdigit(200));
+    printf("%d\n",ft_isdigit(0));
+}
+*/

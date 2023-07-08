@@ -3,66 +3,66 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: elakhfif <elakhfif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 16:56:43 by yel-hadr          #+#    #+#             */
-/*   Updated: 2022/10/17 12:35:27 by yel-hadr         ###   ########.fr       */
+/*   Created: 2022/10/15 20:04:54 by elakhfif          #+#    #+#             */
+/*   Updated: 2022/10/19 00:05:21 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*to_string(int nbr, char *str)
+static int	ft_numlen(int nb)
 {
-	int	i;
+	int	len;
 
-	i = 0;
-	if (nbr < 0)
+	len = 0;
+	if (nb <= 0)
+		len++;
+	while (nb)
 	{
-		str[i] = '-';
-		to_string((nbr * -1), str);
+		len++;
+		nb = nb / 10;
 	}
-	else if (nbr > 9)
-	{
-		to_string((nbr / 10), str);
-		to_string((nbr % 10), str);
-	}
-	else
-	{
-		while (str[i])
-			str++;
-		str[i] = nbr + '0';
-	}
-	return (str);
-}
-
-static int	count(int nbr)
-{
-	int	i;
-
-	i = 0;
-	if (nbr < 0)
-	{
-		nbr *= -1;
-		i++;
-	}
-	while ((nbr / 10) > 0)
-	{
-		nbr = nbr / 10;
-		i++;
-	}
-	return (i);
+	return (len);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*s;
+	int		lenth;
+	char	*str;
+	long	nb;
 
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	s = ft_calloc(sizeof(char), count(n) + 2);
-	if (!s)
+	lenth = ft_numlen(n);
+	str = malloc(sizeof(char) * lenth + 1);
+	nb = n;
+	if (!str)
 		return (NULL);
-	to_string(n, s);
-	return (s);
+	else if (nb < 0)
+	{
+		str[0] = '-';
+		nb = -nb;
+	}
+	if (nb == 0)
+		str[0] = '0';
+	str[lenth--] = '\0';
+	while (nb)
+	{
+		str[lenth] = nb % 10 + 48;
+		nb = nb / 10;
+		lenth--;
+	}
+	return (str);
 }
+/*
+int main()
+{
+    char	*i1 = ft_itoa(-623);
+	char	*i2 = ft_itoa(156);
+	char	*i3 = ft_itoa(-0);
+
+        printf ("%d\n", strcmp(i1,"-623"));
+        printf ("%d\n", strcmp(i2,"156"));
+        printf ("%d\n", strcmp(i3,"0"));
+}
+*/

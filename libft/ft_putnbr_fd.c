@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: elakhfif <elakhfif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/13 14:46:57 by yel-hadr          #+#    #+#             */
-/*   Updated: 2022/10/17 13:01:05 by yel-hadr         ###   ########.fr       */
+/*   Created: 2022/10/17 17:36:26 by elakhfif          #+#    #+#             */
+/*   Updated: 2022/10/21 20:19:19 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,33 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	if (n == -2147483648)
+	long	x;
+
+	x = n;
+	if (x < 0)
 	{
-		ft_putstr_fd ("-2147483648", fd);
-		return ;
+		x = -x;
+		write(fd, "-", 1);
 	}
-	if (n < 0)
+	if (x <= 9)
 	{
-		ft_putchar_fd('-', fd);
-		n *= -1;
-	}
-	if (n > 9)
-	{
-		ft_putnbr_fd((n / 10), fd);
-		ft_putnbr_fd((n % 10), fd);
+		x = x + 48;
+		write(fd, &x, 1);
 	}
 	else
 	{
-		ft_putchar_fd(n + 48, fd);
+		ft_putnbr_fd(x / 10, fd);
+		ft_putnbr_fd(x % 10, fd);
 	}
 }
+/*
+#include <fcntl.h>
+
+int main()
+{
+	int	fd;
+
+	fd = open("ft_putnbr_fd.txt", O_CREAT | O_RDWR);
+	ft_putnbr_fd(541, fd);
+}
+*/

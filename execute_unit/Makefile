@@ -15,7 +15,7 @@ $(NAME) : $(OBJ)
 	@ar rcs $(NAME) $^
 	
 utils :
-	make -C ../libft bonus
+	make -C ../libft
 	make -C builting
 
 %.o : %.c $(DEPS)

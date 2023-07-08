@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: elakhfif <elakhfif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/13 14:39:20 by yel-hadr          #+#    #+#             */
-/*   Updated: 2022/10/17 12:58:50 by yel-hadr         ###   ########.fr       */
+/*   Created: 2022/10/05 15:33:51 by elakhfif          #+#    #+#             */
+/*   Updated: 2022/10/21 20:19:43 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,16 @@
 void	ft_putendl_fd(char *s, int fd)
 {
 	ft_putstr_fd(s, fd);
-	ft_putstr_fd("\n", fd);
+	write(fd, "\n", 1);
 }
+/*
+#include <fcntl.h>
+
+int main()
+{
+	int	fd;
+
+	fd = open("ft_putendl_fd.txt", O_CREAT | O_RDWR);
+	ft_putendl_fd("7ARZAN", fd);
+}
+*/

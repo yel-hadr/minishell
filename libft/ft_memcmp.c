@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: elakhfif <elakhfif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/30 19:36:47 by yel-hadr          #+#    #+#             */
-/*   Updated: 2022/10/03 14:55:40 by yel-hadr         ###   ########.fr       */
+/*   Created: 2022/10/05 15:04:58 by elakhfif          #+#    #+#             */
+/*   Updated: 2022/10/18 23:58:09 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,27 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
+	unsigned char	*frst;
+	unsigned char	*scnd;
+	int				i;
 
 	i = 0;
-	while (i < n)
+	frst = (unsigned char *)s1;
+	scnd = (unsigned char *)s2;
+	while (n--)
 	{
-		if (((unsigned char *)s1)[i] != ((unsigned char *)s2)[i])
-			return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
+		if (frst[i] != scnd[i])
+			return (frst[i] - scnd[i]);
 		i++;
 	}
 	return (0);
 }
+/*
+int main()
+{
+        char k[] = "fallahi";
+        char l[] = "fellahi";
+
+        printf("%d\n",ft_memcmp(k,l,1));
+}
+*/

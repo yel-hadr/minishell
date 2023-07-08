@@ -3,20 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: elakhfif <elakhfif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/02 13:11:38 by yel-hadr          #+#    #+#             */
-/*   Updated: 2022/10/02 13:41:20 by yel-hadr         ###   ########.fr       */
+/*   Created: 2022/10/05 15:05:41 by elakhfif          #+#    #+#             */
+/*   Updated: 2023/06/26 05:13:32 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *str, size_t n)
 {
-	if (!dst && !src)
+	size_t			i;
+	unsigned char	*dest1;
+	unsigned char	*str1;
+
+	i = 0;
+	dest1 = (unsigned char *)dest;
+	str1 = (unsigned char *)str;
+	if (!dest && !str)
 		return (NULL);
-	while (n-- != 0)
-		((unsigned char *)dst)[n] = ((unsigned char *)src)[n];
-	return (dst);
+	while (i < n)
+	{
+		dest1[i] = str1[i];
+		i++;
+	}
+	return (dest);
 }
+/*
+int main()
+{
+	int a;
+	int	b = 513;
+	int *s = ft_memcpy(&a, &b, 1);
+	printf("%d\n", s[0]);
+
+	char str[] = "TARZANdhghfgh";
+    char str1[] = "MALIK";
+    printf("%s\n%s", str, str1);
+}
+*/

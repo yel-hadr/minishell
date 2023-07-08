@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: elakhfif <elakhfif@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/14 17:48:55 by yel-hadr          #+#    #+#             */
-/*   Updated: 2022/10/17 15:40:46 by yel-hadr         ###   ########.fr       */
+/*   Created: 2022/10/25 06:59:44 by elakhfif          #+#    #+#             */
+/*   Updated: 2022/10/25 06:59:47 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,29 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int	count;
+	int		len;
+	t_list	*next;
 
-	count = 0;
-	while (lst)
+	len = 0;
+	next = lst;
+	while (next != NULL)
 	{
-		lst = lst->next;
-		count++;
+		next = next->next;
+		len++;
 	}
-	return (count);
+	return (len);
 }
+/*
+int main()
+{
+	t_list	*a;
+	t_list	*b;
+	t_list	*head;
+
+	a = ft_lstnew("TARZAN ");
+	b = ft_lstnew("Houscein");
+	a->next = b;
+	head = a;
+	printf("%d", ft_lstsize(head));
+}
+*/
