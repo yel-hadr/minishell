@@ -25,7 +25,7 @@
 // 	return (0);
 // }
 
-int ft_execute(t_execute *cmd, char **envp)
+int ft_execute(t_cmd *cmd, char **envp)
 {
 	
 	if (cmd->cmd->redir_in.redir == REDIR_HEREDOC)
@@ -39,55 +39,17 @@ int ft_execute(t_execute *cmd, char **envp)
 	return (1);
 }
 
-void ft_save_fd(t_execute *cmd)
+void ft_save_fd(int *save_stdin, int *save_stdout)
 {
-	cmd->save_stdin = dup(STDIN_FILENO);
-	cmd->save_stdout = dup(STDOUT_FILENO);
+  *save_stdin = dup(STDIN_FILENO);
+  *save_stdout = dup(STDOUT_FILENO);
 }
 
-void ft_restore_fd(t_execute *cmd)
+void ft_restore_fd(int save_stdin, int save_stdout)
 {
-	dup2(cmd->save_stdin, STDIN_FILENO);
-	dup2(cmd->save_stdout, STDOUT_FILENO);
-	close(cmd->save_stdin);
-	close(cmd->save_stdout);
-}
-
-int ft_builting(t_execute *cmd, char **args, t_list **envp)
-{
-	ft_save_fd(cmd);
-	if (cmd->cmd->redir_in.redir == REDIR_HEREDOC)
-		ft_herdoc(cmd);
-	else if (cmd->cmd->redir_in.redir != NONE)
-		ft_redaraction(cmd->cmd->redir_in.file, cmd->cmd->redir_in.redir);
-	if (cmd->cmd->redir_out.redir)
-		ft_redaraction(cmd->cmd->redir_out.file, cmd->cmd->redir_out.redir);
-	
-	if (ft_strnstr(args[0], "echo", ft_strlen(args[0])))
-		cmd->status = ft_echo(args);
-	else if (ft_strnstr(args[0], "cd", ft_strlen(args[0])))
-		cmd->status = ft_cd(args, envp);
-	else if (ft_strnstr(args[0], "pwd", ft_strlen(args[0])))
-		cmd->status = ft_pwd();
-	else if (ft_strnstr(args[0], "export", ft_strlen(args[0])))
-		cmd->status = ft_export(args, envp);
-	else if (ft_strnstr(args[0], "exit", ft_strlen(args[0])))
-		cmd->status = ft_exit(args);
-	ft_restore_fd(cmd);
-	return (0);
-}
-
-int ft_execute_the_cmd(t_execute *cmd, char **envp)
-{
-	if (cmd->cmd->args[0])
-	{
-		t_list *tmp;
-		tmp = ft_dupenvp(envp);
-		if (is_builting(cmd->cmd->args[0]))
-			return (ft_builting(cmd, cmd->cmd->args, &tmp));
-		else
-			return (ft_execute(cmd, envp));
-	}
-	return (0);
+  dup2(save_stdin, STDIN_FILENO);
+  dup2(save_stdout, STDOUT_FILENO);
+  close(save_stdin);
+  close(save_stdout);
 }
 

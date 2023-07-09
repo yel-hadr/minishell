@@ -31,6 +31,12 @@ typedef enum e_redir
 	NONE
 } t_redir_type;
 
+typedef enum e_sep
+{
+  PIPE,
+  END,
+} t_sep;
+
 typedef struct s_redir
 {
   char			*file;
@@ -50,7 +56,7 @@ typedef struct	s_cmd
 	char	**args;
   t_redir	redir_in;
   t_redir	redir_out;
-	char	*sep;
+  char  *sep;
 	int	error;
 	//pid_t	process_id;
 	struct s_cmd	*next;
@@ -60,8 +66,6 @@ typedef struct	s_cmd
 t_cmd	*split_cmd(char *input);
 //add_cmd is a function that add a command to the linked list of commands !
 t_cmd	*add_cmd(t_cmd *cmd, char *input);
-//main is a function that call the parser and the executor !
-int	main(void);
 //split_args is a function that split the command into arguments and return a table of arguments !
 char	**split_args(char *cmd);
 //parser is a function that parse the input and return a linked list of commands !

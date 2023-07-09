@@ -16,26 +16,13 @@
 	ft_pipe: execute the pipe and multiple pipe
 	@cmds: the list of cmds
 	@envp: the envp
-	return: 0 if success
+	return: 0 if success, 1 if not
 */
 
-int ft_herdoc(t_execute *cmd)
-{
-	if (cmd->cmd->redir_in.redir == REDIR_HEREDOC)
-	{
-		pipe(cmd->herdoc_fd);
-		write(cmd->herdoc_fd[1], cmd->cmd->redir_in.file, ft_strlen(cmd->cmd->redir_in.file));
-		close(cmd->herdoc_fd[1]);
-		dup2(cmd->herdoc_fd[0], STDIN_FILENO);
-		close(cmd->herdoc_fd[0]);
-	}
-	return (0);
-}
-
+/*
 int ft_pipe(t_list *cmds, t_list **envp)
 {
 	t_execute	execute;
-	
 	execute.fd_in = 0;
 	execute.tmp = cmds;
 
@@ -84,40 +71,62 @@ int ft_pipe(t_list *cmds, t_list **envp)
 	
 	return (execute.status >> 8);
 }
+*/
 
-int main(int argc, char **argv, char **env)
+int ft_pipe(t_cmd *cmds, t_list **envp)
 {
-	(void)argc;
-	(void)argv;
-	t_list *cmds;
-	t_cmd *cmd;
-	t_cmd *cmd1;
-	t_cmd *cmd2;
-	t_list *envp;
+  int fd[2];
+  int fd_in;
+  int pid;
+  int status;
+  t_cmd *tmp;
 
-	cmd = malloc(sizeof(t_cmd));
-	cmd1 = malloc(sizeof(t_cmd));
-	cmd2 = malloc(sizeof(t_cmd));
-	cmd->args = malloc(sizeof(char *) * 3);
-	cmd1->args = malloc(sizeof(char *) * 3);
-	cmd2->args = malloc(sizeof(char *) * 3);
-	cmd->args[0] = strdup("ls");
-	cmd->args[1] = strdup("-l");
-	cmd->args[2] = NULL;
-	cmd1->args[0] = strdup("grep");
-	cmd1->args[1] = strdup("ft");
-	cmd1->args[2] = NULL;
-	cmd2->args[0] = strdup("wc");
-	cmd2->args[1] = strdup("-l");
-	cmd2->args[2] = NULL;
-	cmd->separator = PIPE;
-	cmd1->separator = PIPE;
-	cmd2->separator = END;
-	cmds = ft_lstnew(cmd);
-	ft_lstadd_back(&cmds, ft_lstnew(cmd1));
-	ft_lstadd_back(&cmds, ft_lstnew(cmd2));
-	envp = ft_lstnew(ft_strdup("PATH=/bin"));
-	ft_pipe(cmds, &envp);
-	return (0);
+  fd_in = 0;
+	tmp = cmds;
+
+
+	while (cmds)
+	{
+		pipe(fd);
+		pid = fork();
+		if (pid == 0)
+		{
+      char **env = ft_lst_to_char(*envp);
+			if (!is_cmd_exists(&cmds->args[0], env))
+      {
+        ft_error(cmds->args[0], "command not found");
+        exit(127);
+      }
+			dup2(fd_in, STDIN_FILENO);
+			if (fd_in)
+				close(fd_in);			
+			close(fd[0]);
+			if (cmds->sep == PIPE)
+				dup2(fd[1], STDOUT_FILENO);
+			close(fd[1]);
+			if (ft_execute(&execute , *envp))
+				ft_error(cmds->args[0], strerror(errno));
+			exit(EXIT_FAILURE);
+		}
+		else
+		{
+			close(fd[1]);
+			if (fd_in)
+				close(fd_in);
+			fd_in = fd[0];
+			cmds = cmds->next;
+		}
+	}
+	close(fd_in);
+	waitpid(pid, &status, 0);
+	printf ("status: %d\n", status >> 8);
+	while (tmp->next)
+	{
+		if (pid == waitpid(-1, &status, 0))
+			printf ("status: %d\n", status >> 8);
+		tmp = tmp->next;
+	}
 	
+	return (status >> 8);
 }
+

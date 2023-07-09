@@ -85,11 +85,11 @@ int ft_redaraction(char *file, t_redir redaraction)
 {
 	int fd;
 	
-	if (redaraction == REDIR_INPUT)
+	if (redaraction == REDIR_IN)
 		fd = redaraction_input(file);
-	else if (redaraction == REDIR_OUTPUT)
+	else if (redaraction == REDIR_OUT)
 		fd = redaraction_output(file);
-	else if (redaraction == REDIR_APPEND)
+	else if (redaraction == APPEND)
 		fd = redaraction_append(file);
 	else
 		fd = -1;

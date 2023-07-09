@@ -59,8 +59,12 @@ char *is_cmd_exists(char **exe, char **envp)
 
 	if (!*exe || !exe)
 		return (NULL);
-	if (ft_strchr(*exe, '/') && !access(*exe, F_OK))
-		return (*exe);
+	if (**exe == '/')
+  {
+    if (!access(*exe, F_OK))
+      return (*exe);
+    return (NULL);
+  }
 	path = ft_get_env("PATH", envp);
 	if (!path)
 		return (NULL);
