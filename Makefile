@@ -27,7 +27,7 @@ clean:
 	@printf "\033[1;36m Deleting \033[0m libft OBJ \033[1;36m√\033[0m\n"
 	@$(MAKE) -s clean -C ./libft
 	@$(MAKE) -s clean -C ./parcing
-	@$(MAKE) -s clean -C ./	execute_unit
+	@$(MAKE) -s clean -C ./execute_unit
 	@printf "\033[1;36m Deleting \033[0m minishell OBJ \033[1;36m√\033[0m\n"
 	@rm -rf $(OBJS)
 	@printf "\033[1;36m ───────────── Done ──────────── \033[0m\n\n"
@@ -37,6 +37,7 @@ fclean: clean
 	@$(MAKE) -s fclean -C ./libft
 	@$(MAKE) -s fclean -C ./parcing
 	@printf "\033[1;36m Deleting \033[0m $(NAME) \033[1;36m√\033[0m\n"
+	@$(MAKE) -s fclean -C ./execute_unit
 	@rm -rf $(NAME)
 	@printf "\033[1;36m ───────────── Done ──────────── \033[0m\n\n"
 
