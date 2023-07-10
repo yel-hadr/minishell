@@ -11,33 +11,38 @@
 /* ************************************************************************** */
 
 #include "parcing/parser.h"
+#include "execute_unit/execute.h"
 
-
-
-
-int	main(void)
+static t_list *ft_depenvp(char **envp)
 {
+  t_list *env;
+  int i;
+
+  i = 0;
+  env = NULL;
+  while (envp[i])
+  {
+    ft_lstadd_back(&env, ft_lstnew(ft_strdup(envp[i])));
+    i++;
+  }
+  return (env);
+}
+
+int	main(int argc, char **argv, char **envp)
+{
+  (void)argc;
+  (void)argv;
 	t_cmd	*cmds;
   	char	*input;
-	int	i;
 
   	while (1)
 	{
-       		input = readline("minishell$ ");
+    input = readline("minishell$ ");
 		add_history(input);
 		cmds = parser(input);
-		while (cmds)
-		{
-			printf("command is:\t\" %s \"\n", cmds->cmd);
-			i = 0;
-			while (cmds->args[i])
-			{
-				printf("args[%d]is:\t%s\n", i, cmds->args[i]);
-				i++;
-			}
-			cmds = cmds->next;
-		}
+    t_list *env = ft_depenvp(envp);
+    ft_pipe(cmds, &env);
+		cmds = cmds->next;
 	}
 	return (0);
 }
-

@@ -12,8 +12,9 @@ $(NAME): $(OBJS)
 	@printf "\033[1;36m Compiling \033[0m LIBFT \033[1;36m√\033[0m\n"
 	@$(MAKE) -s all -C ./libft
 	@$(MAKE) -s all -C ./parcing
+	@$(MAKE) -s all -C ./execute_unit
 	@printf "\033[1;36m Compiling \033[0m $(NAME) \033[1;36m√\033[0m\n"
-	@$(CC) $(CFLAGS) $(OBJS) ./parcing/parser.a ./libft/libft.a -lreadline -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) ./parcing/parser.a ./execute_unit/execute.a ./libft/libft.a -lreadline -o $(NAME)
 	@printf "\n\033[1;36m ───────────── Done ──────────── \033[0m\n\n"
 
 %.o: %.c parser.h
@@ -26,6 +27,7 @@ clean:
 	@printf "\033[1;36m Deleting \033[0m libft OBJ \033[1;36m√\033[0m\n"
 	@$(MAKE) -s clean -C ./libft
 	@$(MAKE) -s clean -C ./parcing
+	@$(MAKE) -s clean -C ./	execute_unit
 	@printf "\033[1;36m Deleting \033[0m minishell OBJ \033[1;36m√\033[0m\n"
 	@rm -rf $(OBJS)
 	@printf "\033[1;36m ───────────── Done ──────────── \033[0m\n\n"

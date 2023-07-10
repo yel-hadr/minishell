@@ -19,59 +19,6 @@
 	return: 0 if success, 1 if not
 */
 
-/*
-int ft_pipe(t_list *cmds, t_list **envp)
-{
-	t_execute	execute;
-	execute.fd_in = 0;
-	execute.tmp = cmds;
-
-	
-	while (cmds)
-	{
-		execute.cmd = (t_cmd *)cmds->content;
-		pipe(execute.fd);
-		execute.pid = fork();
-		if (execute.pid == 0)
-		{
-			if (!is_cmd_exists(&execute.cmd->args[0], ft_lst_to_char(*envp)))
-			{
-				ft_error(execute.cmd->args[0], "command not found");
-				exit(127);
-			}
-			dup2(execute.fd_in, STDIN_FILENO);
-			if (execute.fd_in)
-				close(execute.fd_in);				
-			close(execute.fd[0]);
-			if (execute.cmd->separator == PIPE)
-				dup2(execute.fd[1], STDOUT_FILENO);
-			close(execute.fd[1]);
-			if (ft_execute(&execute , ft_lst_to_char(*envp)))
-				ft_error(execute.cmd->args[0], strerror(errno));
-			exit(EXIT_FAILURE);
-		}
-		else
-		{
-			close(execute.fd[1]);
-			if (execute.fd_in)
-				close(execute.fd_in);
-			execute.fd_in = execute.fd[0];
-			cmds = cmds->next;
-		}
-	}
-	close(execute.fd_in);
-	waitpid(execute.pid, &execute.status, 0);
-	printf ("status: %d\n", execute.status >> 8);
-	while (execute.tmp->next)
-	{
-		if (execute.pid == waitpid(-1, &execute.status, 0))
-			printf ("status: %d\n", execute.status >> 8);
-		execute.tmp = execute.tmp->next;
-	}
-	
-	return (execute.status >> 8);
-}
-*/
 
 int ft_pipe(t_cmd *cmds, t_list **envp)
 {
@@ -129,7 +76,7 @@ int ft_pipe(t_cmd *cmds, t_list **envp)
 	
 	return (status >> 8);
 }
-
+/*
 int main(int argc, char **argv, char **envp)
 {
   t_cmd *cmds;
@@ -158,7 +105,7 @@ int main(int argc, char **argv, char **envp)
   ft_pipe(cmds, &env);
   return (0);
 }
-
+*/
 
 
 

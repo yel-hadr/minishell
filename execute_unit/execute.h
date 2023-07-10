@@ -27,5 +27,5 @@ int ft_error(char *cmd, char *error);
 int is_builting(char *cmd);
 int ft_redaraction(char *file, t_redir redaraction);
 char *ft_strjoin_free(char *s1, char *s2);
-
+int ft_pipe(t_cmd *cmd, t_list **envp);
 #endif
