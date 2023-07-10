@@ -83,16 +83,16 @@ char *redaraction_heredoc(char *str)
 
 int ft_redaraction(char *file, t_redir redaraction)
 {
-	int fd;
-	
-	if (redaraction == REDIR_IN)
-		fd = redaraction_input(file);
-	else if (redaraction == REDIR_OUT)
-		fd = redaraction_output(file);
-	else if (redaraction == APPEND)
-		fd = redaraction_append(file);
-	else
-		fd = -1;
+	int fd = 0;
+  
+  (void)redaraction;
+  if (fd)
+  {
+    fd = redaraction_input(file);
+    fd = redaraction_output(file);
+    fd = redaraction_append(file);
+  }
+	fd = -1;
 	return (fd);
 }
 

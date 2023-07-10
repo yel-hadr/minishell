@@ -101,10 +101,10 @@ int ft_pipe(t_cmd *cmds, t_list **envp)
 			if (fd_in)
 				close(fd_in);			
 			close(fd[0]);
-			if (cmds->sep == PIPE)
+			if (cmds->next)
 				dup2(fd[1], STDOUT_FILENO);
 			close(fd[1]);
-			if (ft_execute(&execute , *envp))
+			if (ft_execute(cmds , env))
 				ft_error(cmds->args[0], strerror(errno));
 			exit(EXIT_FAILURE);
 		}
@@ -129,4 +129,37 @@ int ft_pipe(t_cmd *cmds, t_list **envp)
 	
 	return (status >> 8);
 }
+
+int main(int argc, char **argv, char **envp)
+{
+  t_cmd *cmds;
+  t_list *env;
+  int i;
+
+  i = 0;
+  env = NULL;
+  cmds = malloc(sizeof(t_cmd));
+  env = ft_dupenvp(envp);
+  cmds->args = malloc(sizeof(char *) * 3);
+  cmds->args[0] = ft_strdup("ls");
+  cmds->args[1] = ft_strdup("-l");
+  cmds->args[2] = NULL;
+  cmds->next = malloc(sizeof(t_cmd));
+  cmds->next->args = malloc(sizeof(char *) * 3);
+  cmds->next->args[0] = ft_strdup("ls");
+  cmds->next->args[1] = ft_strdup("-la");
+  cmds->next->args[2] = NULL;
+  cmds->next->next = malloc(sizeof(t_cmd));
+  cmds->next->next->args = malloc(sizeof(char *) * 3);
+  cmds->next->next->args[0] = ft_strdup("ls");
+  cmds->next->next->args[1] = ft_strdup("-l");
+  cmds->next->next->args[2] = NULL;
+  cmds->next->next->next = NULL;
+  ft_pipe(cmds, &env);
+  return (0);
+}
+
+
+
+
 

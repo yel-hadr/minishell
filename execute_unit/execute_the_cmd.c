@@ -28,14 +28,8 @@
 int ft_execute(t_cmd *cmd, char **envp)
 {
 	
-	if (cmd->cmd->redir_in.redir == REDIR_HEREDOC)
-		ft_herdoc(cmd);
-	else if (cmd->cmd->redir_in.redir != NONE)
-		ft_redaraction(cmd->cmd->redir_in.file, cmd->cmd->redir_in.redir);
-	if (cmd->cmd->redir_out.redir)
-		ft_redaraction(cmd->cmd->redir_out.file, cmd->cmd->redir_out.redir);
-	if (cmd->cmd->args[0])
-		execve(cmd->cmd->args[0], cmd->cmd->args, envp);
+	if (cmd->args[0])
+		execve(cmd->args[0], cmd->args, envp);
 	return (1);
 }
 
