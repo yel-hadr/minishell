@@ -25,7 +25,10 @@ int exec_builting(t_cmd *cmd, t_list **envp)
     return (ft_export(cmd->args, envp));
   else if (!ft_strncmp(cmd->args[0], "exit", ft_strlen(cmd->args[0])))
     return (ft_exit(cmd->args));
+  exit(0);
+  return (0);
 }
+
 int is_builting(char *cmd)
 {
 	if (!ft_strncmp(cmd, "echo", ft_strlen(cmd)))

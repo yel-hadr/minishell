@@ -21,7 +21,9 @@
 
 static int ft_child(int *fd, int fd_in, t_cmd *cmds, t_list **envp)
 {
-  char **env = ft_lst_to_char(*envp);
+  char **env;
+
+  env = ft_lst_to_char(*envp);
   if (!is_cmd_exists(&cmds->args[0], env))
   {
     ft_error(cmds->args[0], "command not found");
