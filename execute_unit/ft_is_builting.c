@@ -12,6 +12,20 @@
 
 #include "execute.h"
 
+
+int exec_builting(t_cmd *cmd, t_list **envp)
+{
+  if (!ft_strncmp(cmd->args[0], "echo", ft_strlen(cmd->args[0])))
+    return (ft_echo(cmd->args));
+  else if (!ft_strncmp(cmd->args[0], "cd", ft_strlen(cmd->args[0])))
+    return (ft_cd(cmd->args, envp));
+  else if (!ft_strncmp(cmd->args[0], "pwd", ft_strlen(cmd->args[0])))
+    return (ft_pwd());
+  else if (!ft_strncmp(cmd->args[0], "export", ft_strlen(cmd->args[0])))
+    return (ft_export(cmd->args, envp));
+  else if (!ft_strncmp(cmd->args[0], "exit", ft_strlen(cmd->args[0])))
+    return (ft_exit(cmd->args));
+}
 int is_builting(char *cmd)
 {
 	if (!ft_strncmp(cmd, "echo", ft_strlen(cmd)))
