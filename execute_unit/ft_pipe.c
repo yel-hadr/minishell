@@ -53,7 +53,10 @@ int ft_pipe(t_cmd *cmds, t_list **envp)
   fd_in = 0;
 	tmp = cmds;
 
-
+  if (!cmds)
+    return (0);
+  if (cmds->next == NULL && is_builting(cmds->args[0]))
+    return (exec_builting(cmds, envp));
 	while (cmds)
 	{
 		pipe(fd);
