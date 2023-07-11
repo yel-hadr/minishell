@@ -14,8 +14,7 @@
 
 # define BUILTING_H
 
-# include "../../libft/libft.h"
-# include "../execute.h"
+# include "execute.h"
 
 int ft_echo(char **args);
 int	ft_cd(char **args, t_list **env);

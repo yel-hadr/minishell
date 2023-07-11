@@ -15,7 +15,7 @@
 #include <fcntl.h>
 #include "../libft/libft.h"
 #include "../parcing/parser.h"
-#include "builting/builting.h"
+#include "builting.h"
 
 char *is_cmd_exists(char **exe, char **envp);
 int ft_execute(t_cmd *cmd, char **envp);
