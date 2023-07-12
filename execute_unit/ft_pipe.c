@@ -36,6 +36,8 @@ static int ft_child(int *fd, int fd_in, t_cmd *cmds, t_list **envp)
   if (cmds->next)
     dup2(fd[1], STDOUT_FILENO);
   close(fd[1]);
+  if (is_builting(cmds->args[0]))
+    exit(exec_builting(cmds, envp));
   if (ft_execute(cmds , env))
     ft_error(cmds->args[0], strerror(errno));
   exit(EXIT_FAILURE);

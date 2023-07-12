@@ -20,6 +20,8 @@ static t_list *ft_depenvp(char **envp)
 
   i = 0;
   env = NULL;
+  if (!envp)
+    return (NULL);
   while (envp[i])
   {
     ft_lstadd_back(&env, ft_lstnew(ft_strdup(envp[i])));
