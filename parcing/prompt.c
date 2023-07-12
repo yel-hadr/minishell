@@ -61,6 +61,7 @@ char	*replace_all_words(char *str, char *w0, char *w1, int usefree)
 {
 	char	*result;
 
+  result = NULL;
 	result = replaced_str(str, w0, w1);
 	if (usefree == 1)
 		free(str);
@@ -117,7 +118,8 @@ char	*get_host_name(void)
 	if (fd > 0)
 	{
 		buff = ft_calloc(1024, 1);
-		read(fd, buff, 1024);
+		if (read(fd, buff, 1024) < 0)
+      return (NULL);
 	}
 	close(fd);
 	if (buff && buff[ft_strlen(buff)-1] == '\n')
@@ -135,7 +137,8 @@ char	*get_branch_name(void)
 	if (fd > 0)
 	{
 		buff = ft_calloc(1024, 1);
-		read(fd, buff, 1024);
+		if (read(fd, buff, 1024) < 0)
+      return (NULL);
 	}
 	close(fd);
 	if (buff)
@@ -175,20 +178,4 @@ char	*prompt(void)
 	input = readline(prompt_txt);
 	free(prompt_txt);
 	return (input);
-}
-int	main(void)
-{
-	char	*input;
-
-	while (1)
-	{
-		input = prompt();
-		if (input && *input)
-		{
-			add_history(input);
-			printf("%s\n", input);
-		}
-		free(input);
-	}
-	return (0);
 }

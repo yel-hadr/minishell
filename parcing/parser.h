@@ -77,4 +77,10 @@ char	*remove_quotes(char *cmd);
 // get_redirections is a function that get the redirections from the command and return a table of redirections !
 char	**get_redirections(char *input);
 
+char *prompt(void);
+char	*replace_all_words(char *str, char *w0, char *w1, int usefree);
+char	*extract_branch(char *buff);
+char	*get_host_name(void);
+char	*get_branch_name(void);
+char	*prompt_msg(void);
 #endif

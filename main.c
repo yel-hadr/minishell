@@ -39,7 +39,7 @@ int	main(int argc, char **argv, char **envp)
 
   	while (1)
 	{
-    input = readline("minishell$ ");
+    input = prompt();
 		add_history(input);
 		cmds = parser(input);
     t_list *env = ft_depenvp(envp);

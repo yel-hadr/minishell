@@ -59,7 +59,7 @@ char *is_cmd_exists(char **exe, char **envp)
 
 	if (!*exe || !exe)
 		return (NULL);
-	if (**exe == '/')
+	if (**exe == '/' || **exe == '.')
   {
     if (!access(*exe, F_OK))
       return (*exe);

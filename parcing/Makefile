@@ -21,6 +21,7 @@ SRCS	=	split_cmd.c\
 		parser.c\
 		remove_quotes.c\
 		checker.c\
+		prompt.c\
 
 
 OBJS	=	$(SRCS:.c=.o)
