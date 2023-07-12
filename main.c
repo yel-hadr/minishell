@@ -35,16 +35,18 @@ int	main(int argc, char **argv, char **envp)
   (void)argc;
   (void)argv;
 	t_cmd	*cmds;
-  	char	*input;
+  char	*input;
 
   	while (1)
 	{
-    input = prompt();
+    input = readline("minishell > ");
 		add_history(input);
 		cmds = parser(input);
+    free(input);
     t_list *env = ft_depenvp(envp);
     ft_pipe(cmds, &env);
-		cmds = cmds->next;
+    
 	}
+
 	return (0);
 }

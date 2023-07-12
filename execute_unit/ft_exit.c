@@ -14,6 +14,8 @@
 
 static int	check_the_number(char *str)
 {
+  if (!str)
+    return (0);
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
@@ -34,7 +36,8 @@ int ft_exit(char **args)
 		exit(255);
 	if (args[1])
 		exit(ft_atoi(args[1]));
-	return (0);
+  exit(0);
+  return (0);
 }
 
 // int main(int argc, char **argv)

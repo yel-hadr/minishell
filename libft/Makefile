@@ -12,7 +12,7 @@
 
 NAME = libft.a
 CFLAGS = -Wall -Wextra -Werror
-CC = @cc
+CC = @gcc
 RM = rm -rf
 INC = libft.h								
 SRC =		ft_isalpha.c\

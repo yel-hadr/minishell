@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME	=	parser.a
-CC	=	cc
+CC	=	gcc
 CFLAGS	=	-Werror -Wextra -Wall -O3
 LIBFT	=	../libft/libft.a
 
@@ -21,7 +21,6 @@ SRCS	=	split_cmd.c\
 		parser.c\
 		remove_quotes.c\
 		checker.c\
-		prompt.c\
 
 
 OBJS	=	$(SRCS:.c=.o)
