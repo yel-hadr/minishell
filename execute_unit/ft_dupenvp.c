@@ -17,6 +17,8 @@ char *ft_getenv(char *var, t_list *envp_list)
 {
 	int len;
 
+  if (!var)
+    return (NULL);
 	len = ft_strlen(var);
 	while (envp_list)
 	{
@@ -33,6 +35,8 @@ int ft_setenv(char *var, char *value, t_list *envp)
 	char *new;
 	t_list *tmp_list;
 
+  if (!var || !value)
+    return (0);
 	tmp = ft_strjoin(var, "=");
 	new = ft_strjoin(tmp, value);
 	free(tmp);
@@ -76,6 +80,8 @@ t_list	*ft_dupenvp(char **envp)
 	t_list	*envp_list;
 	t_list	*tmp;
 
+  if (!envp)
+    return (NULL);
 	envp_list = NULL;
 	while (*envp)
 	{

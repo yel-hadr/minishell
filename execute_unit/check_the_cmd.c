@@ -36,7 +36,8 @@ static char *ft_get_env(char *var, char **envp)
 {
 	int j;
 	char *str;
-	
+if (!envp)
+    return (NULL);
 	while (*envp)
 	{
 		j = 0;

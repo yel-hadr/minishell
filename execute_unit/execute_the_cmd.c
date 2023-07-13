@@ -29,7 +29,7 @@
 
 int ft_execute(t_cmd *cmd, char **envp)
 {
-	
+
 	if (cmd->args[0])
 		execve(cmd->args[0], cmd->args, envp);
 	return (1);
