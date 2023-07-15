@@ -13,23 +13,6 @@
 #include "parcing/parser.h"
 #include "execute_unit/execute.h"
 
-static t_list *ft_depenvp(char **envp)
-{
-  t_list *env;
-  int i;
-
-  i = 0;
-  env = NULL;
-  if (!envp)
-    return (NULL);
-  while (envp[i])
-  {
-    ft_lstadd_back(&env, ft_lstnew(ft_strdup(envp[i])));
-    i++;
-  }
-  return (env);
-}
-
 int	main(int argc, char **argv, char **envp)
 {
   (void)argc;
@@ -43,7 +26,7 @@ int	main(int argc, char **argv, char **envp)
 		add_history(input);
 		cmds = parser(input);
     free(input);
-    t_list *env = ft_depenvp(envp);
+    t_list *env = ft_dupenvp(envp);
     ft_pipe(cmds, &env);
     
 	}

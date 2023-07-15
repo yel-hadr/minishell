@@ -59,40 +59,30 @@ static int redaraction_append(char *file)
 	return (fd);
 }
 
-char *redaraction_heredoc(char *str)
+int redaraction_heredoc(char *herdoc)
 {
-	char *line;
-	char *herdoc;
+  int fd;
+  int pipefd[2];
 
-
-	while (1)
-	{
-		line = readline("> ");
-		if (!ft_strncmp(line, str, ft_strlen(str)))
-		{
-			free(line);
-			break ;
-		}
-		line = ft_strjoin_free(line, "\n");
-		herdoc = ft_strjoin(herdoc, line);
-		free(line);
-	}
-
-	return (herdoc);
+  pipe(pipefd);
+  write(pipefd[1], herdoc, ft_strlen(herdoc));
+  close(pipefd[1]);
+  fd = pipefd[0];
+  dup2(fd, STDIN_FILENO);
+  close(fd);
+  return (fd);
 }
 
 int ft_redaraction(char *file, t_redir redaraction)
 {
-	int fd = 0;
-  
-  (void)redaraction;
-  if (fd)
-  {
-    fd = redaraction_input(file);
-    fd = redaraction_output(file);
-    fd = redaraction_append(file);
-  }
-	fd = -1;
-	return (fd);
+  if (redaraction == INPUT)
+    return (redaraction_input(file));
+  else if (redaraction == OUTPUT)
+    return (redaraction_output(file));
+  else if (redaraction == APPEND)
+    return (redaraction_append(file));
+  else if (redaraction == HEREDOC)
+    return (redaraction_heredoc(file));
+  return (-1);
 }
 

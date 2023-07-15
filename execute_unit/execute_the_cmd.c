@@ -25,16 +25,6 @@
 // 	return (0);
 // }
 
-
-
-int ft_execute(t_cmd *cmd, char **envp)
-{
-
-	if (cmd->args[0])
-		execve(cmd->args[0], cmd->args, envp);
-	return (1);
-}
-
 void ft_save_fd(int *save_stdin, int *save_stdout)
 {
   *save_stdin = dup(STDIN_FILENO);
@@ -49,3 +39,10 @@ void ft_restore_fd(int save_stdin, int save_stdout)
   close(save_stdout);
 }
 
+int ft_execute(t_cmd *cmd, char **envp)
+{
+
+	if (cmd->args[0])
+		execve(cmd->args[0], cmd->args, envp);
+	return (1);
+}
