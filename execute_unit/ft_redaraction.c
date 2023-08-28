@@ -73,11 +73,11 @@ int redaraction_heredoc(char *herdoc)
   return (fd);
 }
 
-int ft_redaraction(char *file, t_redir redaraction)
+int ft_redaraction(char *file, t_redir_type redaraction)
 {
-  if (redaraction == INPUT)
+  if (redaraction == REDIR_IN)
     return (redaraction_input(file));
-  else if (redaraction == OUTPUT)
+  else if (redaraction == REDIR_OUT)
     return (redaraction_output(file));
   else if (redaraction == APPEND)
     return (redaraction_append(file));
