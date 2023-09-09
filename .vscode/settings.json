@@ -1,8 +1,0 @@
-{
-	"files.associations": {
-		"execute.h": "c",
-		"string.h": "c",
-		"builting.h": "c",
-		"minishell.h": "c"
-	}
-}
