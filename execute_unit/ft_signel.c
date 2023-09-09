@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   builting.h                                         :+:      :+:    :+:   */
+/*   ft_signel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/17 12:11:48 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/06/18 23:06:17 by yel-hadr         ###   ########.fr       */
+/*   Created: 2023/09/09 03:49:40 by yel-hadr          #+#    #+#             */
+/*   Updated: 2023/09/09 03:58:10 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUILTING_H
+#include "execute.h"
 
-# define BUILTING_H
-
-# include "execute.h"
-
-int ft_echo(char **args);
-int	ft_cd(char **args, t_list **env);
-int	ft_pwd(void);
-int	ft_export(char **args, t_list **env);
-int	ft_exit(char **args);
-
-#endif
+void	ft_handler(int sig)
+{
+	if (sig == SIGINT)
+	{
+		printf("\n");
+		rl_on_new_line();
+		rl_replace_line("", 0);
+		rl_redisplay();
+	}
+}

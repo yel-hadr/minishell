@@ -1,14 +1,12 @@
-NAME = execute.a
+NAME = builting.a
 
-DEPS = execute.h builting.h 
+DEPS = builting.h 
 
-CC = gcc
+CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = execute_the_cmd.c check_the_cmd.c ft_redaraction.c\
-		ft_error.c ft_strjoin_free.c ft_dupenvp.c ft_is_builting.c ft_pipe.c \
-		ft_signel.c
+SRC = ft_pwd.c ft_exit.c ft_export.c ft_echo.c ft_cd.c ft_env.c ft_unset.c
 
 OBJ = $(SRC:.c=.o)
 

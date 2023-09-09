@@ -6,14 +6,14 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 16:44:35 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/06/18 23:16:43 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/07 08:43:27 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "execute.h"
 
 
-int exec_builting(t_cmd *cmd, t_list **envp)
+int exec_builting(t_cmd *cmd, t_list *envp)
 {
   if (!ft_strncmp(cmd->args[0], "echo", ft_strlen(cmd->args[0])))
     return (ft_echo(cmd->args));
@@ -25,6 +25,10 @@ int exec_builting(t_cmd *cmd, t_list **envp)
     return (ft_export(cmd->args, envp));
   else if (!ft_strncmp(cmd->args[0], "exit", ft_strlen(cmd->args[0])))
     return (ft_exit(cmd->args));
+  else if (!ft_strncmp(cmd->args[0], "env", ft_strlen(cmd->args[0])))
+    return (ft_env(envp));
+	else if (!ft_strncmp(cmd->args[0], "unset", ft_strlen(cmd->args[0])))
+		return (ft_unset(cmd->args, &envp));
   exit(0);
   return (0);
 }
@@ -40,6 +44,10 @@ int is_builting(char *cmd)
 	else if (!ft_strncmp(cmd, "export", ft_strlen(cmd)))
 		return (1);
 	else if (!ft_strncmp(cmd, "exit", ft_strlen(cmd)))
+		return (1);
+	else if (!ft_strncmp(cmd, "env", ft_strlen(cmd)))
+		return (1);
+	else if (!ft_strncmp(cmd, "unset", ft_strlen(cmd)))
 		return (1);
 	return (0);
 }

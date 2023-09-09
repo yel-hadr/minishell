@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 09:47:33 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/06/17 14:49:52 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/07 07:48:18 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,19 +35,34 @@ int ft_setenv(char *var, char *value, t_list *envp)
 	char *new;
 	t_list *tmp_list;
 
-  if (!var || !value)
-    return (0);
-	tmp = ft_strjoin(var, "=");
-	new = ft_strjoin(tmp, value);
-	free(tmp);
+	if (!var)
+		return (0);
+	if (!value)
+		new = ft_strdup(var);
+	else
+	{
+		tmp = ft_strjoin(var, "=");
+		new = ft_strjoin(tmp, value);
+		free(tmp);
+	}
+
 	tmp_list = envp;
 	while (tmp_list)
 	{
-		if (!ft_strncmp(tmp_list->content, var, ft_strlen(var)) && ((char *)tmp_list->content)[ft_strlen(var)] == '=')
+		if (!ft_strncmp(tmp_list->content, var, ft_strlen(var)))
 		{
-			free(tmp_list->content);
-			tmp_list->content = new;
-			return (0);
+			if (((char *)tmp_list->content)[ft_strlen(var)] == '=')
+			{
+				free(tmp_list->content);
+				tmp_list->content = new;
+				return (0);
+			}
+			else if (((char *)tmp_list->content)[ft_strlen(var)] == '\0')
+			{
+				free(tmp_list->content);
+				tmp_list->content = new;
+				return (0);
+			}
 		}
 		tmp_list = tmp_list->next;
 	}

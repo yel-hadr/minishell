@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 12:15:48 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/06/18 21:14:10 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/07 06:28:18 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,20 @@
 
 
 
-int ft_cd(char  **args, t_list **env)
+int ft_cd(char  **args, t_list *env)
 {
 	char *oldpwd;
 
 	oldpwd = getcwd(NULL, 0);
 	if (!args[1])
 	{
-		if (chdir(ft_getenv("HOME", *env) + 5) == -1)
+		if (chdir(ft_getenv("HOME", env) + 5) == -1)
 		{
 			ft_error("cd", strerror(errno));
 			return (1);
 		}
-		ft_setenv("OLDPWD", oldpwd, *env);
-		ft_setenv("PWD", getcwd(NULL, 0), *env);
+		ft_setenv("OLDPWD", oldpwd, env);
+		ft_setenv("PWD", getcwd(NULL, 0), env);
 	}
 	else if (!ft_strncmp(args[1], "-", 1))
 	{
@@ -48,8 +48,8 @@ int ft_cd(char  **args, t_list **env)
 			ft_error("cd", strerror(errno));
 			return (1);
 		}
-		ft_setenv("OLDPWD", oldpwd, *env);
-		ft_setenv("PWD", oldpwd, *env);
+		ft_setenv("OLDPWD", oldpwd, env);
+		ft_setenv("PWD", oldpwd, env);
 	}
 	else
 	{
@@ -58,8 +58,8 @@ int ft_cd(char  **args, t_list **env)
 			ft_error("cd", strerror(errno));
 			return (1);
 		}
-		ft_setenv("OLDPWD", oldpwd, *env);
-		ft_setenv("PWD", getcwd(NULL, 0), *env);
+		ft_setenv("OLDPWD", oldpwd, env);
+		ft_setenv("PWD", getcwd(NULL, 0), env);
 	}
 	return (0);
 }
