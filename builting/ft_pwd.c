@@ -6,11 +6,11 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 12:38:14 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/06/17 13:15:04 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/09 08:22:08 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "builting.h"
+#include "../include/builting.h"
 
 int ft_pwd(void)
 {

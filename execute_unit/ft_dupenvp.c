@@ -6,11 +6,11 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 09:47:33 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/07 07:48:18 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/09 08:30:13 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "execute.h"
+#include "../include/execute.h"
 
 
 char *ft_getenv(char *var, t_list *envp_list)

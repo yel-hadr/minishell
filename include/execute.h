@@ -13,9 +13,11 @@
 #include <sys/wait.h>
 #include <string.h>
 #include <fcntl.h>
-#include "../libft/libft.h"
-#include "../parcing/parser.h"
-#include "../builting/builting.h"
+#include "../include/libft.h"
+#include "parser.h"
+#include "builting.h"
+
+int g_exit_status;
 
 char    *is_cmd_exists(char **exe, char **envp);
 int     ft_execute(t_cmd *cmd, char **envp);

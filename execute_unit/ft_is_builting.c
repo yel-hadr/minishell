@@ -6,12 +6,11 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 16:44:35 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/07 08:43:27 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/09 08:30:17 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "execute.h"
-
+#include "../include/execute.h"
 
 int exec_builting(t_cmd *cmd, t_list *envp)
 {

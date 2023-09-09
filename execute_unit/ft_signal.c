@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   builting.h                                         :+:      :+:    :+:   */
+/*   ft_signal.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/17 12:11:48 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/07 08:41:44 by yel-hadr         ###   ########.fr       */
+/*   Created: 2023/09/09 03:49:40 by yel-hadr          #+#    #+#             */
+/*   Updated: 2023/09/09 08:30:20 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUILTING_H
+#include "../include/execute.h"
 
-# define BUILTING_H
-
-#include "../execute_unit/execute.h"
-
-int ft_echo(char **args);
-int	ft_cd(char **args, t_list *env);
-int	ft_pwd(void);
-int	ft_export(char **args, t_list *env);
-int	ft_exit(char **args);
-int	ft_env(t_list *env);
-int	ft_unset(char **args, t_list **env);
-
-#endif
+void	ft_handler(int sig)
+{
+	int status;
+	
+	status = 0;
+	wait(&status);
+	printf("\n");
+	rl_on_new_line();
+	rl_replace_line("", 0);
+	
+	if (status && WIFSIGNALED(status) && sig == SIGINT)
+		g_exit_status = WTERMSIG(status) + 128;
+	else
+		rl_redisplay();
+}

@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_signel.c                                        :+:      :+:    :+:   */
+/*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/09 03:49:40 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/09 03:58:10 by yel-hadr         ###   ########.fr       */
+/*   Created: 2023/09/09 08:12:59 by yel-hadr          #+#    #+#             */
+/*   Updated: 2023/09/09 08:21:09 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "execute.h"
+#ifndef MINISHELL_H
+# define MINISHELL_H
 
-void	ft_handler(int sig)
-{
-	if (sig == SIGINT)
-	{
-		printf("\n");
-		rl_on_new_line();
-		rl_replace_line("", 0);
-		rl_redisplay();
-	}
-}
+#include "execute.h"
+#include "parser.h"
+#include "builting.h"
+#include "../include/libft.h"
+
+#endif
+

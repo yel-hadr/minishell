@@ -6,11 +6,11 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 09:15:39 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/07 06:29:58 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/09 08:30:18 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "execute.h"
+#include "../include/execute.h"
 
 /*
 	ft_pipe: execute the pipe and multiple pipe
@@ -47,11 +47,10 @@ static int ft_child(int *fd, int fd_in, t_cmd *cmds, t_list *envp)
 
 int ft_pipe(t_cmd *cmds, t_list *envp)
 {
-  int fd[2];
-  int fd_in;
-  int pid;
-  int status;
-  t_cmd *tmp;
+	int fd[2];
+	int fd_in;
+	int pid;
+	t_cmd *tmp;
 
 	fd_in = 0;
 	tmp = cmds;
@@ -76,12 +75,12 @@ int ft_pipe(t_cmd *cmds, t_list *envp)
 		cmds = cmds->next;
 	}
 	close(fd_in);
-  waitpid(pid, &status, 0);
+	waitpid(pid, &g_exit_status, 0);
 	while (tmp->next)
 	{
-		waitpid(-1, &status, 0);
+		waitpid(-1, &g_exit_status, 0);
 		tmp = tmp->next;
 	}
 
-	return (status >> 8);
+	return (g_exit_status >> 8);
 }

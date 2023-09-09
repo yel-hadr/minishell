@@ -6,11 +6,12 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 15:31:05 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/06/18 21:14:48 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/09 08:22:08 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "builting.h"
+#include "../include/builting.h"
+
 
 static int	check_the_number(char *str)
 {

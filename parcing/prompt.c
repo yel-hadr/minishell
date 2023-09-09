@@ -3,17 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   prompt.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elakhfif <elakhfif@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 04:10:13 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/06/19 19:00:19 by elakhfif         ###   ########.fr       */
+/*   Updated: 2023/09/09 08:29:40 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parser.h"
-#include <fcntl.h>
-#include <readline/readline.h>
-#include <readline/history.h>
+#include "../include/parser.h"
+
 
 static int	new_str_size(char *str, char *w0, char *w1)
 {

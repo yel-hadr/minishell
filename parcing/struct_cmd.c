@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   struct_cmd.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elakhfif <elakhfif@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 02:09:56 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/06/19 02:10:47 by elakhfif         ###   ########.fr       */
+/*   Updated: 2023/09/09 08:29:56 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parser.h"
+#include "../include/parser.h"
 
 t_cmd	*add_cmd(t_cmd *cmd, char *input)
 {

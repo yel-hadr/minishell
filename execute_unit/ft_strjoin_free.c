@@ -6,11 +6,11 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 21:39:55 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/06/16 15:39:05 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/09 08:30:26 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "execute.h"
+#include "../include/execute.h"
 
 
 char *ft_strjoin_free(char *s1, char *s2)

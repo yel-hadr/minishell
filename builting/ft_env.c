@@ -6,11 +6,12 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 08:33:05 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/07 08:37:46 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/09 08:22:08 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "builting.h"
+#include "../include/builting.h"
+
 
 int ft_env(t_list *env)
 {

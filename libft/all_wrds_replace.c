@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   all_wrds_replace.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elakhfif <elakhfif@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 08:19:13 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/06/26 05:06:07 by elakhfif         ###   ########.fr       */
+/*   Updated: 2023/09/09 08:21:37 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 static int	new_str_len(char *str, char *fword, char *sword)
 {

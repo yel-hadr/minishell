@@ -6,14 +6,12 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 05:43:33 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/09 03:52:54 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/09 08:12:38 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parcing/parser.h"
-#include "execute_unit/execute.h"
+#include "./include/minishell.h"
 
-int g_exit_status = 0;
 
 int	main(int argc, char **argv, char **envp)
 {
@@ -22,6 +20,7 @@ int	main(int argc, char **argv, char **envp)
 	t_cmd	*cmds;
 	char	*input;
 	t_list *env = ft_dupenvp(envp);
+	g_exit_status = 0;
 	
 	signal(SIGINT, ft_handler);
 	signal(SIGQUIT, SIG_IGN);
@@ -33,7 +32,6 @@ int	main(int argc, char **argv, char **envp)
 		cmds = parser(input);
 		free(input);
 		ft_pipe(cmds, env);
-
 	}
 
 	return (0);

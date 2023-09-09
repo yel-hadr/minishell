@@ -6,11 +6,12 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 15:34:40 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/06/19 11:27:52 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/09 08:30:11 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "execute.h"
+#include "../include/execute.h"
+
 
 // int ft_herdoc(t_execute *cmd)
 // {

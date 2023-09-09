@@ -6,11 +6,11 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 12:19:21 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/06/29 20:05:43 by elakhfif         ###   ########.fr       */
+/*   Updated: 2023/09/09 08:22:08 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "builting.h"
+#include "../include/builting.h"
 
 /*
 	ft_echo: print the args

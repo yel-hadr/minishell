@@ -1,46 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   builting.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/17 17:36:26 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/09 08:21:09 by yel-hadr         ###   ########.fr       */
+/*   Created: 2023/06/17 12:11:48 by yel-hadr          #+#    #+#             */
+/*   Updated: 2023/09/09 08:30:32 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#ifndef BUILTING_H
 
-void	ft_putnbr_fd(int n, int fd)
-{
-	long	x;
+# define BUILTING_H
 
-	x = n;
-	if (x < 0)
-	{
-		x = -x;
-		write(fd, "-", 1);
-	}
-	if (x <= 9)
-	{
-		x = x + 48;
-		write(fd, &x, 1);
-	}
-	else
-	{
-		ft_putnbr_fd(x / 10, fd);
-		ft_putnbr_fd(x % 10, fd);
-	}
-}
-/*
-#include <fcntl.h>
+#include "execute.h"
 
-int main()
-{
-	int	fd;
+int ft_echo(char **args);
+int	ft_cd(char **args, t_list *env);
+int	ft_pwd(void);
+int	ft_export(char **args, t_list *env);
+int	ft_exit(char **args);
+int	ft_env(t_list *env);
+int	ft_unset(char **args, t_list **env);
 
-	fd = open("ft_putnbr_fd.txt", O_CREAT | O_RDWR);
-	ft_putnbr_fd(541, fd);
-}
-*/
+#endif
