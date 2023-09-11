@@ -6,12 +6,21 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 05:43:33 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/09 09:29:48 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/11 01:04:05 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/minishell.h"
 
+int ft_check_input(char *input)
+{
+	while (*input)
+	{
+		if (*input != ' ')
+			return (1);
+	}
+	return (0);
+}
 
 int	main(int argc, char **argv, char **envp)
 {
@@ -28,10 +37,18 @@ int	main(int argc, char **argv, char **envp)
   	while (1)
 	{
 		input = readline("minishell > ");
-		add_history(input);
-		cmds = parser(input);
+		if (!input)
+		{
+			printf("exit minishell\n");
+			exit(0);
+		}
+		else if (ft_check_input(input))
+		{
+			add_history(input);
+			cmds = parser(input);
+			ft_pipe(cmds, env);
+		}
 		free(input);
-		ft_pipe(cmds, env);
 	}
 
 	return (0);

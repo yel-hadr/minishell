@@ -35,7 +35,7 @@ BUILTING_OBJS	=	$(BUILTING_SRCS:.c=.o)
 OBJS	=	$(SRCS:.c=.o)
 
 %.o: %.c
-	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/  -c $< -o $@
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -I include -c $< -o $@
 	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
 
 all:	$(NAME)
@@ -49,12 +49,22 @@ utiles : $(PARCING_OBJS) $(LIBFT_OBJS) $(BUILTING_OBJS) $(EXECUTION_OBJS)
 	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $(UTILS)
 
 clean:
-	@rm -f $(OBJS) $(EXECUTION_OBJS) $(PARCING_OBJS) $(LIBFT_OBJS) $(BUILTING_OBJS)
-	@printf "\033[0;32mDelete [OK]\033[0m OBJS\n" 
+	@rm -f $(OBJS)
+	@printf "\033[0;32mDelete [OK]\033[0m OBJECTS\n"
+	@rm -f $(EXECUTION_OBJS)
+	@printf "\033[0;32mDelete [OK]\033[0m EXECUTION_OBJS\n"
+	@rm -f $(PARCING_OBJS)
+	@printf "\033[0;32mDelete [OK]\033[0m PARCING_OBJS\n"
+	@rm -f $(LIBFT_OBJS)
+	@printf "\033[0;32mDelete [OK]\033[0m LIBFT_OBJS\n"
+	@rm -f $(BUILTING_OBJS)
+	@printf "\033[0;32mDelete [OK]\033[0m BUILTING_OBJS\n"
+	@rm -f $(UTILS)
+	@printf "\033[0;32mDelete [OK]\033[0m UTILS\n"
 
 fclean : clean
-	@rm -f $(NAME) $(UTILS)
-	@printf "\033[0;32mDelete [OK]\033[0m EXECUTABEL\n"
+	@rm -f $(NAME)
+	@printf "\033[0;32mDelete [OK]\033[0m %s\n" $(NAME)
 
 re : fclean all
 
