@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 05:43:33 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/11 02:45:35 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/11 12:49:11 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	main(int argc, char **argv, char **envp)
 		input = readline("minishell > ");
 		if (!input)
 		{
-			printf("exit minishell\n");
+			printf("exit\n");
 			exit(0);
 		}
 		else if (ft_check_input(input))

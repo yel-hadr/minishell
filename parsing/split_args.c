@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:41:52 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/09 08:29:46 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/11 13:35:23 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,25 +35,47 @@ static char	*next_arg(char *cmd)
 static int	args_count(char *cmd)
 {
 	int	count;
+	int	i;
+	int	sq;
+	int	dq;
 
 	count = 0;
-	while (cmd[0])
+	i = 0;
+	sq = 0;
+	dq = 0;
+	while (cmd[i])
 	{
-		if (ft_strchr("><", cmd[0]))
-		{
-			while (ft_strchr("><", cmd[0]))
-				cmd++;
-			count--;
-		}
-		else if (!ft_strchr("\t |", cmd[0]))
-		{
+		if (cmd[i] == '\'' && !dq)
+			sq = !sq;
+		else if (cmd[i] == '\"' && !sq)
+			dq = !dq;
+		else if (cmd[i] == ' ' && !sq && !dq)
 			count++;
-			cmd = next_arg(cmd);
-		}
-		else
-			cmd++;
+		i++;
 	}
+	if (cmd[i - 1] != ' ')
+		count++;
 	return (count);
+}
+
+static char	*next_quote(char *cmd)
+{
+	int	i;
+	int	sq;
+	int	dq;
+
+	i = 1;
+	sq = 0;
+	dq = 0;
+	while (cmd[i] && (cmd[i] != '\'' || sq || dq))
+	{
+		if (cmd[i] == '\'' && !dq)
+			sq = !sq;
+		else if (cmd[i] == '\"' && !sq)
+			dq = !dq;
+		i++;
+	}
+	return (cmd + i);
 }
 
 char	**split_args(char *cmd)
@@ -70,13 +92,15 @@ char	**split_args(char *cmd)
 	{
 		while (cmd[0] && ft_strchr("\t ", cmd[0]))
 			cmd++;
-		if (ft_strchr("><", cmd[0]))
-			while (ft_strchr("\t ><", cmd[0]))
-				cmd++;
+		if (ft_strchr("\'\"", cmd[0]))
+		{
+			tmp = ft_substr(cmd, 0, next_quote(cmd) - cmd);
+			result[index++] = remove_quotes(tmp);
+			free(tmp);
+		}
 		else
 		{
-			tmp = ft_substr(cmd, 0,
-					(ft_strlen(cmd) - ft_strlen(next_arg(cmd))));
+			tmp = ft_substr(cmd, 0, next_arg(cmd) - cmd); // next_arg(cmd) - cmd = strlen of the word
 			result[index++] = remove_quotes(tmp);
 			free(tmp);
 		}

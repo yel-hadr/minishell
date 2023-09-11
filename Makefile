@@ -1,6 +1,6 @@
 NAME	=	minishell
 CC	=	cc
-CFLAGS	=	-Werror -Wextra -Wall -O3  #-g -fsanitize=address
+CFLAGS	=	-Werror -Wextra -Wall -O3  -g -fsanitize=address
 
 UTILS	=	minishell_utils.a
 
@@ -8,8 +8,8 @@ EXECUTION_SRCS	=	execute_unit/execute_the_cmd.c execute_unit/check_the_cmd.c exe
 		execute_unit/ft_error.c execute_unit/ft_strjoin_free.c execute_unit/ft_dupenvp.c execute_unit/ft_is_builting.c execute_unit/ft_pipe.c \
 		execute_unit/ft_signal.c
 
-PARCING_SRCS	=	parcing/split_cmd.c parcing/struct_cmd.c parcing/split_args.c\
-					parcing/parser.c parcing/remove_quotes.c parcing/checker.c\
+PARSING_SRCS	=	parsing/split_cmd.c parsing/struct_cmd.c parsing/split_args.c\
+					parsing/parser.c parsing/remove_quotes.c parsing/checker.c\
 
 LIBFT_SRCS		=	libft/ft_isalpha.c libft/ft_isdigit.c libft/ft_isalnum.c libft/ft_isascii.c libft/ft_isprint.c\
 					libft/ft_putchar_fd.c libft/ft_putstr_fd.c libft/ft_putendl_fd.c libft/ft_strlen.c libft/ft_memcpy.c\
@@ -28,7 +28,7 @@ BUILTING_SRCS	=	 builting/ft_pwd.c builting/ft_exit.c builting/ft_export.c built
 SRCS	=	main.c 
 
 EXECUTION_OBJS	=	$(EXECUTION_SRCS:.c=.o)
-PARCING_OBJS	=	$(PARCING_SRCS:.c=.o)
+PARSING_OBJS	=	$(PARSING_SRCS:.c=.o)
 LIBFT_OBJS		=	$(LIBFT_SRCS:.c=.o)
 BUILTING_OBJS	=	$(BUILTING_SRCS:.c=.o)
 
@@ -44,8 +44,8 @@ $(NAME) : utiles $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) $(UTILS) -lreadline -L ~/.brew/opt/readline/lib/ -o $(NAME)
 	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $(NAME)
 
-utiles : $(PARCING_OBJS) $(LIBFT_OBJS) $(BUILTING_OBJS) $(EXECUTION_OBJS)
-	@ar rc $(UTILS) $(EXECUTION_OBJS) $(PARCING_OBJS) $(LIBFT_OBJS) $(BUILTING_OBJS)
+utiles : $(PARSING_OBJS) $(LIBFT_OBJS) $(BUILTING_OBJS) $(EXECUTION_OBJS)
+	@ar rc $(UTILS) $(EXECUTION_OBJS) $(PARSING_OBJS) $(LIBFT_OBJS) $(BUILTING_OBJS)
 	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $(UTILS)
 
 clean:
