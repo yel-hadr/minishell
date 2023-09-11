@@ -6,18 +6,19 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 05:43:33 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/11 01:04:05 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/11 02:45:35 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/minishell.h"
 
-int ft_check_input(char *input)
+int	ft_check_input(char *input)
 {
 	while (*input)
 	{
-		if (*input != ' ')
+		if (*input != ' ' && *input != '\t')
 			return (1);
+		input++;
 	}
 	return (0);
 }
@@ -28,14 +29,19 @@ int	main(int argc, char **argv, char **envp)
 	(void)argv;
 	t_cmd	*cmds;
 	char	*input;
-	t_list *env = ft_dupenvp(envp);
+	t_list *env;
 	g_exit_status = 0;
-	
 	signal(SIGINT, ft_handler);
 	signal(SIGQUIT, SIG_IGN);
+	env = ft_dupenvp(envp);
 	
   	while (1)
 	{
+		if (!env || !env->content)
+		{
+			printf("minishell: fatal error: env is empty\n");
+			exit(1);
+		}
 		input = readline("minishell > ");
 		if (!input)
 		{

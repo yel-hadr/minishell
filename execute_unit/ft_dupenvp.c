@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 09:47:33 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/09 08:30:13 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/11 02:45:46 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ char *ft_getenv(char *var, t_list *envp_list)
 {
 	int len;
 
-  if (!var)
-    return (NULL);
+	if (!var)
+		return (NULL);
 	len = ft_strlen(var);
 	while (envp_list)
 	{
@@ -95,8 +95,8 @@ t_list	*ft_dupenvp(char **envp)
 	t_list	*envp_list;
 	t_list	*tmp;
 
-  if (!envp)
-    return (NULL);
+	if (!envp)
+		return (NULL);
 	envp_list = NULL;
 	while (*envp)
 	{

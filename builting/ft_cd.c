@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 12:15:48 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/09 08:22:08 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/11 03:02:34 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int ft_cd(char  **args, t_list *env)
 	char *oldpwd;
 
 	oldpwd = getcwd(NULL, 0);
-	if (!args[1])
+	if (!args[1] || !ft_strncmp(args[1], "~", 1))
 	{
 		if (chdir(ft_getenv("HOME", env) + 5) == -1)
 		{
