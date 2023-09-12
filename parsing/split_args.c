@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:41:52 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/11 13:35:23 by elakhfif         ###   ########.fr       */
+/*   Updated: 2023/09/12 17:12:52 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static char	*next_arg(char *cmd)
 	i = 0;
 	sq = 0;
 	dq = 0;
-	while (cmd[i] && (cmd[i] != ' ' || sq || dq))
+	while (cmd && cmd[i] && (cmd[i] != ' ' || sq || dq))
 	{
 		if (cmd[i] == '\'' && !dq)
 			sq = !sq;
@@ -67,7 +67,7 @@ static char	*next_quote(char *cmd)
 	i = 1;
 	sq = 0;
 	dq = 0;
-	while (cmd[i] && (cmd[i] != '\'' || sq || dq))
+	while (cmd && cmd[i] && (cmd[i] != '\'' || sq || dq))
 	{
 		if (cmd[i] == '\'' && !dq)
 			sq = !sq;
