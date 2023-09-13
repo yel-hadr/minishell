@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 12:22:02 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/09 08:21:09 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/13 06:41:54 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	lenth1 = ft_strlen(s1);
 	lenth2 = ft_strlen(s2);
-	result = malloc(lenth1 + lenth2 + 1);
+	result = ft_calloc(lenth1 + lenth2 + 1, 1);
 	if (result)
 	{
 		ft_memcpy(result, s1, lenth1);

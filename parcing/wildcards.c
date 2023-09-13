@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 14:18:06 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/09 08:30:00 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/13 06:39:39 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ char		**ms_wildcard(char *wildcard)
 
 	i = 0;
 	j = 0;
-	tab = (char **)malloc(sizeof(char *) * (ms_filenumber() + 1));
+	tab = (char **)ft_calloc(sizeof(char *) * (ms_filenumber() + 1));
 	tab = ms_filltab(tab, i);
 	while (tab[i])
 	{

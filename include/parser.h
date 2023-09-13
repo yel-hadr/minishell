@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:13:04 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/09 08:30:50 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/13 07:31:09 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,20 +43,13 @@ typedef struct s_redir
   t_redir_type	type;
 }	t_redir;
 
-typedef struct s_env
-{
-	char			*key;
-	char			*value;
-	struct s_env	*next;
-}	t_env;
-
 typedef struct	s_cmd
 {
 	char	*cmd;
 	char	**args;
-  t_redir	redir_in;
-  t_redir	redir_out;
-  char  *sep;
+	t_redir	redir_in;
+	t_redir	redir_out;
+	char  *sep;
 	int	error;
 	//pid_t	process_id;
 	struct s_cmd	*next;

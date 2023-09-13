@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 06:58:55 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/09 08:21:09 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/13 06:43:19 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*ptr;
 
-	ptr = (t_list *)(malloc(sizeof(t_list)));
+	ptr = (t_list *)(ft_calloc(sizeof(t_list), 1));
 	if (!ptr)
 		return (NULL);
 	ptr->content = content;

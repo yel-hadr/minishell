@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 16:10:37 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/09 08:30:09 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/13 07:38:55 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,26 +32,19 @@ void ft_free(char **ptr)
 	free(tmp);
 }
 
-static char *ft_get_env(char *var, char **envp)
+char *ft_getval(char *var, t_list *envp)
 {
-	int j;
-	char *str;
-if (!envp)
-    return (NULL);
-	while (*envp)
-	{
-		j = 0;
-		str = *envp;
-		while (str[j] && str[j] != '=')
-			j++;
-		if (!ft_strncmp(str, var, j))
-			return (str + j + 1);
-		envp++;
-	}
+	char *tmp;
+	
+	if (!var)
+		return (NULL);
+	tmp = ft_getenv(var, envp);
+	if (tmp)
+		return (strdup(tmp + ft_strlen(var) + 1));
 	return (NULL);
 }
 
-char *is_cmd_exists(char **exe, char **envp)
+char *is_cmd_exists(char **exe, t_list *envp)
 {
 	char *path;
 	char **path_split;
@@ -66,7 +59,7 @@ char *is_cmd_exists(char **exe, char **envp)
       return (*exe);
     return (NULL);
   }
-	path = ft_get_env("PATH", envp);
+	path = ft_getval("PATH", envp);
 	if (!path)
 		return (NULL);
 	path_split = ft_split(path, ':');

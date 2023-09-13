@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 09:15:39 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/09 08:30:18 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/13 07:45:20 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,26 +21,23 @@
 
 static int ft_child(int *fd, int fd_in, t_cmd *cmds, t_list *envp)
 {
-  char **env;
-
-  env = ft_lst_to_char(envp);
-  if (!is_cmd_exists(&cmds->args[0], env))
-  {
-    ft_error(cmds->args[0], "command not found");
-    exit(127);
-  }
-  dup2(fd_in, STDIN_FILENO);
-  if (fd_in)
-    close(fd_in);			
-  close(fd[0]);
-  if (cmds->next)
-    dup2(fd[1], STDOUT_FILENO);
-  close(fd[1]);
-  if (is_builting(cmds->args[0]))
-    exit(exec_builting(cmds, envp));
-  if (ft_execute(cmds , env))
-    ft_error(cmds->args[0], strerror(errno));
-  exit(EXIT_FAILURE);
+	if (!is_cmd_exists(&cmds->args[0], envp))
+	{
+		ft_error(cmds->args[0], "command not found");
+		exit(127);
+	}
+	dup2(fd_in, STDIN_FILENO);
+	if (fd_in)
+		close(fd_in);		
+	close(fd[0]);
+	if (cmds->next)
+		dup2(fd[1], STDOUT_FILENO);
+	close(fd[1]);
+	if (is_builting(cmds->args[0]))
+		exit(exec_builting(cmds, envp));
+	if (ft_execute(cmds , envp))
+		ft_error(cmds->args[0], strerror(errno));
+	exit(EXIT_FAILURE);
   return (0);
 }
 

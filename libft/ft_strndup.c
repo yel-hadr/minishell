@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 06:45:55 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/09 08:21:09 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/13 06:42:36 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strndup(const char *str, unsigned int n)
 	unsigned int	i;
 
 	i = 0;
-	ptr = (char *)malloc(sizeof(char) * (n + 1));
+	ptr = (char *)ft_calloc(sizeof(char) , (n + 1));
 	if (!ptr)
 		return (NULL);
 	while (str[i] && i < n)

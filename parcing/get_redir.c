@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 11:17:38 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/09 08:29:35 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/13 06:39:39 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ char	**get_redirections(char *input)
 	int		type;
 
 	i = 0;
-	if (!(redirections = (char **)malloc(sizeof(char *) *
+	if (!(redirections = (char **)ft_calloc(sizeof(char *) *
 					(count_redirections(input) + 1))))
 		return (NULL);
 	while (*input)

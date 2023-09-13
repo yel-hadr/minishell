@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 09:52:20 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/09 08:27:52 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/13 06:39:39 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static char	*get_var(char *str, int i, int j)
 	int		k;
 
 	k = 0;
-	var = (char *)malloc(sizeof(char) * (i - j + 1));
+	var = (char *)ft_calloc(sizeof(char) * (i - j + 1));
 	while (j < i)
 	{
 		var[k] = str[j];
@@ -65,7 +65,7 @@ static char	*ft_strjoin_char(char *s1, char c)
 	int		i;
 
 	i = 0;
-	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 2));
+	str = (char *)ft_calloc(sizeof(char) * (ft_strlen(s1) + 2));
 	while (s1[i])
 	{
 		str[i] = s1[i];
@@ -113,7 +113,7 @@ int	main(void)
 	char	*str;
 	t_env	*env;
 
-	env = (t_env *)malloc(sizeof(t_env));
+	env = (t_env *)ft_calloc(sizeof(t_env));
 	env->key = ft_strdup("HOME");
 	env->value = ft_strdup("/Users/elakhfif");
 	env->next = NULL;

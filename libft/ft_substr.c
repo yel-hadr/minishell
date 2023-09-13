@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 17:58:56 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/09 08:21:09 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/13 06:41:24 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	if (s_len > ft_strlen(s))
 	{
-		substring = (char *)malloc((unsigned int) ft_strlen(s) + 1);
+		substring = (char *)ft_calloc((unsigned int) ft_strlen(s) + 1, 1);
 		s_len = ft_strlen(s) - start;
 	}
 	else
-		substring = (char *)malloc(s_len + 1);
+		substring = (char *)ft_calloc(s_len + 1, 1);
 	if (!substring)
 		return (NULL);
 	if (start >= ft_strlen(s))

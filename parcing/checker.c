@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 10:56:11 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/09 08:29:32 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/13 06:40:35 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static char	*get_separator(char *str)
 	index[0] = 0;
 	index[1] = 0;
 	index[2] = 0;
-	result = (char *)malloc(sizeof(char) * (ft_strlen(str) + 1));
+	result = (char *)ft_calloc(sizeof(char) , (ft_strlen(str) + 1));
 	while (str && str[i])
 	{
 		if (str[i] == '>' && str[i + 1] == '>')

@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 22:20:46 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/09 08:21:09 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/13 06:42:25 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strmapi(char const *s, char (*f) (unsigned int, char))
 	index = 0;
 	if (!s)
 		return (NULL);
-	str = (char *)malloc(ft_strlen(s) + 1);
+	str = (char *)ft_calloc(ft_strlen(s) + 1, 1);
 	if (str == NULL)
 		return (NULL);
 	while (s[index] != '\0')

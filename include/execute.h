@@ -19,8 +19,8 @@
 
 int g_exit_status;
 
-char    *is_cmd_exists(char **exe, char **envp);
-int     ft_execute(t_cmd *cmd, char **envp);
+char    *is_cmd_exists(char **exe, t_list *envp);
+int     ft_execute(t_cmd *cmd, t_list *envp);
 char    *ft_getenv(char *var, t_list *envp_list);
 int     ft_setenv(char *var, char *value, t_list *envp);
 char    **ft_lst_to_char(t_list *envp_list);
@@ -34,5 +34,6 @@ int     ft_pipe(t_cmd *cmd, t_list *envp);
 int     ft_exec_the_cmd(t_cmd *cmd, t_list *envp);
 int     execute(t_cmd *cmd, t_list *envp);
 void	ft_handler(int sig);
+char	*ft_getval(char *var, t_list *envp);
 
 #endif
