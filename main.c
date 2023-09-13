@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 05:43:33 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/11 12:49:11 by elakhfif         ###   ########.fr       */
+/*   Updated: 2023/09/11 23:52:43 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int	main(int argc, char **argv, char **envp)
 		{
 			add_history(input);
 			cmds = parser(input);
+			split_redir(cmds);
 			ft_pipe(cmds, env);
 		}
 		free(input);

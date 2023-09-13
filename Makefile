@@ -10,6 +10,7 @@ EXECUTION_SRCS	=	execute_unit/execute_the_cmd.c execute_unit/check_the_cmd.c exe
 
 PARSING_SRCS	=	parsing/split_cmd.c parsing/struct_cmd.c parsing/split_args.c\
 					parsing/parser.c parsing/remove_quotes.c parsing/checker.c\
+					parsing/split_redir.c parsing/get_redir.c
 
 LIBFT_SRCS		=	libft/ft_isalpha.c libft/ft_isdigit.c libft/ft_isalnum.c libft/ft_isascii.c libft/ft_isprint.c\
 					libft/ft_putchar_fd.c libft/ft_putstr_fd.c libft/ft_putendl_fd.c libft/ft_strlen.c libft/ft_memcpy.c\
@@ -53,8 +54,8 @@ clean:
 	@printf "\033[0;32mDelete [OK]\033[0m OBJECTS\n"
 	@rm -f $(EXECUTION_OBJS)
 	@printf "\033[0;32mDelete [OK]\033[0m EXECUTION_OBJS\n"
-	@rm -f $(PARCING_OBJS)
-	@printf "\033[0;32mDelete [OK]\033[0m PARCING_OBJS\n"
+	@rm -f $(PARSING_OBJS)
+	@printf "\033[0;32mDelete [OK]\033[0m PARSING_OBJS\n"
 	@rm -f $(LIBFT_OBJS)
 	@printf "\033[0;32mDelete [OK]\033[0m LIBFT_OBJS\n"
 	@rm -f $(BUILTING_OBJS)

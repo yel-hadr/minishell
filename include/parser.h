@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:13:04 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/09 08:30:50 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/12 00:15:03 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,17 +50,18 @@ typedef struct s_env
 	struct s_env	*next;
 }	t_env;
 
-typedef struct	s_cmd
+typedef struct s_cmd
 {
-	char	*cmd;
-	char	**args;
-  t_redir	redir_in;
-  t_redir	redir_out;
-  char  *sep;
-	int	error;
-	//pid_t	process_id;
+	char			*cmd;
+	char			*exec;
+	char			**args;
+	char			**redir_files;
+	char			**redir_sym;
+	char			*sep;
+	int				error;
+	int				prev_error;
 	struct s_cmd	*next;
-}				t_cmd;
+}	t_cmd;
 
 //split_cmd is a function that split the input into commands and return a linked list of commands !
 t_cmd	*split_cmd(char *input);
@@ -83,4 +84,5 @@ char	*extract_branch(char *buff);
 char	*get_host_name(void);
 char	*get_branch_name(void);
 char	*prompt_msg(void);
+int		split_redir(t_cmd *cmd);
 #endif
