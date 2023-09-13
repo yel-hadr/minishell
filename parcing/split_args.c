@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:41:52 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/09 08:29:46 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/13 06:05:00 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	args_count(char *cmd)
 	int	count;
 
 	count = 0;
-	while (cmd[0])
+	while (*cmd)
 	{
 		if (ft_strchr("><", cmd[0]))
 		{
@@ -70,9 +70,15 @@ char	**split_args(char *cmd)
 	{
 		while (cmd[0] && ft_strchr("\t ", cmd[0]))
 			cmd++;
-		if (ft_strchr("><", cmd[0]))
+		if (ft_strchr("><", *cmd))
+		{
 			while (ft_strchr("\t ><", cmd[0]))
 				cmd++;
+			tmp = ft_substr(cmd, 0,
+					(ft_strlen(cmd) - ft_strlen(next_arg(cmd))));
+			printf ("\n{tmp = %s}\n", remove_quotes(tmp));
+			
+		}
 		else
 		{
 			tmp = ft_substr(cmd, 0,
@@ -80,6 +86,7 @@ char	**split_args(char *cmd)
 			result[index++] = remove_quotes(tmp);
 			free(tmp);
 		}
+		printf ("tmp = %s\n", tmp);
 		cmd = next_arg(cmd);
 	}
 	result[index] = NULL;
