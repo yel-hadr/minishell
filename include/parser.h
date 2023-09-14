@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:13:04 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/14 07:36:59 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/14 08:11:33 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ char	**get_redirections(char *input);
 t_redir_type get_redir_type(char *input);
 int ft_redir_open(char *file, t_redir_type type, t_cmd *cmd);
 
-char *prompt(void);
+char	*prompt(void);
 char	*replace_all_words(char *str, char *w0, char *w1, int usefree);
 char	*extract_branch(char *buff);
 char	*get_host_name(void);

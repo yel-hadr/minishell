@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 20:06:50 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/09 08:30:22 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/14 08:10:37 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,14 +75,16 @@ int redaraction_heredoc(char *herdoc)
 
 int ft_redaraction(char *file, t_redir_type redaraction)
 {
-  if (redaraction == REDIR_IN)
-    return (redaraction_input(file));
-  else if (redaraction == REDIR_OUT)
-    return (redaraction_output(file));
-  else if (redaraction == APPEND)
-    return (redaraction_append(file));
-  else if (redaraction == HEREDOC)
-    return (redaraction_heredoc(file));
+	if (redaraction == REDIR_IN)
+		return (redaraction_input(file));
+	else if (redaraction == REDIR_OUT)
+		return (redaraction_output(file));
+	else if (redaraction == APPEND)
+		return (redaraction_append(file));
+	else if (redaraction == HEREDOC)
+		return (redaraction_heredoc(file));
+		else if (redaraction == NONE)
+		return (0);
   return (-1);
 }
 

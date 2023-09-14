@@ -1,0 +1,18 @@
+total 264
+drwxr-xr-x   17 yel-hadr  candidates   578B Sep 14 08:15 .
+drwxr-xr-x   12 yel-hadr  candidates   408B Sep 13 04:54 ..
+drwxr-xr-x   15 yel-hadr  candidates   510B Sep 14 07:41 .git
+drwxr-xr-x    6 yel-hadr  candidates   204B Sep 14 02:24 .vscode
+-rw-r--r--    1 yel-hadr  candidates   3.0K Sep 14 02:40 Makefile
+-rw-r--r--    1 yel-hadr  candidates    12B Sep 11 22:51 README.md
+drwxr-xr-x   16 yel-hadr  candidates   544B Sep 14 08:12 builting
+drwxr-xr-x   20 yel-hadr  candidates   680B Sep 14 08:12 execute_unit
+drwxr-xr-x    7 yel-hadr  candidates   238B Sep 13 04:46 include
+drwxr-xr-x  102 yel-hadr  candidates   3.4K Sep 14 08:12 libft
+-rw-r--r--    1 yel-hadr  candidates   1.6K Sep 14 08:03 main.c
+-rw-r--r--    1 yel-hadr  candidates   1.5K Sep 14 08:12 main.o
+-rwxr-xr-x    1 yel-hadr  candidates    28K Sep 14 08:12 minishell
+-rw-r--r--    1 yel-hadr  candidates    78K Sep 14 08:12 minishell_utils.a
+drwxr-xr-x   20 yel-hadr  candidates   680B Sep 14 08:12 parcing
+-rw-r--r--    1 yel-hadr  candidates     0B Sep 14 08:15 za
+-rw-r--r--    1 yel-hadr  candidates   220B Sep 14 08:13 zaba
