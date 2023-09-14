@@ -10,6 +10,7 @@ EXECUTION_SRCS	=	execute_unit/execute_the_cmd.c execute_unit/check_the_cmd.c exe
 
 PARCING_SRCS	=	parcing/split_cmd.c parcing/struct_cmd.c parcing/split_args.c\
 					parcing/parser.c parcing/remove_quotes.c parcing/checker.c\
+					parcing/get_redir.c
 
 LIBFT_SRCS		=	libft/ft_isalpha.c libft/ft_isdigit.c libft/ft_isalnum.c libft/ft_isascii.c libft/ft_isprint.c\
 					libft/ft_putchar_fd.c libft/ft_putstr_fd.c libft/ft_putendl_fd.c libft/ft_strlen.c libft/ft_memcpy.c\
@@ -35,18 +36,17 @@ BUILTING_OBJS	=	$(BUILTING_SRCS:.c=.o)
 OBJS	=	$(SRCS:.c=.o)
 
 %.o: %.c
-	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -I include -c $< -o $@
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
 	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
 
 all:	$(NAME)
 
-$(NAME) : utiles $(OBJS)
+$(NAME) : $(PARCING_OBJS) $(LIBFT_OBJS) $(BUILTING_OBJS) $(EXECUTION_OBJS) $(OBJS)
+	@ar rc $(UTILS) $(EXECUTION_OBJS) $(PARCING_OBJS) $(LIBFT_OBJS) $(BUILTING_OBJS)
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $(UTILS)
 	@$(CC) $(CFLAGS) $(OBJS) $(UTILS) -lreadline -L ~/.brew/opt/readline/lib/ -o $(NAME)
 	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $(NAME)
 
-utiles : $(PARCING_OBJS) $(LIBFT_OBJS) $(BUILTING_OBJS) $(EXECUTION_OBJS)
-	@ar rc $(UTILS) $(EXECUTION_OBJS) $(PARCING_OBJS) $(LIBFT_OBJS) $(BUILTING_OBJS)
-	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $(UTILS)
 
 clean:
 	@rm -f $(OBJS)

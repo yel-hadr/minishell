@@ -6,53 +6,23 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 11:17:38 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/13 06:39:39 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/14 07:40:59 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/parser.h"
 
-static char	*next_redirection(char *input)
+t_redir_type get_redir_type(char *input)
 {
 	int		i;
 	int		sq;
 	int		dq;
+	t_redir_type type;
 
 	i = 0;
 	sq = 0;
 	dq = 0;
-	while (input[i])
-	{
-		if (input[i] == '\'' && !dq)
-			sq = !sq;
-		if (input[i] == '\"' && !sq)
-			dq = !dq;
-		if (ft_strchr("><", input[i]) && !sq && !dq)
-			return (input + i);
-		i++;
-	}
-	return (NULL);
-}
-
-static int	skip_spaces(char *input)
-{
-	int	i;
-
-	i = 0;
-	while (input[i] && ft_isspace(input[i]))
-		i++;
-	return (i);
-}
-
-static char	*get_redirection(char *input, int *type)
-{
-	int		i;
-	int		sq;
-	int		dq;
-
-	i = 0;
-	sq = 0;
-	dq = 0;
+	type = NONE;
 	while (input[i])
 	{
 		if (input[i] == '\'' && !dq)
@@ -61,81 +31,58 @@ static char	*get_redirection(char *input, int *type)
 			dq = !dq;
 		if (input[i] == '>' && !sq && !dq)
 		{
+			type = REDIR_OUT;
 			if (input[i + 1] == '>')
-				*type = APPEND;
-			else
-				*type = REDIR_OUT;
-			return (input + i);
+				type = APPEND;
+			return (type);
+		}
+		if (input[i] == '<' && !sq && !dq)
+		{
+			type = REDIR_IN;
+			if (input[i + 1] == '<')
+				type = HEREDOC;
+			return (type);
 		}
 		i++;
 	}
-	return (NULL);
+	return (type);
 }
 
-static int	count_redirections(char *input)
+char	*ft_get_heredoc(char *heredoc)
 {
-	int		i;
-	int		sq;
-	int		dq;
-	int		count;
-
-	i = 0;
-	sq = 0;
-	dq = 0;
-	count = 0;
-	while (input[i])
+	char *tmp;
+	char *line;
+	
+	tmp = NULL;
+	line = NULL;
+	while (1)
 	{
-		if (input[i] == '\'' && !dq)
-			sq = !sq;
-		if (input[i] == '\"' && !sq)
-			dq = !dq;
-		if (input[i] == '>' && !sq && !dq)
-			count++;
-		i++;
-		input = next_redirection(input);
-	}
-	return (count);
-}
-
-char	**get_redirections(char *input)
-{
-	char	**redirections;
-	int		i;
-	int		type;
-
-	i = 0;
-	if (!(redirections = (char **)ft_calloc(sizeof(char *) *
-					(count_redirections(input) + 1))))
-		return (NULL);
-	while (*input)
-	{
-		input += skip_spaces(input);
-		if (!(redirections[i] = get_redirection(input, &type)))
+		line = readline("heredoc > ");
+		if (!ft_strcmp(line, heredoc))
 			break ;
-		if (type == APPEND)
-			input += 2;
-		else
-			input++;
-		redirections[i] = ft_substr(input, 0, ft_strlen(input) -
-				ft_strlen(next_redirection(input)));
-		input += ft_strlen(redirections[i]);
-		i++;
+		tmp = ft_strjoin(tmp, line);
+		tmp = ft_strjoin(tmp, "\n");
+		free(line);
 	}
-	redirections[i] = NULL;
-	return (redirections);
+	return (tmp);
 }
 
-// int	main()
-// {
-// 	char	**redirections;
-// 	int		i;
-//
-// 	i = 0;
-// 	redirections = get_redirections("echo 'hello' > file1 >> file2 > file3");
-// 	while (redirections[i])
-// 	{
-// 		printf("%s\n", redirections[i]);
-// 		i++;
-// 	}
-// 	return (0);
-// }
+int ft_redir_open(char *file, t_redir_type type, t_cmd *cmd)
+{
+	int fd;
+
+	fd = 0;
+	if (type == REDIR_OUT)
+		fd = open(file, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+	else if (type == APPEND)
+		fd = open(file, O_WRONLY | O_CREAT | O_APPEND, 0644);
+	else if (type == REDIR_IN)
+		fd = open(file, O_RDONLY);
+	else if (type == HEREDOC)
+		cmd->redir_in.file = ft_get_heredoc(file);
+	if (type == HEREDOC)
+		free(file);
+	if (fd != -1 && type != HEREDOC)
+		close(fd);
+	return (fd);
+}
