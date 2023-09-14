@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 16:10:37 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/14 08:32:46 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/14 08:41:37 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void ft_free(char **ptr)
 	free(tmp);
 }
 
+char *ft_getval(char *var, t_list *envp)
 {
 	char *tmp;
 	

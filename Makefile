@@ -4,9 +4,9 @@ CFLAGS	=	-Werror -Wextra -Wall -O3  #-g -fsanitize=address
 
 UTILS	=	minishell_utils.a
 
-EXECUTION_SRCS	=	execute_unit/execute_the_cmd.c execute_unit/check_the_cmd.c execute_unit/ft_redaraction.c\
-		execute_unit/ft_error.c execute_unit/ft_strjoin_free.c execute_unit/ft_dupenvp.c execute_unit/ft_is_builting.c execute_unit/ft_pipe.c \
-		execute_unit/ft_signal.c
+EXECUTION_SRCS	=	execute_unit/execute_the_cmd.c execute_unit/check_the_cmd.c execute_unit/ft_redirection.c\
+					execute_unit/ft_error.c execute_unit/ft_strjoin_free.c execute_unit/ft_dupenvp.c\
+					execute_unit/ft_is_builting.c execute_unit/ft_pipe.c execute_unit/ft_signal.c
 
 PARCING_SRCS	=	parcing/split_cmd.c parcing/struct_cmd.c parcing/split_args.c\
 					parcing/parser.c parcing/remove_quotes.c parcing/checker.c\
