@@ -10,7 +10,7 @@ EXECUTION_SRCS	=	execute_unit/execute_the_cmd.c execute_unit/check_the_cmd.c exe
 
 PARCING_SRCS	=	parcing/split_cmd.c parcing/struct_cmd.c parcing/split_args.c\
 					parcing/parser.c parcing/remove_quotes.c parcing/checker.c\
-					parcing/get_redir.c
+					parcing/get_redir.c parcing/expand_variable.c
 
 LIBFT_SRCS		=	libft/ft_isalpha.c libft/ft_isdigit.c libft/ft_isalnum.c libft/ft_isascii.c libft/ft_isprint.c\
 					libft/ft_putchar_fd.c libft/ft_putstr_fd.c libft/ft_putendl_fd.c libft/ft_strlen.c libft/ft_memcpy.c\
@@ -24,7 +24,8 @@ LIBFT_SRCS		=	libft/ft_isalpha.c libft/ft_isdigit.c libft/ft_isalnum.c libft/ft_
 					libft/ft_lstadd_back_bonus.c libft/ft_lstdelone_bonus.c libft/ft_lstclear_bonus.c\
 					libft/ft_lstiter_bonus.c libft/ft_lstmap_bonus.c
 
-BUILTING_SRCS	=	 builting/ft_pwd.c builting/ft_exit.c builting/ft_export.c builting/ft_echo.c builting/ft_cd.c builting/ft_env.c builting/ft_unset.c
+BUILTING_SRCS	=	builting/ft_pwd.c builting/ft_exit.c builting/ft_export.c builting/ft_echo.c builting/ft_cd.c\
+					builting/ft_env.c builting/ft_unset.c
 
 SRCS	=	main.c 
 
