@@ -1,5 +1,6 @@
 {
+	"makefile.extensionOutputFolder": "./.vscode",
 	"files.associations": {
-		"execute_unit.h": "c"
+		"execute.h": "c"
 	}
 }
