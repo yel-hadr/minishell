@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 09:47:33 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/11 02:45:46 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/16 05:00:41 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,9 +83,12 @@ char **ft_lst_to_char(t_list *envp_list)
 		return (NULL);
 	while (envp_list)
 	{
-		envp[i] = ft_strdup(envp_list->content);
+		if (ft_strchr(envp_list->content, '='))
+		{
+			envp[i] = ft_strdup(envp_list->content);
+			i++;
+		}
 		envp_list = envp_list->next;
-		i++;
 	}
 	return (envp);
 }

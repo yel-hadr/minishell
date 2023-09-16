@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 09:15:39 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/14 08:50:10 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/16 04:32:58 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,6 @@
 
 static int ft_child(int *fd, int fd_in, t_cmd *cmds, t_list *envp)
 {
-	if (!is_cmd_exists(&cmds->args[0], envp))
-	{
-		ft_error(cmds->args[0], "command not found");
-		exit(127);
-	}
 	dup2(fd_in, STDIN_FILENO);
 	if (fd_in)
 		close(fd_in);		
@@ -35,6 +30,11 @@ static int ft_child(int *fd, int fd_in, t_cmd *cmds, t_list *envp)
 	close(fd[1]);
 	if (is_builting(cmds->args[0]))
 		exit(exec_builting(cmds, envp));
+	if (!is_cmd_exists(&cmds->args[0], envp))
+	{
+		ft_error(cmds->args[0],	strerror(errno));
+		exit(127);
+	}
 	if (ft_execute(cmds , envp))
 		ft_error(cmds->args[0], strerror(errno));
 	exit(EXIT_FAILURE);
@@ -61,14 +61,14 @@ int ft_pipe(t_cmd *cmds, t_list *envp)
 		pipe(fd);
 		pid = fork();
 		if (pid == 0)
-      ft_child(fd, fd_in, cmds, envp);
+			ft_child(fd, fd_in, cmds, envp);
 		else
 		{
 			close(fd[1]);
 			if (fd_in)
 				close(fd_in);
 			fd_in = fd[0];
-    }
+    	}
 		cmds = cmds->next;
 	}
 	close(fd_in);

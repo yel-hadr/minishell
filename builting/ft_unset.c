@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 08:39:16 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/09 08:22:08 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/15 09:03:24 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,7 @@ int ft_unset(char **args, t_list **env)
 	while (args[i])
 	{
 		if (ft_check_if_var(args[i]))
-		{
-			ft_putstr_fd("unset: `", 2);
-			ft_putstr_fd(args[i], 2);
-			ft_putendl_fd("': not a valid identifier", 2);
-		}
+			ft_error("unset", "not a valid identifier");
 		else
 			ft_lstremove_if(env, args[i], ft_varcmp, free);
 		i++;

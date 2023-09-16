@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 09:52:20 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/14 09:03:53 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/16 04:05:17 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ static char	*get_var(char *str, int i, int j)
 	return (var);
 }
 
-static char	*skip_var(char *str, int i)
-{
-	while (str[i] && str[i] != ' ' && str[i] != '$' && str[i] != '\"'
-		&& str[i] != '\'' && str[i] != '\\' && str[i] != '\n')
-		i++;
-	return (str + i);
-}
+// static char	*skip_var(char *str, int i)
+// {
+// 	while (str[i] && str[i] != ' ' && str[i] != '$' && str[i] != '\"'
+// 		&& str[i] != '\'' && str[i] != '\\' && str[i] != '\n')
+// 		i++;
+// 	return (str + i);
+// }
 
 static char	*ft_strjoin_char(char *s1, char c)
 {
@@ -68,29 +68,33 @@ char		*expand_variable(char *str, t_list *env)
 	int		i;
 	int		j;
 	char	*var;
-	char	*var_value;
 	char	*new_str;
-
+	char	*val;
+	
 	i = 0;
 	j = 0;
 	new_str = ft_strdup("");
 	while (str[i])
 	{
-		if (str[i] == '$' && str[i + 1] && str[i + 1] != ' '
-			&& str[i + 1] != '\"' && str[i + 1] != '\''
-			&& str[i + 1] != '\\' && str[i + 1] != '\n')
+		if (str[i] == '$' && str[i + 1] && str[i + 1] != ' ' && str[i + 1] != '$'
+			&& str[i + 1] != '\"' && str[i + 1] != '\'' && str[i + 1] != '\\'
+			&& str[i + 1] != '\n')
 		{
 			j = i + 1;
 			i = next_var(str, i + 1);
 			var = get_var(str, i, j);
-			var_value = ft_getval(var, env);
-			new_str = ft_strjoin(new_str, var_value);
-			new_str = skip_var(str, i);
+			val = ft_getval(var, env);
+			if (!val)
+				val = strdup("");
+			new_str = ft_strjoin(new_str, val);
+			free(val);
 			free(var);
 		}
 		else
+		{
 			new_str = ft_strjoin_char(new_str, str[i]);
-		i++;
+			i++;
+		}
 	}
 	return (new_str);
 }

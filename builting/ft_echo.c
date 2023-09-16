@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 12:19:21 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/09 08:22:08 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/16 04:19:36 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int ft_echo(char **args)
 
 	flag = 0;
 	args++;
-	while (!ft_memcmp(*args, "-n", ft_strlen(*args)))
+	while (*args && !ft_memcmp(*args, "-n", ft_strlen(*args)))
 	{
 		args++;
 		flag = 1;

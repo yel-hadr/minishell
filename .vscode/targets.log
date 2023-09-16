@@ -8,13 +8,12 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Fri Sep 15 08:42:57 2023
+# Make data base, printed on Sat Sep 16 05:20:19 2023
 
 # Variables
 
 # makefile (from `Makefile', line 5)
 UTILS = minishell_utils.a
- 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
@@ -27,6 +26,7 @@ VSCODE_CRASH_REPORTER_PROCESS_TYPE = extensionHost
 @D = $(patsubst %/,%,$(dir $@))
 # automatic
 @F = $(notdir $@)
+ 
 # makefile
 CURDIR := /Users/yel-hadr/Desktop/minishell
 # makefile
@@ -36,7 +36,7 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","osLocale":"en","availableLanguages":{},"_
 # environment
 _ = /usr/bin/make
 # makefile (from `Makefile', line 3)
-CFLAGS = -Werror -Wextra -Wall -O3  
+CFLAGS = -Werror -Wextra -Wall -O3  -g -fsanitize=address
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # makefile (from `Makefile', line 37)
@@ -44,13 +44,13 @@ OBJS = $(SRCS:.c=.o)
 # environment
 VSCODE_CWD = /Users/yel-hadr/Desktop/minishell
 # environment
-PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Users/yel-hadr/.brew/bin:/Users/yel-hadr/.brew/bin
+PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Users/yel-hadr/.brew/bin
 # makefile (from `Makefile', line 33)
 PARCING_OBJS = $(PARCING_SRCS:.c=.o)
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-LaunchInstanceID = 5E8656B4-F884-4801-94F6-50048D89AE81
+LaunchInstanceID = 9825C935-FA25-4B94-97E5-CB0209B287A2
 # makefile (from `Makefile', line 7)
 EXECUTION_SRCS = execute_unit/execute_the_cmd.c execute_unit/check_the_cmd.c execute_unit/ft_redirection.c execute_unit/ft_error.c execute_unit/ft_strjoin_free.c execute_unit/ft_dupenvp.c execute_unit/ft_is_builting.c execute_unit/ft_pipe.c execute_unit/ft_signal.c
 # environment
@@ -60,7 +60,7 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 LS_COLORS = di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.Kj8Dct93Fu/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.ejQIedzdVG/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -112,7 +112,7 @@ PARCING_SRCS = parcing/split_cmd.c parcing/struct_cmd.c parcing/split_args.c par
 # default
 MAKECMDGOALS := all
 # environment
-TERM_SESSION_ID = w0t0p0:46E0D572-0030-4971-95DA-0E7DA85F23BC
+TERM_SESSION_ID = w0t0p0:1117C403-46E8-462F-841C-EABBA9252275
 # makefile (from `Makefile', line 1)
 NAME = minishell
 # environment
@@ -144,7 +144,7 @@ TERM_PROGRAM_VERSION = 3.4.13
 # makefile (from `Makefile', line 34)
 LIBFT_OBJS = $(LIBFT_SRCS:.c=.o)
 # environment
-XPC_SERVICE_NAME = com.microsoft.VSCode.2504.A4C295D3-14B2-42CE-A850-6F55714C7841
+XPC_SERVICE_NAME = com.microsoft.VSCode.2504.761C48A6-62EA-4B33-88DC-8A49F3D17D66
 # environment
 LC_TERMINAL_VERSION = 3.4.13
 # automatic
@@ -152,7 +152,7 @@ LC_TERMINAL_VERSION = 3.4.13
 # automatic
 +F = $(notdir $+)
 # environment
-ITERM_SESSION_ID = w0t0p0:46E0D572-0030-4971-95DA-0E7DA85F23BC
+ITERM_SESSION_ID = w0t0p0:1117C403-46E8-462F-841C-EABBA9252275
 # environment
 COLORFGBG = 15;0
 # makefile (from `Makefile', line 32)
@@ -192,7 +192,7 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 48012
+VSCODE_PID = 21482
 # variable set hash-table stats:
 # Load=90/1024=9%, Rehash=0, Collisions=12/126=10%
 
@@ -225,7 +225,7 @@ VSCODE_PID = 48012
 execute_unit/execute_the_cmd.o: execute_unit/execute_the_cmd.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `execute_unit/execute_the_cmd'
-#  Last modified 2023-09-15 08:42:23
+#  Last modified 2023-09-16 04:33:09
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -256,10 +256,9 @@ libft/ft_strlcpy.c:
 libft/ft_putendl_fd.o: libft/ft_putendl_fd.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_putendl_fd'
-#  Last modified 2023-09-15 08:42:36
+#  Last modified 2023-09-16 04:33:07
 #  File has been updated.
 #  Successfully updated.
- 
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 #  commands to execute (from `Makefile', line 40):
@@ -267,10 +266,11 @@ libft/ft_putendl_fd.o: libft/ft_putendl_fd.c
 	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
 	
 
+ 
 libft/wd_replace.o: libft/wd_replace.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/wd_replace'
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 04:33:08
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -283,7 +283,7 @@ libft/wd_replace.o: libft/wd_replace.c
 libft/ft_strmapi.o: libft/ft_strmapi.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_strmapi'
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 04:33:08
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -305,7 +305,7 @@ libft/ft_strncmp.c:
 parcing/remove_quotes.o: parcing/remove_quotes.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `parcing/remove_quotes'
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 04:33:06
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -371,7 +371,7 @@ do: all
 libft/ft_memcpy.o: libft/ft_memcpy.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_memcpy'
-#  Last modified 2023-09-15 08:42:36
+#  Last modified 2023-09-16 04:33:07
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -384,7 +384,7 @@ libft/ft_memcpy.o: libft/ft_memcpy.c
 parcing/expand_variable.o: parcing/expand_variable.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `parcing/expand_variable'
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 04:33:06
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -406,7 +406,7 @@ libft/ft_strdup.c:
 execute_unit/ft_strjoin_free.o: execute_unit/ft_strjoin_free.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `execute_unit/ft_strjoin_free'
-#  Last modified 2023-09-15 08:42:36
+#  Last modified 2023-09-16 04:33:09
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -419,7 +419,7 @@ execute_unit/ft_strjoin_free.o: execute_unit/ft_strjoin_free.c
 libft/ft_memcmp.o: libft/ft_memcmp.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_memcmp'
-#  Last modified 2023-09-15 08:42:36
+#  Last modified 2023-09-16 04:33:07
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -432,7 +432,7 @@ libft/ft_memcmp.o: libft/ft_memcmp.c
 libft/ft_strlen.o: libft/ft_strlen.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_strlen'
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 04:33:07
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -463,7 +463,7 @@ libft/ft_strlen.c:
 builting/ft_echo.o: builting/ft_echo.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `builting/ft_echo'
-#  Last modified 2023-09-15 08:42:23
+#  Last modified 2023-09-16 04:33:09
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -476,7 +476,7 @@ builting/ft_echo.o: builting/ft_echo.c
 libft/ft_isdigit.o: libft/ft_isdigit.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_isdigit'
-#  Last modified 2023-09-15 08:42:35
+#  Last modified 2023-09-16 04:33:07
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -498,7 +498,7 @@ libft/ft_strchr.c:
 execute_unit/ft_signal.o: execute_unit/ft_signal.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `execute_unit/ft_signal'
-#  Last modified 2023-09-15 08:42:23
+#  Last modified 2023-09-16 04:33:10
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -511,17 +511,17 @@ execute_unit/ft_signal.o: execute_unit/ft_signal.c
 # Not a target:
 main.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 05:19:29
 #  File has been updated.
 #  Successfully updated.
- 
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 libft/ft_isspace.o: libft/ft_isspace.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_isspace'
-#  Last modified 2023-09-15 08:42:23
+#  Last modified 2023-09-16 04:33:08
+ 
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -552,7 +552,7 @@ execute_unit/ft_error.c:
 libft/ft_memchr.o: libft/ft_memchr.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_memchr'
-#  Last modified 2023-09-15 08:42:36
+#  Last modified 2023-09-16 04:33:07
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -574,7 +574,7 @@ libft/ft_toupper.c:
 builting/ft_export.o: builting/ft_export.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `builting/ft_export'
-#  Last modified 2023-09-15 08:42:23
+#  Last modified 2023-09-16 04:33:09
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -587,7 +587,7 @@ builting/ft_export.o: builting/ft_export.c
 libft/ft_lstnew_bonus.o: libft/ft_lstnew_bonus.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_lstnew_bonus'
-#  Last modified 2023-09-15 08:42:36
+#  Last modified 2023-09-16 04:33:08
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -600,7 +600,7 @@ libft/ft_lstnew_bonus.o: libft/ft_lstnew_bonus.c
 libft/ft_memset.o: libft/ft_memset.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_memset'
-#  Last modified 2023-09-15 08:42:23
+#  Last modified 2023-09-16 04:33:07
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -631,7 +631,7 @@ libft/ft_putstr_fd.c:
 libft/ft_tolower.o: libft/ft_tolower.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_tolower'
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 04:33:07
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -653,7 +653,7 @@ libft/ft_lstlast_bonus.c:
 libft/ft_strrchr.o: libft/ft_strrchr.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_strrchr'
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 04:33:07
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -672,7 +672,7 @@ libft/ft_strrchr.o: libft/ft_strrchr.c
 libft/ft_split.o: libft/ft_split.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_split'
-#  Last modified 2023-09-15 08:42:23
+#  Last modified 2023-09-16 04:33:08
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -685,7 +685,7 @@ libft/ft_split.o: libft/ft_split.c
 execute_unit/ft_is_builting.o: execute_unit/ft_is_builting.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `execute_unit/ft_is_builting'
-#  Last modified 2023-09-15 08:42:23
+#  Last modified 2023-09-16 04:33:10
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -698,7 +698,7 @@ execute_unit/ft_is_builting.o: execute_unit/ft_is_builting.c
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2023-09-15 08:42:23
+#  Last modified 2023-09-16 05:19:45
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -716,7 +716,7 @@ libft/ft_putchar_fd.c:
 libft/ft_strlcat.o: libft/ft_strlcat.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_strlcat'
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 04:33:07
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -738,7 +738,7 @@ libft/ft_isascii.c:
 libft/all_wrds_replace.o: libft/all_wrds_replace.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/all_wrds_replace'
-#  Last modified 2023-09-15 08:42:23
+#  Last modified 2023-09-16 04:33:08
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -751,7 +751,7 @@ libft/all_wrds_replace.o: libft/all_wrds_replace.c
 libft/ft_strjoin.o: libft/ft_strjoin.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_strjoin'
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 04:33:08
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -767,7 +767,6 @@ builting/ft_cd.c:
 #  Last modified 2023-09-15 08:42:23
 #  File has been updated.
 #  Successfully updated.
- 
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
@@ -776,6 +775,7 @@ libft/ft_lstclear_bonus.c:
 #  Implicit rule search has been done.
 #  Last modified 2023-09-15 08:42:23
 #  File has been updated.
+ 
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
@@ -792,7 +792,7 @@ libft/ft_strtrim.c:
 libft/ft_bzero.o: libft/ft_bzero.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_bzero'
-#  Last modified 2023-09-15 08:42:36
+#  Last modified 2023-09-16 04:33:07
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -805,7 +805,7 @@ libft/ft_bzero.o: libft/ft_bzero.c
 libft/ft_lstsize_bonus.o: libft/ft_lstsize_bonus.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_lstsize_bonus'
-#  Last modified 2023-09-15 08:42:36
+#  Last modified 2023-09-16 04:33:09
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -818,7 +818,7 @@ libft/ft_lstsize_bonus.o: libft/ft_lstsize_bonus.c
 libft/ft_isprint.o: libft/ft_isprint.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_isprint'
-#  Last modified 2023-09-15 08:42:35
+#  Last modified 2023-09-16 04:33:07
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -831,7 +831,7 @@ libft/ft_isprint.o: libft/ft_isprint.c
 parcing/parser.o: parcing/parser.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `parcing/parser'
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 04:33:06
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -853,7 +853,7 @@ execute_unit/execute_the_cmd.c:
 libft/ft_atoi.o: libft/ft_atoi.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_atoi'
-#  Last modified 2023-09-15 08:42:36
+#  Last modified 2023-09-16 04:33:08
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -866,7 +866,7 @@ libft/ft_atoi.o: libft/ft_atoi.c
 execute_unit/ft_redirection.o: execute_unit/ft_redirection.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `execute_unit/ft_redirection'
-#  Last modified 2023-09-15 08:42:23
+#  Last modified 2023-09-16 04:33:09
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -888,7 +888,7 @@ libft/ft_itoa.c:
 parcing/split_cmd.o: parcing/split_cmd.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `parcing/split_cmd'
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 04:33:06
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -919,7 +919,7 @@ libft/ft_strmapi.c:
 libft/ft_striteri.o: libft/ft_striteri.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_striteri'
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 04:33:08
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -931,7 +931,7 @@ libft/ft_striteri.o: libft/ft_striteri.c
 
 minishell: parcing/split_cmd.o parcing/struct_cmd.o parcing/split_args.o parcing/parser.o parcing/remove_quotes.o parcing/checker.o parcing/get_redir.o parcing/expand_variable.o libft/ft_isalpha.o libft/ft_isdigit.o libft/ft_isalnum.o libft/ft_isascii.o libft/ft_isprint.o libft/ft_putchar_fd.o libft/ft_putstr_fd.o libft/ft_putendl_fd.o libft/ft_strlen.o libft/ft_memcpy.o libft/ft_strdup.o libft/ft_toupper.o libft/ft_bzero.o libft/ft_memchr.o libft/ft_memmove.o libft/ft_strlcat.o libft/ft_strrchr.o libft/ft_memcmp.o libft/ft_memset.o libft/ft_strlcpy.o libft/ft_tolower.o libft/ft_strchr.o libft/ft_atoi.o libft/ft_strtrim.o libft/ft_strnstr.o libft/ft_substr.o libft/ft_calloc.o libft/ft_strjoin.o libft/ft_split.o libft/ft_itoa.o libft/ft_putnbr_fd.o libft/ft_striteri.o libft/ft_strncmp.o libft/ft_strmapi.o libft/ft_strcmp.o libft/ft_strndup.o libft/wd_replace.o libft/all_wrds_replace.o libft/ft_strcpy.o libft/all_wrds_replace.o libft/ft_isspace.o libft/ft_strnew.o libft/ft_lstnew_bonus.o libft/ft_lstadd_front_bonus.o libft/ft_lstsize_bonus.o libft/ft_lstlast_bonus.o libft/ft_lstadd_back_bonus.o libft/ft_lstdelone_bonus.o libft/ft_lstclear_bonus.o libft/ft_lstiter_bonus.o libft/ft_lstmap_bonus.o builting/ft_pwd.o builting/ft_exit.o builting/ft_export.o builting/ft_echo.o builting/ft_cd.o builting/ft_env.o builting/ft_unset.o execute_unit/execute_the_cmd.o execute_unit/check_the_cmd.o execute_unit/ft_redirection.o execute_unit/ft_error.o execute_unit/ft_strjoin_free.o execute_unit/ft_dupenvp.o execute_unit/ft_is_builting.o execute_unit/ft_pipe.o execute_unit/ft_signal.o main.o
 #  Implicit rule search has not been done.
-#  Last modified 2023-09-15 08:42:38
+#  Last modified 2023-09-16 05:19:47
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -955,7 +955,7 @@ parcing/remove_quotes.c:
 libft/ft_lstmap_bonus.o: libft/ft_lstmap_bonus.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_lstmap_bonus'
-#  Last modified 2023-09-15 08:42:36
+#  Last modified 2023-09-16 04:33:09
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -965,13 +965,13 @@ libft/ft_lstmap_bonus.o: libft/ft_lstmap_bonus.c
 	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
 	
 
- 
 parcing/get_redir.o: parcing/get_redir.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `parcing/get_redir'
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 04:33:06
 #  File has been updated.
 #  Successfully updated.
+ 
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 #  commands to execute (from `Makefile', line 40):
@@ -982,7 +982,7 @@ parcing/get_redir.o: parcing/get_redir.c
 libft/ft_itoa.o: libft/ft_itoa.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_itoa'
-#  Last modified 2023-09-15 08:42:23
+#  Last modified 2023-09-16 04:33:08
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1013,7 +1013,7 @@ libft/ft_memcpy.c:
 # Not a target:
 parcing/expand_variable.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 04:05:17
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1049,7 +1049,7 @@ libft/ft_memcmp.c:
 builting/ft_env.o: builting/ft_env.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `builting/ft_env'
-#  Last modified 2023-09-15 08:42:23
+#  Last modified 2023-09-16 04:33:09
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1062,7 +1062,7 @@ builting/ft_env.o: builting/ft_env.c
 libft/ft_lstadd_front_bonus.o: libft/ft_lstadd_front_bonus.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_lstadd_front_bonus'
-#  Last modified 2023-09-15 08:42:36
+#  Last modified 2023-09-16 04:33:08
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1075,7 +1075,7 @@ libft/ft_lstadd_front_bonus.o: libft/ft_lstadd_front_bonus.c
 # Not a target:
 builting/ft_echo.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-09-15 08:42:23
+#  Last modified 2023-09-16 04:19:36
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1084,7 +1084,7 @@ builting/ft_echo.c:
 builting/ft_exit.o: builting/ft_exit.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `builting/ft_exit'
-#  Last modified 2023-09-15 08:42:36
+#  Last modified 2023-09-16 04:33:09
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1097,7 +1097,7 @@ builting/ft_exit.o: builting/ft_exit.c
 libft/ft_lstdelone_bonus.o: libft/ft_lstdelone_bonus.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_lstdelone_bonus'
-#  Last modified 2023-09-15 08:42:36
+#  Last modified 2023-09-16 04:33:09
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1155,7 +1155,7 @@ libft/ft_memchr.c:
 libft/ft_putnbr_fd.o: libft/ft_putnbr_fd.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_putnbr_fd'
-#  Last modified 2023-09-15 08:42:36
+#  Last modified 2023-09-16 04:33:08
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1213,7 +1213,7 @@ libft/ft_strlcat.c:
 libft/ft_calloc.o: libft/ft_calloc.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_calloc'
-#  Last modified 2023-09-15 08:42:36
+#  Last modified 2023-09-16 04:33:08
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1226,11 +1226,10 @@ libft/ft_calloc.o: libft/ft_calloc.c
 libft/ft_substr.o: libft/ft_substr.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_substr'
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 04:33:08
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
- 
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 #  commands to execute (from `Makefile', line 40):
 	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
@@ -1238,9 +1237,10 @@ libft/ft_substr.o: libft/ft_substr.c
 	
 
 parcing/split_args.o: parcing/split_args.c
+ 
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `parcing/split_args'
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 04:33:06
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1262,7 +1262,7 @@ libft/ft_tolower.c:
 builting/ft_pwd.o: builting/ft_pwd.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `builting/ft_pwd'
-#  Last modified 2023-09-15 08:42:36
+#  Last modified 2023-09-16 04:33:09
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1290,7 +1290,7 @@ libft/ft_strrchr.c:
 # Not a target:
 execute_unit/ft_dupenvp.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-09-15 08:42:23
+#  Last modified 2023-09-16 05:00:41
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1299,7 +1299,7 @@ execute_unit/ft_dupenvp.c:
 execute_unit/check_the_cmd.o: execute_unit/check_the_cmd.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `execute_unit/check_the_cmd'
-#  Last modified 2023-09-15 08:42:23
+#  Last modified 2023-09-16 04:33:09
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1330,7 +1330,7 @@ libft/ft_split.c:
 libft/ft_isalpha.o: libft/ft_isalpha.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_isalpha'
-#  Last modified 2023-09-15 08:42:35
+#  Last modified 2023-09-16 04:33:06
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1361,7 +1361,7 @@ libft/ft_atoi.c:
 # Not a target:
 execute_unit/ft_pipe.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 04:32:58
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1370,7 +1370,7 @@ execute_unit/ft_pipe.c:
 builting/ft_unset.o: builting/ft_unset.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `builting/ft_unset'
-#  Last modified 2023-09-15 08:42:23
+#  Last modified 2023-09-16 04:33:09
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1434,7 +1434,7 @@ libft/ft_lstsize_bonus.c:
 libft/ft_strlcpy.o: libft/ft_strlcpy.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_strlcpy'
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 04:33:07
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1456,7 +1456,7 @@ libft/ft_isprint.c:
 # Not a target:
 parcing/parser.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 04:17:19
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1465,7 +1465,7 @@ parcing/parser.c:
 libft/ft_strndup.o: libft/ft_strndup.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_strndup'
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 04:33:08
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1478,7 +1478,7 @@ libft/ft_strndup.o: libft/ft_strndup.c
 libft/ft_strncmp.o: libft/ft_strncmp.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_strncmp'
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 04:33:08
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1491,18 +1491,18 @@ libft/ft_strncmp.o: libft/ft_strncmp.c
 # Not a target:
 execute_unit/check_the_cmd.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-09-15 08:42:23
+#  Last modified 2023-09-16 04:02:27
 #  File has been updated.
 #  Successfully updated.
- 
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 parcing/checker.o: parcing/checker.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `parcing/checker'
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 04:33:06
 #  File has been updated.
+ 
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
@@ -1514,7 +1514,7 @@ parcing/checker.o: parcing/checker.c
 libft/ft_strcpy.o: libft/ft_strcpy.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_strcpy'
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 04:33:08
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1527,7 +1527,7 @@ libft/ft_strcpy.o: libft/ft_strcpy.c
 libft/ft_isalnum.o: libft/ft_isalnum.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_isalnum'
-#  Last modified 2023-09-15 08:42:35
+#  Last modified 2023-09-16 04:33:07
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1549,7 +1549,7 @@ execute_unit/ft_redirection.c:
 libft/ft_lstadd_back_bonus.o: libft/ft_lstadd_back_bonus.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_lstadd_back_bonus'
-#  Last modified 2023-09-15 08:42:36
+#  Last modified 2023-09-16 04:33:09
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1562,7 +1562,7 @@ libft/ft_lstadd_back_bonus.o: libft/ft_lstadd_back_bonus.c
 libft/ft_strcmp.o: libft/ft_strcmp.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_strcmp'
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 04:33:08
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1593,7 +1593,7 @@ libft/ft_striteri.c:
 libft/ft_strdup.o: libft/ft_strdup.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_strdup'
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 04:33:07
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1624,7 +1624,7 @@ parcing/get_redir.c:
 libft/ft_lstiter_bonus.o: libft/ft_lstiter_bonus.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_lstiter_bonus'
-#  Last modified 2023-09-15 08:42:36
+#  Last modified 2023-09-16 04:33:09
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1637,7 +1637,7 @@ libft/ft_lstiter_bonus.o: libft/ft_lstiter_bonus.c
 execute_unit/ft_dupenvp.o: execute_unit/ft_dupenvp.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `execute_unit/ft_dupenvp'
-#  Last modified 2023-09-15 08:42:23
+#  Last modified 2023-09-16 05:00:48
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1650,7 +1650,7 @@ execute_unit/ft_dupenvp.o: execute_unit/ft_dupenvp.c
 libft/ft_memmove.o: libft/ft_memmove.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_memmove'
-#  Last modified 2023-09-15 08:42:23
+#  Last modified 2023-09-16 04:33:07
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1663,7 +1663,7 @@ libft/ft_memmove.o: libft/ft_memmove.c
 libft/ft_strchr.o: libft/ft_strchr.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_strchr'
-#  Last modified 2023-09-15 08:42:36
+#  Last modified 2023-09-16 04:33:07
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1676,7 +1676,7 @@ libft/ft_strchr.o: libft/ft_strchr.c
 main.o: main.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `main'
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 05:19:47
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1689,7 +1689,7 @@ main.o: main.c
 libft/ft_strnew.o: libft/ft_strnew.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_strnew'
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 04:33:08
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1702,7 +1702,7 @@ libft/ft_strnew.o: libft/ft_strnew.c
 execute_unit/ft_error.o: execute_unit/ft_error.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `execute_unit/ft_error'
-#  Last modified 2023-09-15 08:42:23
+#  Last modified 2023-09-16 04:33:09
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1733,12 +1733,11 @@ libft/ft_lstadd_front_bonus.c:
 libft/ft_toupper.o: libft/ft_toupper.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_toupper'
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 04:33:07
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
- 
 #  commands to execute (from `Makefile', line 40):
 	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
 	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
@@ -1746,8 +1745,9 @@ libft/ft_toupper.o: libft/ft_toupper.c
 
 execute_unit/ft_pipe.o: execute_unit/ft_pipe.c
 #  Implicit rule search has been done.
+ 
 #  Implicit/static pattern stem: `execute_unit/ft_pipe'
-#  Last modified 2023-09-15 08:42:37
+#  Last modified 2023-09-16 04:33:10
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1778,7 +1778,7 @@ libft/ft_lstdelone_bonus.c:
 libft/ft_strnstr.o: libft/ft_strnstr.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_strnstr'
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 04:33:08
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1791,7 +1791,7 @@ libft/ft_strnstr.o: libft/ft_strnstr.c
 libft/ft_putstr_fd.o: libft/ft_putstr_fd.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_putstr_fd'
-#  Last modified 2023-09-15 08:42:35
+#  Last modified 2023-09-16 04:33:07
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1813,7 +1813,7 @@ libft/ft_putnbr_fd.c:
 libft/ft_lstlast_bonus.o: libft/ft_lstlast_bonus.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_lstlast_bonus'
-#  Last modified 2023-09-15 08:42:36
+#  Last modified 2023-09-16 04:33:09
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1853,7 +1853,7 @@ libft/ft_substr.c:
 builting/ft_cd.o: builting/ft_cd.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `builting/ft_cd'
-#  Last modified 2023-09-15 08:42:23
+#  Last modified 2023-09-16 04:33:09
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1866,7 +1866,7 @@ builting/ft_cd.o: builting/ft_cd.c
 parcing/struct_cmd.o: parcing/struct_cmd.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `parcing/struct_cmd'
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 04:33:06
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1897,7 +1897,7 @@ builting/ft_pwd.c:
 libft/ft_putchar_fd.o: libft/ft_putchar_fd.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_putchar_fd'
-#  Last modified 2023-09-15 08:42:35
+#  Last modified 2023-09-16 04:33:07
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1910,7 +1910,7 @@ libft/ft_putchar_fd.o: libft/ft_putchar_fd.c
 libft/ft_isascii.o: libft/ft_isascii.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_isascii'
-#  Last modified 2023-09-15 08:42:35
+#  Last modified 2023-09-16 04:33:07
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1932,7 +1932,7 @@ libft/ft_memmove.c:
 # Not a target:
 builting/ft_unset.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-09-15 08:42:23
+#  Last modified 2023-09-15 09:03:25
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1941,7 +1941,7 @@ builting/ft_unset.c:
 libft/ft_lstclear_bonus.o: libft/ft_lstclear_bonus.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_lstclear_bonus'
-#  Last modified 2023-09-15 08:42:23
+#  Last modified 2023-09-16 04:33:09
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1954,7 +1954,7 @@ libft/ft_lstclear_bonus.o: libft/ft_lstclear_bonus.c
 libft/ft_strtrim.o: libft/ft_strtrim.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `libft/ft_strtrim'
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-16 04:33:08
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1977,6 +1977,6 @@ libft/ft_strtrim.o: libft/ft_strtrim.c
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Fri Sep 15 08:42:57 2023
+# Finished Make data base on Sat Sep 16 05:20:19 2023
 
  

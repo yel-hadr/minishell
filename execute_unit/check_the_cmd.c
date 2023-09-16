@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 16:10:37 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/14 08:41:37 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/16 04:02:27 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,12 @@ char *is_cmd_exists(char **exe, t_list *envp)
 	if (!*exe || !exe)
 		return (NULL);
 	if (**exe == '/' || **exe == '.')
-  {
-    if (!access(*exe, F_OK))
-      return (*exe);
-    return (NULL);
-  }
+	{
+		if (!access(*exe, F_OK))
+			if (!access(*exe, X_OK))
+				return (*exe);
+		return (NULL);
+	}
 	path = ft_getval("PATH", envp);
 	if (!path)
 		return (NULL);
@@ -69,11 +70,12 @@ char *is_cmd_exists(char **exe, t_list *envp)
 		tmp = ft_strjoin(*path_split, "/");
 		tmp = ft_strjoin(tmp,*exe);
 		if (!access(tmp, F_OK))
-		{
-			ft_free(ptr);
-			*exe = tmp;
-			return (tmp);
-		}
+			if (!access(tmp, X_OK))
+			{
+				ft_free(ptr);
+				*exe = tmp;
+				return (tmp);
+			}
 		free(tmp);
 		path_split++;
 	}
