@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 15:34:40 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/14 08:11:37 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/16 08:48:32 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,10 @@ int ft_execute(t_cmd *cmd, t_list *envp)
 {
 	char **env;
 	env = ft_lst_to_char(envp);
-	ft_redaraction(cmd->redir_in.file, cmd->redir_in.type);
-	ft_redaraction(cmd->redir_out.file, cmd->redir_out.type);
+	if (ft_redaraction(cmd->redir_in.file, cmd->redir_in.type) == -1)
+		return (1);
+	if (ft_redaraction(cmd->redir_out.file, cmd->redir_out.type) == -1)
+		return (1);
 	if (cmd->args[0])
 		execve(cmd->args[0], cmd->args, env);
 	return (1);

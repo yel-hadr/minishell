@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 09:15:39 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/16 04:32:58 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/16 06:03:04 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int ft_pipe(t_cmd *cmds, t_list *envp)
 	int fd[2];
 	int fd_in;
 	int pid;
+	int status;
 	t_cmd *tmp;
 
 	fd_in = 0;
@@ -72,11 +73,11 @@ int ft_pipe(t_cmd *cmds, t_list *envp)
 		cmds = cmds->next;
 	}
 	close(fd_in);
-	waitpid(pid, &g_exit_status, 0);
+	waitpid(pid, &status, 0);
 	while (tmp->next)
 	{
-		waitpid(-1, &g_exit_status, 0);
+		waitpid(-1, &status, 0);
 		tmp = tmp->next;
 	}
-	return (g_exit_status >> 8);
+	return (status >> 8);
 }

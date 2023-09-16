@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 16:10:37 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/16 04:02:27 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/16 08:30:37 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 	@return: the path of the cmd if it exists, NULL otherwise
 */
 
-void ft_free(char **ptr)
+void	ft_free(char **ptr)
 {
 	char **tmp;
 
@@ -32,7 +32,7 @@ void ft_free(char **ptr)
 	free(tmp);
 }
 
-char *ft_getval(char *var, t_list *envp)
+char	*ft_getval(char *var, t_list *envp)
 {
 	char *tmp;
 	
@@ -44,12 +44,32 @@ char *ft_getval(char *var, t_list *envp)
 	return (NULL);
 }
 
-char *is_cmd_exists(char **exe, t_list *envp)
+static char	*ft_search_path(char **exe, char **path_split)
 {
-	char *path;
-	char **path_split;
-	char *tmp;
-	char **ptr;
+	char	*tmp;
+
+
+	while (*path_split)
+	{
+		tmp = ft_strjoin(*path_split, "/");
+		tmp = ft_strjoin(tmp, *exe);
+		if (!access(tmp, F_OK))
+			if (!access(tmp, X_OK))
+			{
+				free(*exe);
+				*exe = tmp;
+				return (tmp);
+			}
+		free(tmp);
+		path_split++;
+	}
+	return (NULL);
+}
+
+char	*is_cmd_exists(char **exe, t_list *envp)
+{
+	char	*path;
+	char	**path_split;
 
 	if (!*exe || !exe)
 		return (NULL);
@@ -61,24 +81,9 @@ char *is_cmd_exists(char **exe, t_list *envp)
 		return (NULL);
 	}
 	path = ft_getval("PATH", envp);
-	if (!path)
-		return (NULL);
 	path_split = ft_split(path, ':');
-	ptr = path_split;
-	while (*path_split)
-	{
-		tmp = ft_strjoin(*path_split, "/");
-		tmp = ft_strjoin(tmp,*exe);
-		if (!access(tmp, F_OK))
-			if (!access(tmp, X_OK))
-			{
-				ft_free(ptr);
-				*exe = tmp;
-				return (tmp);
-			}
-		free(tmp);
-		path_split++;
-	}
-	ft_free(ptr);
-	return (NULL);
+	free(path);
+	path = ft_search_path(exe, path_split);
+	ft_free(path_split);
+	return (path);
 }
