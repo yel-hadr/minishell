@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 09:15:39 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/16 06:03:04 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/17 02:56:55 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int ft_pipe(t_cmd *cmds, t_list *envp)
 	fd_in = 0;
 	tmp = cmds;
 
-	if (!cmds)
+	if (!cmds || !*cmds->args || !cmds->args)
   		return (0);
 	if (cmds->next == NULL && is_builting(cmds->args[0]))
     	return (exec_builting(cmds, envp));
