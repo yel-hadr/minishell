@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 09:15:39 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/17 02:56:55 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/20 03:30:57 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int ft_pipe(t_cmd *cmds, t_list *envp)
   		return (0);
 	if (cmds->next == NULL && is_builting(cmds->args[0]))
     	return (exec_builting(cmds, envp));
+	g_sig = 1;
 	while (cmds)
 	{
 		pipe(fd);
@@ -79,5 +80,6 @@ int ft_pipe(t_cmd *cmds, t_list *envp)
 		waitpid(-1, &status, 0);
 		tmp = tmp->next;
 	}
+	g_sig = 0;
 	return (status >> 8);
 }

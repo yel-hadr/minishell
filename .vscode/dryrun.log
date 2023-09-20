@@ -1,8 +1,7 @@
-make --dry-run --keep-going --print-directory
-make: Entering directory `/Users/yel-hadr/Desktop/minishell'
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/yel-hadr/Desktop/yel-hadr'
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c parcing/split_cmd.c -o parcing/split_cmd.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" parcing/split_cmd.c
- 
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c parcing/struct_cmd.c -o parcing/struct_cmd.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" parcing/struct_cmd.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c parcing/split_args.c -o parcing/split_args.o
@@ -93,10 +92,10 @@ cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/wd_repl
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" libft/wd_replace.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/all_wrds_replace.c -o libft/all_wrds_replace.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" libft/all_wrds_replace.c
+ 
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_strcpy.c -o libft/ft_strcpy.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" libft/ft_strcpy.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_isspace.c -o libft/ft_isspace.o
- 
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" libft/ft_isspace.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_strnew.c -o libft/ft_strnew.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" libft/ft_strnew.c
@@ -132,10 +131,11 @@ cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c builting/ft_e
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" builting/ft_env.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c builting/ft_unset.c -o builting/ft_unset.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" builting/ft_unset.c
-cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c execute_unit/execute_the_cmd.c -o execute_unit/execute_the_cmd.o
-printf "\033[0;32mCompilation [OK]\033[0m %s\n" execute_unit/execute_the_cmd.c
-cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c execute_unit/check_the_cmd.c -o execute_unit/check_the_cmd.o
-printf "\033[0;32mCompilation [OK]\033[0m %s\n" execute_unit/check_the_cmd.c
+cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c execute_unit/ft_execute.c -o execute_unit/ft_execute.o
+printf "\033[0;32mCompilation [OK]\033[0m %s\n" execute_unit/ft_execute.c
+ 
+cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c execute_unit/ft_search_path.c -o execute_unit/ft_search_path.o
+printf "\033[0;32mCompilation [OK]\033[0m %s\n" execute_unit/ft_search_path.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c execute_unit/ft_redirection.c -o execute_unit/ft_redirection.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" execute_unit/ft_redirection.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c execute_unit/ft_error.c -o execute_unit/ft_error.o
@@ -152,9 +152,9 @@ cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c execute_unit/
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" execute_unit/ft_signal.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c main.c -o main.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" main.c
-ar rc minishell_utils.a execute_unit/execute_the_cmd.o execute_unit/check_the_cmd.o execute_unit/ft_redirection.o execute_unit/ft_error.o execute_unit/ft_strjoin_free.o execute_unit/ft_dupenvp.o execute_unit/ft_is_builting.o execute_unit/ft_pipe.o execute_unit/ft_signal.o parcing/split_cmd.o parcing/struct_cmd.o parcing/split_args.o parcing/parser.o parcing/remove_quotes.o parcing/checker.o parcing/get_redir.o parcing/expand_variable.o libft/ft_isalpha.o libft/ft_isdigit.o libft/ft_isalnum.o libft/ft_isascii.o libft/ft_isprint.o libft/ft_putchar_fd.o libft/ft_putstr_fd.o libft/ft_putendl_fd.o libft/ft_strlen.o libft/ft_memcpy.o libft/ft_strdup.o libft/ft_toupper.o libft/ft_bzero.o libft/ft_memchr.o libft/ft_memmove.o libft/ft_strlcat.o libft/ft_strrchr.o libft/ft_memcmp.o libft/ft_memset.o libft/ft_strlcpy.o libft/ft_tolower.o libft/ft_strchr.o libft/ft_atoi.o libft/ft_strtrim.o libft/ft_strnstr.o libft/ft_substr.o libft/ft_calloc.o libft/ft_strjoin.o libft/ft_split.o libft/ft_itoa.o libft/ft_putnbr_fd.o libft/ft_striteri.o libft/ft_strncmp.o libft/ft_strmapi.o libft/ft_strcmp.o libft/ft_strndup.o libft/wd_replace.o libft/all_wrds_replace.o libft/ft_strcpy.o libft/all_wrds_replace.o libft/ft_isspace.o libft/ft_strnew.o libft/ft_lstnew_bonus.o libft/ft_lstadd_front_bonus.o libft/ft_lstsize_bonus.o libft/ft_lstlast_bonus.o libft/ft_lstadd_back_bonus.o libft/ft_lstdelone_bonus.o libft/ft_lstclear_bonus.o libft/ft_lstiter_bonus.o libft/ft_lstmap_bonus.o builting/ft_pwd.o builting/ft_exit.o builting/ft_export.o builting/ft_echo.o builting/ft_cd.o builting/ft_env.o builting/ft_unset.o
+ar rc minishell_utils.a execute_unit/ft_execute.o execute_unit/ft_search_path.o execute_unit/ft_redirection.o execute_unit/ft_error.o execute_unit/ft_strjoin_free.o execute_unit/ft_dupenvp.o execute_unit/ft_is_builting.o execute_unit/ft_pipe.o execute_unit/ft_signal.o parcing/split_cmd.o parcing/struct_cmd.o parcing/split_args.o parcing/parser.o parcing/remove_quotes.o parcing/checker.o parcing/get_redir.o parcing/expand_variable.o libft/ft_isalpha.o libft/ft_isdigit.o libft/ft_isalnum.o libft/ft_isascii.o libft/ft_isprint.o libft/ft_putchar_fd.o libft/ft_putstr_fd.o libft/ft_putendl_fd.o libft/ft_strlen.o libft/ft_memcpy.o libft/ft_strdup.o libft/ft_toupper.o libft/ft_bzero.o libft/ft_memchr.o libft/ft_memmove.o libft/ft_strlcat.o libft/ft_strrchr.o libft/ft_memcmp.o libft/ft_memset.o libft/ft_strlcpy.o libft/ft_tolower.o libft/ft_strchr.o libft/ft_atoi.o libft/ft_strtrim.o libft/ft_strnstr.o libft/ft_substr.o libft/ft_calloc.o libft/ft_strjoin.o libft/ft_split.o libft/ft_itoa.o libft/ft_putnbr_fd.o libft/ft_striteri.o libft/ft_strncmp.o libft/ft_strmapi.o libft/ft_strcmp.o libft/ft_strndup.o libft/wd_replace.o libft/all_wrds_replace.o libft/ft_strcpy.o libft/all_wrds_replace.o libft/ft_isspace.o libft/ft_strnew.o libft/ft_lstnew_bonus.o libft/ft_lstadd_front_bonus.o libft/ft_lstsize_bonus.o libft/ft_lstlast_bonus.o libft/ft_lstadd_back_bonus.o libft/ft_lstdelone_bonus.o libft/ft_lstclear_bonus.o libft/ft_lstiter_bonus.o libft/ft_lstmap_bonus.o builting/ft_pwd.o builting/ft_exit.o builting/ft_export.o builting/ft_echo.o builting/ft_cd.o builting/ft_env.o builting/ft_unset.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" minishell_utils.a
 cc -Werror -Wextra -Wall -O3   main.o minishell_utils.a -lreadline -L ~/.brew/opt/readline/lib/ -o minishell
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" minishell
-make: Leaving directory `/Users/yel-hadr/Desktop/minishell'
+make: Leaving directory `/Users/yel-hadr/Desktop/yel-hadr'
  

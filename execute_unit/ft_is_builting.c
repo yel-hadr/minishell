@@ -6,24 +6,30 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 16:44:35 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/17 03:31:54 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/18 06:12:50 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/execute.h"
 
-int exec_builting(t_cmd *cmd, t_list *envp)
+static int	do_redir(int *in, int *out, t_cmd *cmd)
 {
-	int save_stdin;
-	int save_stdout;
-	int status;
-	
+	ft_save_fd(in, out);
+	if (ft_redaraction(cmd->redir_in.file, cmd->redir_in.type) == -1)
+		return (1);
+	if (ft_redaraction(cmd->redir_out.file, cmd->redir_out.type) == -1)
+		return (1);
+	return (0);
+}
+
+int	exec_builting(t_cmd *cmd, t_list *envp)
+{
+	int	save_stdin;
+	int	save_stdout;
+	int	status;
+
 	status = 0;
-	ft_save_fd(&save_stdin, &save_stdout);
-
-	ft_redaraction(cmd->redir_in.file, cmd->redir_in.type);
-	ft_redaraction(cmd->redir_out.file, cmd->redir_out.type);
-
+	do_redir(&save_stdin, &save_stdout, cmd);
 	if (!ft_strncmp(cmd->args[0], "echo", ft_strlen(cmd->args[0])))
 		status = ft_echo(cmd->args);
 	else if (!ft_strncmp(cmd->args[0], "cd", ft_strlen(cmd->args[0])))
@@ -44,7 +50,7 @@ int exec_builting(t_cmd *cmd, t_list *envp)
 	return (status);
 }
 
-int is_builting(char *cmd)
+int	is_builting(char *cmd)
 {
 	if (!ft_strncmp(cmd, "echo", ft_strlen(cmd)))
 		return (1);

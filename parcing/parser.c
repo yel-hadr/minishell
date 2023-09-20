@@ -6,26 +6,26 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 05:46:27 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/16 04:17:19 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/20 04:12:08 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/parser.h"
 
-t_cmd	*parser(char *line, t_list *env)
+t_cmd	*parser(char *line, t_list *env, int *status)
 {
 	t_cmd	*result;
 	t_cmd	*cmd;
-	char *tmp;
 
-	tmp = expand_variable(line, env);
-	result = split_cmd(tmp);
+	g_sig = -1;
+	result = split_cmd(line, status);
 	cmd = result;
 	while (cmd)
 	{
-		cmd->args = split_args(cmd->cmd, cmd);
+		cmd->args = split_args(cmd->cmd, cmd, env);
 		cmd = cmd->next;
 	}
+	g_sig = 0;
 	return (result);
 }
 

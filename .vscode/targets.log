@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Sat Sep 16 08:35:17 2023
+# Make data base, printed on Mon Sep 18 07:37:54 2023
 
 # Variables
 
@@ -21,13 +21,14 @@ UTILS = minishell_utils.a
 # environment
 VSCODE_CRASH_REPORTER_PROCESS_TYPE = extensionHost
 # automatic
+ 
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/yel-hadr/Desktop/minishell
+CURDIR := /Users/yel-hadr/Desktop/yel-hadr
 # makefile
 SHELL = /bin/sh
 # environment
@@ -41,17 +42,17 @@ MAKEFILE_LIST :=  Makefile
 # makefile (from `Makefile', line 37)
 OBJS = $(SRCS:.c=.o)
 # environment
-VSCODE_CWD = /Users/yel-hadr/Desktop/minishell
+VSCODE_CWD = /Users/yel-hadr/Desktop/yel-hadr
 # environment
-PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Users/yel-hadr/.brew/bin
+PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Users/yel-hadr/.brew/bin:/Users/yel-hadr/.brew/bin
 # makefile (from `Makefile', line 33)
 PARCING_OBJS = $(PARCING_SRCS:.c=.o)
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-LaunchInstanceID = 37F2D73A-74A2-449F-BAAF-2B1E9E031B33
+LaunchInstanceID = 6DD48D25-8BE0-4C9E-A5F6-6EA42B51F91C
 # makefile (from `Makefile', line 7)
-EXECUTION_SRCS = execute_unit/execute_the_cmd.c execute_unit/check_the_cmd.c execute_unit/ft_redirection.c execute_unit/ft_error.c execute_unit/ft_strjoin_free.c execute_unit/ft_dupenvp.c execute_unit/ft_is_builting.c execute_unit/ft_pipe.c execute_unit/ft_signal.c
+EXECUTION_SRCS = execute_unit/ft_execute.c execute_unit/ft_search_path.c execute_unit/ft_redirection.c execute_unit/ft_error.c execute_unit/ft_strjoin_free.c execute_unit/ft_dupenvp.c execute_unit/ft_is_builting.c execute_unit/ft_pipe.c execute_unit/ft_signal.c
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
@@ -59,11 +60,11 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 LS_COLORS = di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.iWNBv64rTb/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.MOELqeajNU/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-PWD = /Users/yel-hadr/Desktop/minishell
+PWD = /Users/yel-hadr/Desktop/yel-hadr
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # makefile (from `Makefile', line 35)
@@ -111,7 +112,7 @@ PARCING_SRCS = parcing/split_cmd.c parcing/struct_cmd.c parcing/split_args.c par
 # default
 MAKECMDGOALS := all
 # environment
-TERM_SESSION_ID = w0t0p0:2C03FDCA-0010-49CB-B25F-AC6482A50B9D
+TERM_SESSION_ID = w0t0p0:67ADE486-1628-4A96-8D6A-496DEBB54F4C
 # makefile (from `Makefile', line 1)
 NAME = minishell
 # environment
@@ -143,7 +144,7 @@ TERM_PROGRAM_VERSION = 3.4.13
 # makefile (from `Makefile', line 34)
 LIBFT_OBJS = $(LIBFT_SRCS:.c=.o)
 # environment
-XPC_SERVICE_NAME = com.microsoft.VSCode.2504.C2F1E384-B4EC-4E9F-ACB6-A6598019EB83
+XPC_SERVICE_NAME = com.microsoft.VSCode.2256.178BD0B7-C1AE-4E8D-89AF-F01083BABCFE
 # environment
 LC_TERMINAL_VERSION = 3.4.13
 # automatic
@@ -151,7 +152,7 @@ LC_TERMINAL_VERSION = 3.4.13
 # automatic
 +F = $(notdir $+)
 # environment
-ITERM_SESSION_ID = w0t0p0:2C03FDCA-0010-49CB-B25F-AC6482A50B9D
+ITERM_SESSION_ID = w0t0p0:67ADE486-1628-4A96-8D6A-496DEBB54F4C
 # environment
 COLORFGBG = 15;0
 # makefile (from `Makefile', line 32)
@@ -178,6 +179,7 @@ LC_ALL = C
 SECURITYSESSIONID = 186a8
 # automatic
 ^F = $(notdir $^)
+ 
 # default
 SUFFIXES := 
 # default
@@ -191,7 +193,7 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 8944
+VSCODE_PID = 1947
 # variable set hash-table stats:
 # Load=90/1024=9%, Rehash=0, Collisions=12/130=9%
 
@@ -201,8 +203,8 @@ VSCODE_PID = 8944
 
 # Directories
 
-# . (device 16777225, inode 6536297): 11 files, no impossibilities.
-# parcing (device 16777225, inode 6582344): 10 files, no impossibilities so far.
+# . (device 16777225, inode 6612420): 11 files, no impossibilities.
+# parcing (device 16777225, inode 6612563): 10 files, no impossibilities so far.
 
 # 21 files, no impossibilities in 2 directories.
 
@@ -217,12 +219,6 @@ VSCODE_PID = 8944
 # 1 implicit rules, 0 (0.0%) terminal.
 
 # Files
-
-# Not a target:
-execute_unit/execute_the_cmd.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
 
 # Not a target:
 libft/ft_putendl_fd.o:
@@ -273,7 +269,6 @@ libft/ft_memcpy.o:
 
 # Not a target:
 parcing/expand_variable.o:
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -377,7 +372,7 @@ execute_unit/ft_is_builting.o:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2023-09-16 08:34:10
+#  Last modified 2023-09-18 05:44:11
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -472,7 +467,8 @@ libft/ft_striteri.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-minishell: parcing/split_cmd.o parcing/struct_cmd.o parcing/split_args.o parcing/parser.o parcing/remove_quotes.o parcing/checker.o parcing/get_redir.o parcing/expand_variable.o libft/ft_isalpha.o libft/ft_isdigit.o libft/ft_isalnum.o libft/ft_isascii.o libft/ft_isprint.o libft/ft_putchar_fd.o libft/ft_putstr_fd.o libft/ft_putendl_fd.o libft/ft_strlen.o libft/ft_memcpy.o libft/ft_strdup.o libft/ft_toupper.o libft/ft_bzero.o libft/ft_memchr.o libft/ft_memmove.o libft/ft_strlcat.o libft/ft_strrchr.o libft/ft_memcmp.o libft/ft_memset.o libft/ft_strlcpy.o libft/ft_tolower.o libft/ft_strchr.o libft/ft_atoi.o libft/ft_strtrim.o libft/ft_strnstr.o libft/ft_substr.o libft/ft_calloc.o libft/ft_strjoin.o libft/ft_split.o libft/ft_itoa.o libft/ft_putnbr_fd.o libft/ft_striteri.o libft/ft_strncmp.o libft/ft_strmapi.o libft/ft_strcmp.o libft/ft_strndup.o libft/wd_replace.o libft/all_wrds_replace.o libft/ft_strcpy.o libft/all_wrds_replace.o libft/ft_isspace.o libft/ft_strnew.o libft/ft_lstnew_bonus.o libft/ft_lstadd_front_bonus.o libft/ft_lstsize_bonus.o libft/ft_lstlast_bonus.o libft/ft_lstadd_back_bonus.o libft/ft_lstdelone_bonus.o libft/ft_lstclear_bonus.o libft/ft_lstiter_bonus.o libft/ft_lstmap_bonus.o builting/ft_pwd.o builting/ft_exit.o builting/ft_export.o builting/ft_echo.o builting/ft_cd.o builting/ft_env.o builting/ft_unset.o execute_unit/execute_the_cmd.o execute_unit/check_the_cmd.o execute_unit/ft_redirection.o execute_unit/ft_error.o execute_unit/ft_strjoin_free.o execute_unit/ft_dupenvp.o execute_unit/ft_is_builting.o execute_unit/ft_pipe.o execute_unit/ft_signal.o main.o
+minishell: parcing/split_cmd.o parcing/struct_cmd.o parcing/split_args.o parcing/parser.o parcing/remove_quotes.o parcing/checker.o parcing/get_redir.o parcing/expand_variable.o libft/ft_isalpha.o libft/ft_isdigit.o libft/ft_isalnum.o libft/ft_isascii.o libft/ft_isprint.o libft/ft_putchar_fd.o libft/ft_putstr_fd.o libft/ft_putendl_fd.o libft/ft_strlen.o libft/ft_memcpy.o libft/ft_strdup.o libft/ft_toupper.o libft/ft_bzero.o libft/ft_memchr.o libft/ft_memmove.o libft/ft_strlcat.o libft/ft_strrchr.o libft/ft_memcmp.o libft/ft_memset.o libft/ft_strlcpy.o libft/ft_tolower.o libft/ft_strchr.o libft/ft_atoi.o libft/ft_strtrim.o libft/ft_strnstr.o libft/ft_substr.o libft/ft_calloc.o libft/ft_strjoin.o libft/ft_split.o libft/ft_itoa.o libft/ft_putnbr_fd.o libft/ft_striteri.o libft/ft_strncmp.o libft/ft_strmapi.o libft/ft_strcmp.o libft/ft_strndup.o libft/wd_replace.o libft/all_wrds_replace.o libft/ft_strcpy.o libft/all_wrds_replace.o libft/ft_isspace.o libft/ft_strnew.o libft/ft_lstnew_bonus.o libft/ft_lstadd_front_b 
+onus.o libft/ft_lstsize_bonus.o libft/ft_lstlast_bonus.o libft/ft_lstadd_back_bonus.o libft/ft_lstdelone_bonus.o libft/ft_lstclear_bonus.o libft/ft_lstiter_bonus.o libft/ft_lstmap_bonus.o builting/ft_pwd.o builting/ft_exit.o builting/ft_export.o builting/ft_echo.o builting/ft_cd.o builting/ft_env.o builting/ft_unset.o execute_unit/ft_execute.o execute_unit/ft_search_path.o execute_unit/ft_redirection.o execute_unit/ft_error.o execute_unit/ft_strjoin_free.o execute_unit/ft_dupenvp.o execute_unit/ft_is_builting.o execute_unit/ft_pipe.o execute_unit/ft_signal.o main.o
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
@@ -529,7 +525,6 @@ libft/ft_lstadd_front_bonus.o:
 builting/ft_exit.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
 #  File has not been updated.
 
 # Not a target:
@@ -570,12 +565,6 @@ builting/ft_pwd.o:
 
 # Not a target:
 .DEFAULT:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-execute_unit/check_the_cmd.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -667,7 +656,7 @@ libft/ft_strcmp.o:
 # Not a target:
 parcing/split_cmd.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-09-15 08:42:24
+#  Last modified 2023-09-17 07:01:18
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -746,6 +735,12 @@ libft/ft_putstr_fd.o:
 #  File has not been updated.
 
 # Not a target:
+execute_unit/ft_execute.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 libft/ft_lstlast_bonus.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -765,6 +760,13 @@ parcing/struct_cmd.o:
 
 # Not a target:
 libft/ft_putchar_fd.o:
+#  Implicit rule search has not been done.
+ 
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+execute_unit/ft_search_path.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -788,7 +790,7 @@ libft/ft_strtrim.o:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=85/1024=8%, Rehash=0, Collisions=14/182=8%
+# Load=85/1024=8%, Rehash=0, Collisions=12/182=7%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -800,6 +802,6 @@ libft/ft_strtrim.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sat Sep 16 08:35:17 2023
+# Finished Make data base on Mon Sep 18 07:37:54 2023
 
  

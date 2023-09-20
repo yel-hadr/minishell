@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:41:52 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/14 09:46:16 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/20 04:26:55 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,30 @@ int ft_get_redir_file(char *input, t_cmd *cmd, t_redir_type type)
 }
 
 
-char	**split_args(char *cmd , t_cmd *command)
+static char *ft_do_args(char *cmd, int *count, t_list *env)
+{
+	char *expended;
+	char *tmp;
+	char *result;
+
+	expended = NULL;
+	tmp = NULL;
+	tmp = ft_substr(cmd, 0,
+			(ft_strlen(cmd) - ft_strlen(next_arg(cmd))));
+	if (ft_strchr(tmp, '$'))
+	{
+		expended = expand_variable(tmp, env);
+		free(tmp);
+		tmp = expended;
+	}
+	result = remove_quotes(tmp);
+	free(tmp);
+	(*count)--;
+	return (result);
+}
+
+
+char	**split_args(char *cmd , t_cmd *command, t_list *env)
 {
 	int		count;
 	char	*tmp;
@@ -118,13 +141,7 @@ char	**split_args(char *cmd , t_cmd *command)
 			count--;
 		}
 		else
-		{
-			tmp = ft_substr(cmd, 0,
-					(ft_strlen(cmd) - ft_strlen(next_arg(cmd))));
-			result[index++] = remove_quotes(tmp);
-			free(tmp);
-			count--;
-		}
+			result[index++] = ft_do_args(cmd, &count, env);
 		tmp = NULL;
 		cmd = next_arg(cmd);
 	}

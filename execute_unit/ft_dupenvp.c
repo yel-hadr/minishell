@@ -6,47 +6,31 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 09:47:33 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/16 05:00:41 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/18 06:01:29 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/execute.h"
 
-
-char *ft_getenv(char *var, t_list *envp_list)
+char	*ft_getenv(char *var, t_list *envp_list)
 {
-	int len;
+	int	len;
 
 	if (!var)
 		return (NULL);
 	len = ft_strlen(var);
 	while (envp_list)
 	{
-		if (!ft_strncmp(envp_list->content, var, len) && ((char *)envp_list->content)[len] == '=')
+		if (!ft_strncmp(envp_list->content, var, len) && \
+			((char *)envp_list->content)[len] == '=')
 			return (envp_list->content);
 		envp_list = envp_list->next;
 	}
 	return (NULL);
 }
 
-int ft_setenv(char *var, char *value, t_list *envp)
+static int	ft_search_set(char *new, char *var, t_list *tmp_list)
 {
-	char *tmp;
-	char *new;
-	t_list *tmp_list;
-
-	if (!var)
-		return (0);
-	if (!value)
-		new = ft_strdup(var);
-	else
-	{
-		tmp = ft_strjoin(var, "=");
-		new = ft_strjoin(tmp, value);
-		free(tmp);
-	}
-
-	tmp_list = envp;
 	while (tmp_list)
 	{
 		if (!ft_strncmp(tmp_list->content, var, ft_strlen(var)))
@@ -66,11 +50,33 @@ int ft_setenv(char *var, char *value, t_list *envp)
 		}
 		tmp_list = tmp_list->next;
 	}
+	return (1);
+}
+
+int	ft_setenv(char *var, char *value, t_list *envp)
+{
+	char	*tmp;
+	char	*new;
+	t_list	*tmp_list;
+
+	if (!var)
+		return (0);
+	if (!value)
+		new = ft_strdup(var);
+	else
+	{
+		tmp = ft_strjoin(var, "=");
+		new = ft_strjoin(tmp, value);
+		free(tmp);
+	}
+	if (!ft_search_set(new, var, envp))
+		return (0);
 	tmp_list = ft_lstnew(new);
 	ft_lstadd_back(&envp, tmp_list);
-	return (0);	
+	return (0);
 }
-char **ft_lst_to_char(t_list *envp_list)
+
+char	**ft_lst_to_char(t_list *envp_list)
 {
 	char	**envp;
 	int		i;
@@ -78,7 +84,7 @@ char **ft_lst_to_char(t_list *envp_list)
 	i = 0;
 	if (!envp_list)
 		return (NULL);
-	envp = ft_calloc(sizeof(char *) ,(ft_lstsize(envp_list) + 1));
+	envp = ft_calloc(sizeof(char *), (ft_lstsize(envp_list) + 1));
 	if (!envp)
 		return (NULL);
 	while (envp_list)

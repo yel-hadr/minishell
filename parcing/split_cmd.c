@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:06:49 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/09 08:29:48 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/17 07:01:18 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static int	words_count(char *input)
 	return (count);
 }
 
-t_cmd	*split_cmd(char *input)
+t_cmd	*split_cmd(char *input, int *status)
 {
 	t_cmd	*result;
 	char	*temp;
@@ -88,6 +88,7 @@ t_cmd	*split_cmd(char *input)
 	}
 	if (check_quoted(result) || check_separator(result))
 	{
+		*status = 1;
 		free(result);
 		return (NULL);
 	}
