@@ -6,9 +6,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
- 
 
-# Make data base, printed on Mon Sep 18 07:37:54 2023
+# Make data base, printed on Thu Sep 21 05:53:46 2023
 
 # Variables
 
@@ -21,7 +20,6 @@ UTILS = minishell_utils.a
 # environment
 VSCODE_CRASH_REPORTER_PROCESS_TYPE = extensionHost
 # automatic
- 
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
@@ -42,25 +40,21 @@ MAKEFILE_LIST :=  Makefile
 # makefile (from `Makefile', line 37)
 OBJS = $(SRCS:.c=.o)
 # environment
-VSCODE_CWD = /Users/yel-hadr/Desktop/yel-hadr
+VSCODE_CWD = /
 # environment
-PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Users/yel-hadr/.brew/bin:/Users/yel-hadr/.brew/bin
+PATH = /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 # makefile (from `Makefile', line 33)
 PARCING_OBJS = $(PARCING_SRCS:.c=.o)
-# environment
-LSCOLORS = Gxfxcxdxbxegedabagacad
-# environment
-LaunchInstanceID = 6DD48D25-8BE0-4C9E-A5F6-6EA42B51F91C
 # makefile (from `Makefile', line 7)
 EXECUTION_SRCS = execute_unit/ft_execute.c execute_unit/ft_search_path.c execute_unit/ft_redirection.c execute_unit/ft_error.c execute_unit/ft_strjoin_free.c execute_unit/ft_dupenvp.c execute_unit/ft_is_builting.c execute_unit/ft_pipe.c execute_unit/ft_signal.c
+# environment
+LaunchInstanceID = CBC50963-8C24-4B07-871B-A54CE8B83B9D
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-LS_COLORS = di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43
-# environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.MOELqeajNU/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.DMWaoIIuQj/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -82,23 +76,19 @@ LOGNAME = yel-hadr
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
-ZSH = /Users/yel-hadr/.oh-my-zsh
-# environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
 XPC_FLAGS = 0x0
-# environment
-COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
-# environment
-LC_TERMINAL = iTerm2
+# default
+MAKECMDGOALS := all
 # makefile (from `Makefile', line 30)
 SRCS = main.c 
 # environment
-SHLVL = 2
+SHLVL = 1
 # makefile (from `Makefile', line 2)
 CC = cc
 # default
@@ -109,20 +99,12 @@ USER = yel-hadr
 PARCING_SRCS = parcing/split_cmd.c parcing/struct_cmd.c parcing/split_args.c parcing/parser.c parcing/remove_quotes.c parcing/checker.c parcing/get_redir.c parcing/expand_variable.c
 # makefile
 .DEFAULT_GOAL := all
-# default
-MAKECMDGOALS := all
-# environment
-TERM_SESSION_ID = w0t0p0:67ADE486-1628-4A96-8D6A-496DEBB54F4C
 # makefile (from `Makefile', line 1)
 NAME = minishell
-# environment
-LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
 MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
-# environment
-TERM_PROGRAM = iTerm.app
 # default
 .VARIABLES := 
 # environment
@@ -139,22 +121,14 @@ MAKEFLAGS = Rrqp
 MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
-# environment
-TERM_PROGRAM_VERSION = 3.4.13
 # makefile (from `Makefile', line 34)
 LIBFT_OBJS = $(LIBFT_SRCS:.c=.o)
 # environment
-XPC_SERVICE_NAME = com.microsoft.VSCode.2256.178BD0B7-C1AE-4E8D-89AF-F01083BABCFE
-# environment
-LC_TERMINAL_VERSION = 3.4.13
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000003.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
-# environment
-ITERM_SESSION_ID = w0t0p0:67ADE486-1628-4A96-8D6A-496DEBB54F4C
-# environment
-COLORFGBG = 15;0
 # makefile (from `Makefile', line 32)
 EXECUTION_OBJS = $(EXECUTION_SRCS:.c=.o)
 # environment
@@ -170,16 +144,11 @@ LIBFT_SRCS = libft/ft_isalpha.c libft/ft_isdigit.c libft/ft_isalnum.c libft/ft_i
 # automatic
 <F = $(notdir $<)
 # environment
-ITERM_PROFILE = Default
-# environment
-PAGER = less
-# environment
 LC_ALL = C
 # environment
 SECURITYSESSIONID = 186a8
 # automatic
 ^F = $(notdir $^)
- 
 # default
 SUFFIXES := 
 # default
@@ -187,15 +156,11 @@ SUFFIXES :=
 # environment
 MAKELEVEL := 0
 # environment
-CLICOLOR = 1
-# environment
 LANG = C
 # environment
-TERM = xterm-256color
-# environment
-VSCODE_PID = 1947
+VSCODE_PID = 3119
 # variable set hash-table stats:
-# Load=90/1024=9%, Rehash=0, Collisions=12/130=9%
+# Load=74/1024=7%, Rehash=0, Collisions=7/110=6%
 
 # Pattern-specific Variable Values
 
@@ -203,10 +168,13 @@ VSCODE_PID = 1947
 
 # Directories
 
-# . (device 16777225, inode 6612420): 11 files, no impossibilities.
-# parcing (device 16777225, inode 6612563): 10 files, no impossibilities so far.
+# . (device 16777225, inode 6612420): 14 files, no impossibilities.
+# execute_unit (device 16777225, inode 6612495): 19 files, no impossibilities so far.
+# parcing (device 16777225, inode 6612563): 19 files, no impossibilities so far.
+# builting (device 16777225, inode 6612487): 15 files, no impossibilities so far.
+# libft (device 16777225, inode 6612511): 101 files, no impossibilities so far.
 
-# 21 files, no impossibilities in 2 directories.
+# 168 files, no impossibilities in 5 directories.
 
 # Implicit Rules
 
@@ -221,37 +189,129 @@ VSCODE_PID = 1947
 # Files
 
 # Not a target:
-libft/ft_putendl_fd.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_isdigit.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-libft/wd_replace.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_strlcpy.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+libft/ft_putendl_fd.o: libft/ft_putendl_fd.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_putendl_fd'
+#  Last modified 2023-09-21 02:55:26
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+libft/wd_replace.o: libft/wd_replace.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/wd_replace'
+#  Last modified 2023-09-21 02:55:28
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+libft/ft_strmapi.o: libft/ft_strmapi.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_strmapi'
+#  Last modified 2023-09-21 02:55:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+ 
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
 
 # Not a target:
-libft/ft_strmapi.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_strncmp.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+parcing/remove_quotes.o: parcing/remove_quotes.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `parcing/remove_quotes'
+#  Last modified 2023-09-21 02:55:26
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
 
 # Not a target:
-parcing/remove_quotes.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+parcing/checker.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+libft/ft_strcpy.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+libft/ft_isalnum.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+libft/ft_lstadd_back_bonus.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 all: minishell
 #  Command-line target.
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
-#  Needs to be updated (-q is set).
+#  Successfully updated.
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 do: all
 #  Implicit rule search has not been done.
@@ -261,95 +321,309 @@ do: all
 	./minishell
 	
 
-# Not a target:
-libft/ft_memcpy.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_memcpy.o: libft/ft_memcpy.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_memcpy'
+#  Last modified 2023-09-21 02:55:26
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+parcing/expand_variable.o: parcing/expand_variable.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `parcing/expand_variable'
+#  Last modified 2023-09-21 02:55:26
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
 
 # Not a target:
-parcing/expand_variable.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_strdup.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+execute_unit/ft_strjoin_free.o: execute_unit/ft_strjoin_free.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `execute_unit/ft_strjoin_free'
+#  Last modified 2023-09-21 02:55:29
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+libft/ft_memcmp.o: libft/ft_memcmp.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_memcmp'
+#  Last modified 2023-09-21 02:55:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+libft/ft_strlen.o: libft/ft_strlen.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_strlen'
+#  Last modified 2023-09-21 02:55:26
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
 
 # Not a target:
-execute_unit/ft_strjoin_free.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_lstiter_bonus.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-libft/ft_memcmp.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_strlen.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+builting/ft_echo.o: builting/ft_echo.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `builting/ft_echo'
+#  Last modified 2023-09-21 02:55:29
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+libft/ft_isdigit.o: libft/ft_isdigit.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_isdigit'
+#  Last modified 2023-09-21 02:55:26
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
 
 # Not a target:
-libft/ft_strlen.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_strchr.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+execute_unit/ft_signal.o: execute_unit/ft_signal.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `execute_unit/ft_signal'
+#  Last modified 2023-09-21 02:55:29
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
 
 # Not a target:
-builting/ft_echo.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+main.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-21 02:55:16
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+libft/ft_isspace.o: libft/ft_isspace.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_isspace'
+#  Last modified 2023-09-21 02:55:28
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
 
 # Not a target:
-libft/ft_isdigit.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_strnew.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-execute_unit/ft_signal.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+execute_unit/ft_error.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-18 06:02:09
+#  File has been updated.
+#  Successfully updated.
+ 
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+libft/ft_memchr.o: libft/ft_memchr.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_memchr'
+#  Last modified 2023-09-21 02:55:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
 
 # Not a target:
-libft/ft_isspace.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_toupper.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+builting/ft_export.o: builting/ft_export.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `builting/ft_export'
+#  Last modified 2023-09-21 02:55:29
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+libft/ft_lstnew_bonus.o: libft/ft_lstnew_bonus.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_lstnew_bonus'
+#  Last modified 2023-09-21 02:55:28
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+libft/ft_memset.o: libft/ft_memset.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_memset'
+#  Last modified 2023-09-21 02:55:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
 
 # Not a target:
-libft/ft_memchr.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_strnstr.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-builting/ft_export.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_putstr_fd.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-libft/ft_lstnew_bonus.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+execute_unit/ft_execute.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-18 06:03:18
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+libft/ft_tolower.o: libft/ft_tolower.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_tolower'
+#  Last modified 2023-09-21 02:55:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
 
 # Not a target:
-libft/ft_memset.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_lstlast_bonus.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-# Not a target:
-libft/ft_tolower.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-libft/ft_strrchr.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_strrchr.o: libft/ft_strrchr.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_strrchr'
+#  Last modified 2023-09-21 02:55:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
 
 # Not a target:
 .SUFFIXES:
@@ -357,17 +631,31 @@ libft/ft_strrchr.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-libft/ft_split.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_split.o: libft/ft_split.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_split'
+#  Last modified 2023-09-21 02:55:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
 
-# Not a target:
-execute_unit/ft_is_builting.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+execute_unit/ft_is_builting.o: execute_unit/ft_is_builting.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `execute_unit/ft_is_builting'
+#  Last modified 2023-09-21 02:55:29
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
 
 # Not a target:
 Makefile:
@@ -379,102 +667,237 @@ Makefile:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-libft/ft_strlcat.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-libft/all_wrds_replace.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-libft/ft_strjoin.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-libft/ft_bzero.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-libft/ft_lstsize_bonus.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-libft/ft_isprint.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-parcing/parser.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-libft/ft_atoi.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-execute_unit/ft_redirection.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-parcing/split_cmd.o: parcing/split_cmd.c
+libft/ft_putchar_fd.c:
 #  Implicit rule search has been done.
-#  Implicit/static pattern stem: `parcing/split_cmd'
-#  File does not exist.
+#  Last modified 2023-09-17 06:35:44
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := parcing/split_cmd.o
-# automatic
-# % := 
-# automatic
-# * := parcing/split_cmd
-# automatic
-# + := parcing/split_cmd.c
-# automatic
-# | := 
-# automatic
-# < := parcing/split_cmd.c
-# automatic
-# ^ := parcing/split_cmd.c
-# automatic
-# ? := parcing/split_cmd.c
+#  Successfully updated.
 # variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/15=7%
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+execute_unit/ft_search_path.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-18 05:40:35
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+libft/ft_strlcat.o: libft/ft_strlcat.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_strlcat'
+#  Last modified 2023-09-21 02:55:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 #  commands to execute (from `Makefile', line 40):
 	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
 	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
 	
 
 # Not a target:
-libft/ft_striteri.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-minishell: parcing/split_cmd.o parcing/struct_cmd.o parcing/split_args.o parcing/parser.o parcing/remove_quotes.o parcing/checker.o parcing/get_redir.o parcing/expand_variable.o libft/ft_isalpha.o libft/ft_isdigit.o libft/ft_isalnum.o libft/ft_isascii.o libft/ft_isprint.o libft/ft_putchar_fd.o libft/ft_putstr_fd.o libft/ft_putendl_fd.o libft/ft_strlen.o libft/ft_memcpy.o libft/ft_strdup.o libft/ft_toupper.o libft/ft_bzero.o libft/ft_memchr.o libft/ft_memmove.o libft/ft_strlcat.o libft/ft_strrchr.o libft/ft_memcmp.o libft/ft_memset.o libft/ft_strlcpy.o libft/ft_tolower.o libft/ft_strchr.o libft/ft_atoi.o libft/ft_strtrim.o libft/ft_strnstr.o libft/ft_substr.o libft/ft_calloc.o libft/ft_strjoin.o libft/ft_split.o libft/ft_itoa.o libft/ft_putnbr_fd.o libft/ft_striteri.o libft/ft_strncmp.o libft/ft_strmapi.o libft/ft_strcmp.o libft/ft_strndup.o libft/wd_replace.o libft/all_wrds_replace.o libft/ft_strcpy.o libft/all_wrds_replace.o libft/ft_isspace.o libft/ft_strnew.o libft/ft_lstnew_bonus.o libft/ft_lstadd_front_b 
-onus.o libft/ft_lstsize_bonus.o libft/ft_lstlast_bonus.o libft/ft_lstadd_back_bonus.o libft/ft_lstdelone_bonus.o libft/ft_lstclear_bonus.o libft/ft_lstiter_bonus.o libft/ft_lstmap_bonus.o builting/ft_pwd.o builting/ft_exit.o builting/ft_export.o builting/ft_echo.o builting/ft_cd.o builting/ft_env.o builting/ft_unset.o execute_unit/ft_execute.o execute_unit/ft_search_path.o execute_unit/ft_redirection.o execute_unit/ft_error.o execute_unit/ft_strjoin_free.o execute_unit/ft_dupenvp.o execute_unit/ft_is_builting.o execute_unit/ft_pipe.o execute_unit/ft_signal.o main.o
-#  Implicit rule search has not been done.
-#  File does not exist.
+libft/ft_isascii.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
 #  File has been updated.
-#  Needs to be updated (-q is set).
+#  Successfully updated.
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+libft/all_wrds_replace.o: libft/all_wrds_replace.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/all_wrds_replace'
+#  Last modified 2023-09-21 02:55:28
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+libft/ft_strjoin.o: libft/ft_strjoin.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_strjoin'
+#  Last modified 2023-09-21 02:55:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+# Not a target:
+builting/ft_cd.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+libft/ft_lstclear_bonus.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+libft/ft_strtrim.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+ 
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+libft/ft_bzero.o: libft/ft_bzero.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_bzero'
+#  Last modified 2023-09-21 02:55:26
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+libft/ft_lstsize_bonus.o: libft/ft_lstsize_bonus.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_lstsize_bonus'
+#  Last modified 2023-09-21 02:55:28
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+libft/ft_isprint.o: libft/ft_isprint.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_isprint'
+#  Last modified 2023-09-21 02:55:26
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+parcing/parser.o: parcing/parser.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `parcing/parser'
+#  Last modified 2023-09-21 02:55:26
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+libft/ft_atoi.o: libft/ft_atoi.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_atoi'
+#  Last modified 2023-09-21 02:55:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+execute_unit/ft_redirection.o: execute_unit/ft_redirection.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `execute_unit/ft_redirection'
+#  Last modified 2023-09-21 02:55:29
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+# Not a target:
+libft/ft_itoa.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+parcing/split_cmd.o: parcing/split_cmd.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `parcing/split_cmd'
+#  Last modified 2023-09-21 02:55:25
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+# Not a target:
+libft/wd_replace.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+libft/ft_strmapi.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+libft/ft_striteri.o: libft/ft_striteri.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_striteri'
+#  Last modified 2023-09-21 02:55:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+minishell: parcing/split_cmd.o parcing/struct_cmd.o parcing/split_args.o parcing/parser.o parcing/remove_quotes.o parcing/checker.o parcing/get_redir.o parcing/expand_variable.o libft/ft_isalpha.o libft/ft_isdigit.o libft/ft_isalnum.o libft/ft_isascii.o libft/ft_isprint.o libft/ft_putchar_fd.o libft/ft_putstr_fd.o libft/ft_putendl_fd.o libft/ft_strlen.o libft/ft_memcpy.o libft/ft_strdup.o libft/ft_toupper.o libft/ft_bzero.o libft/ft_memchr.o libft/ft_memmove.o libft/ft_strlcat.o libft/ft_strrchr.o libft/ft_memcmp.o libft/ft_memset.o libft/ft_strlcpy.o libft/ft_tolower.o libft/ft_strchr.o libft/ft_atoi.o libft/ft_strtrim.o libft/ft_strnstr.o libft/ft_substr.o libft/ft_calloc.o libft/ft_strjoin.o libft/ft_split.o libft/ft_itoa.o libft/ft_putnbr_fd.o libft/ft_striteri.o libft/ft_strncmp.o libft/ft_strmapi.o libft/ft_strcmp.o libft/ft_strndup.o libft/wd_replace.o libft/all_wrds_replace.o libft/ft_strcpy.o libft/all_wrds_replace.o libft/ft_isspace.o libft/ft_strnew.o libft/ft_lstnew_bonus.o libft/ft_lstadd_front_bonus.o libft/ft_lstsize_bonus.o libft/ft_lstlast_bonus.o libft/ft_lstadd_back_bonus.o libft/ft_lstdelone_bonus.o libft/ft_lstclear_bonus.o libft/ft_lstiter_bonus.o libft/ft_lstmap_bonus.o builting/ft_pwd.o builting/ft_exit.o builting/ft_export.o builting/ft_echo.o builting/ft_cd.o builting/ft_env.o builting/ft_unset.o execute_unit/ft_execute.o execute_unit/ft_search_path.o execute_unit/ft_redirection.o execute_unit/ft_error.o execute_unit/ft_strjoin_free.o execute_unit/ft_dupenvp.o execute_unit/ft_is_builting.o execute_unit/ft_pipe.o execute_unit/ft_signal.o main.o
+#  Implicit rule search has not been done.
+#  Last modified 2023-09-21 02:55:29
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 #  commands to execute (from `Makefile', line 46):
 	@ar rc $(UTILS) $(EXECUTION_OBJS) $(PARCING_OBJS) $(LIBFT_OBJS) $(BUILTING_OBJS)
 	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $(UTILS)
@@ -483,22 +906,80 @@ onus.o libft/ft_lstsize_bonus.o libft/ft_lstlast_bonus.o libft/ft_lstadd_back_bo
 	
 
 # Not a target:
-libft/ft_lstmap_bonus.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+parcing/remove_quotes.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+libft/ft_lstmap_bonus.o: libft/ft_lstmap_bonus.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_lstmap_bonus'
+#  Last modified 2023-09-21 02:55:28
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+parcing/get_redir.o: parcing/get_redir.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `parcing/get_redir'
+#  Last modified 2023-09-21 02:55:26
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+libft/ft_itoa.o: libft/ft_itoa.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_itoa'
+#  Last modified 2023-09-21 02:55:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+ 
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
 
 # Not a target:
-parcing/get_redir.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_strndup.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-libft/ft_itoa.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_memcpy.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+parcing/expand_variable.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 fclean: clean
 #  Implicit rule search has not been done.
@@ -510,58 +991,248 @@ fclean: clean
 	
 
 # Not a target:
-builting/ft_env.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+execute_unit/ft_strjoin_free.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-libft/ft_lstadd_front_bonus.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_memcmp.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+builting/ft_env.o: builting/ft_env.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `builting/ft_env'
+#  Last modified 2023-09-21 02:55:29
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+libft/ft_lstadd_front_bonus.o: libft/ft_lstadd_front_bonus.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_lstadd_front_bonus'
+#  Last modified 2023-09-21 02:55:28
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
 
 # Not a target:
-builting/ft_exit.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+builting/ft_echo.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-20 04:38:53
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+builting/ft_exit.o: builting/ft_exit.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `builting/ft_exit'
+#  Last modified 2023-09-21 02:55:28
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+libft/ft_lstdelone_bonus.o: libft/ft_lstdelone_bonus.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_lstdelone_bonus'
+#  Last modified 2023-09-21 02:55:28
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
 
 # Not a target:
-libft/ft_lstdelone_bonus.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+execute_unit/ft_signal.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-20 07:18:26
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-libft/ft_putnbr_fd.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_strcmp.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-libft/ft_calloc.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_isspace.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-libft/ft_substr.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_isalpha.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-parcing/split_args.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_memchr.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+libft/ft_putnbr_fd.o: libft/ft_putnbr_fd.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_putnbr_fd'
+#  Last modified 2023-09-21 02:55:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
 
 # Not a target:
-builting/ft_pwd.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+parcing/struct_cmd.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+builting/ft_export.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 23:55:39
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+libft/ft_lstnew_bonus.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+libft/ft_memset.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+libft/ft_strlcat.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+libft/ft_calloc.o: libft/ft_calloc.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_calloc'
+#  Last modified 2023-09-21 02:55:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+libft/ft_substr.o: libft/ft_substr.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_substr'
+#  Last modified 2023-09-21 02:55:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+parcing/split_args.o: parcing/split_args.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `parcing/split_args'
+#  Last modified 2023-09-21 02:55:26
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+# Not a target:
+libft/ft_tolower.c:
+ 
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+builting/ft_pwd.o: builting/ft_pwd.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `builting/ft_pwd'
+#  Last modified 2023-09-21 02:55:28
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
 
 # Not a target:
 .DEFAULT:
@@ -570,21 +1241,107 @@ builting/ft_pwd.o:
 #  File has not been updated.
 
 # Not a target:
-libft/ft_isalpha.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_strrchr.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-builting/ft_unset.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+execute_unit/ft_dupenvp.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-18 06:01:29
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+libft/ft_strjoin.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+libft/ft_split.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+libft/ft_isalpha.o: libft/ft_isalpha.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_isalpha'
+#  Last modified 2023-09-21 02:55:26
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+# Not a target:
+execute_unit/ft_is_builting.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-18 06:12:50
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+libft/ft_atoi.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+execute_unit/ft_pipe.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-20 07:00:21
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+builting/ft_unset.o: builting/ft_unset.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `builting/ft_unset'
+#  Last modified 2023-09-21 02:55:29
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
 
 re: fclean all
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+
+# Not a target:
+libft/all_wrds_replace.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 clean:
 #  Implicit rule search has not been done.
@@ -606,52 +1363,154 @@ clean:
 	
 
 # Not a target:
-libft/ft_strlcpy.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_bzero.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-libft/ft_strndup.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_lstsize_bonus.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+libft/ft_strlcpy.o: libft/ft_strlcpy.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_strlcpy'
+#  Last modified 2023-09-21 02:55:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
 
 # Not a target:
-libft/ft_strncmp.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_isprint.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-parcing/checker.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+parcing/parser.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-20 07:02:13
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-# Not a target:
-libft/ft_strcpy.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_strndup.o: libft/ft_strndup.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_strndup'
+#  Last modified 2023-09-21 02:55:28
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
 
-# Not a target:
-libft/ft_isalnum.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_strncmp.o: libft/ft_strncmp.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_strncmp'
+#  Last modified 2023-09-21 02:55:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
 
-# Not a target:
-libft/ft_lstadd_back_bonus.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+parcing/checker.o: parcing/checker.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `parcing/checker'
+#  Last modified 2023-09-21 02:55:26
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
 
+libft/ft_strcpy.o: libft/ft_strcpy.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_strcpy'
+#  Last modified 2023-09-21 02:55:28
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+libft/ft_isalnum.o: libft/ft_isalnum.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_isalnum'
+#  Last modified 2023-09-21 02:55:26
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+ 
 # Not a target:
-libft/ft_strcmp.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+execute_unit/ft_redirection.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+libft/ft_lstadd_back_bonus.o: libft/ft_lstadd_back_bonus.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_lstadd_back_bonus'
+#  Last modified 2023-09-21 02:55:28
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+libft/ft_strcmp.o: libft/ft_strcmp.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_strcmp'
+#  Last modified 2023-09-21 02:55:28
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
 
 # Not a target:
 parcing/split_cmd.c:
@@ -663,134 +1522,416 @@ parcing/split_cmd.c:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-libft/ft_strdup.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_striteri.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+libft/ft_strdup.o: libft/ft_strdup.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_strdup'
+#  Last modified 2023-09-21 02:55:26
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
 
 # Not a target:
-libft/ft_lstiter_bonus.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_lstmap_bonus.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-execute_unit/ft_dupenvp.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+parcing/get_redir.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-20 07:03:51
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+libft/ft_lstiter_bonus.o: libft/ft_lstiter_bonus.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_lstiter_bonus'
+#  Last modified 2023-09-21 02:55:28
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+execute_unit/ft_dupenvp.o: execute_unit/ft_dupenvp.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `execute_unit/ft_dupenvp'
+#  Last modified 2023-09-21 02:55:29
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+libft/ft_memmove.o: libft/ft_memmove.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_memmove'
+#  Last modified 2023-09-21 02:55:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+libft/ft_strchr.o: libft/ft_strchr.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_strchr'
+#  Last modified 2023-09-21 02:55:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+main.o: main.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `main'
+#  Last modified 2023-09-21 02:55:29
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+libft/ft_strnew.o: libft/ft_strnew.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_strnew'
+#  Last modified 2023-09-21 02:55:28
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+execute_unit/ft_error.o: execute_unit/ft_error.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `execute_unit/ft_error'
+#  Last modified 2023-09-21 02:55:29
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
 
 # Not a target:
-libft/ft_memmove.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+builting/ft_env.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-libft/ft_strchr.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_lstadd_front_bonus.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+libft/ft_toupper.o: libft/ft_toupper.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_toupper'
+#  Last modified 2023-09-21 02:55:26
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+execute_unit/ft_pipe.o: execute_unit/ft_pipe.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `execute_unit/ft_pipe'
+#  Last modified 2023-09-21 02:55:29
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
 
 # Not a target:
-main.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+builting/ft_exit.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-libft/ft_strnew.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_lstdelone_bonus.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-# Not a target:
-execute_unit/ft_error.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-libft/ft_toupper.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-execute_unit/ft_pipe.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-libft/ft_strnstr.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-libft/ft_putstr_fd.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-execute_unit/ft_execute.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-libft/ft_lstlast_bonus.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-builting/ft_cd.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-parcing/struct_cmd.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-libft/ft_putchar_fd.o:
-#  Implicit rule search has not been done.
+libft/ft_strnstr.o: libft/ft_strnstr.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_strnstr'
+#  Last modified 2023-09-21 02:55:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
  
-#  Modification time never checked.
-#  File has not been updated.
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+libft/ft_putstr_fd.o: libft/ft_putstr_fd.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_putstr_fd'
+#  Last modified 2023-09-21 02:55:26
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
 
 # Not a target:
-execute_unit/ft_search_path.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_putnbr_fd.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+execute_unit/ft_execute.o: execute_unit/ft_execute.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `execute_unit/ft_execute'
+#  Last modified 2023-09-21 02:55:29
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+libft/ft_lstlast_bonus.o: libft/ft_lstlast_bonus.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_lstlast_bonus'
+#  Last modified 2023-09-21 02:55:28
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
 
 # Not a target:
-libft/ft_isascii.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_putendl_fd.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-libft/ft_lstclear_bonus.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_calloc.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-libft/ft_strtrim.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+libft/ft_substr.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+builting/ft_cd.o: builting/ft_cd.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `builting/ft_cd'
+#  Last modified 2023-09-21 02:55:29
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+parcing/struct_cmd.o: parcing/struct_cmd.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `parcing/struct_cmd'
+#  Last modified 2023-09-21 02:55:25
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+# Not a target:
+parcing/split_args.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-20 22:46:20
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+builting/ft_pwd.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+libft/ft_putchar_fd.o: libft/ft_putchar_fd.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_putchar_fd'
+#  Last modified 2023-09-21 02:55:26
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+execute_unit/ft_search_path.o: execute_unit/ft_search_path.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `execute_unit/ft_search_path'
+#  Last modified 2023-09-21 02:55:29
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+libft/ft_isascii.o: libft/ft_isascii.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_isascii'
+#  Last modified 2023-09-21 02:55:26
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+# Not a target:
+libft/ft_memmove.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+builting/ft_unset.c:
+#  Implicit rule search has been done.
+#  Last modified 2023-09-17 06:35:44
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+libft/ft_lstclear_bonus.o: libft/ft_lstclear_bonus.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_lstclear_bonus'
+#  Last modified 2023-09-21 02:55:28
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
+
+libft/ft_strtrim.o: libft/ft_strtrim.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `libft/ft_strtrim'
+#  Last modified 2023-09-21 02:55:27
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 40):
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
+	
 
 # files hash-table stats:
-# Load=85/1024=8%, Rehash=0, Collisions=12/182=7%
+# Load=159/1024=16%, Rehash=0, Collisions=128/478=27%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -802,6 +1943,6 @@ libft/ft_strtrim.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Mon Sep 18 07:37:54 2023
+# Finished Make data base on Thu Sep 21 05:53:46 2023
 
  

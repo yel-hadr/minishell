@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:41:52 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/20 04:26:55 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/20 22:46:20 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static char	*next_arg(char *cmd)
 	i = 0;
 	sq = 0;
 	dq = 0;
-	while (cmd[i] && (cmd[i] != ' ' || sq || dq))
+	while (cmd[i] && (!ft_strchr("\t |<>", cmd[i]) || sq || dq))
 	{
 		if (cmd[i] == '\'' && !dq)
 			sq = !sq;
@@ -141,7 +141,10 @@ char	**split_args(char *cmd , t_cmd *command, t_list *env)
 			count--;
 		}
 		else
+		{
 			result[index++] = ft_do_args(cmd, &count, env);
+			next_arg(cmd);
+		}
 		tmp = NULL;
 		cmd = next_arg(cmd);
 	}

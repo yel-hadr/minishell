@@ -2,6 +2,7 @@ make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/yel-hadr/Desktop/yel-hadr'
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c parcing/split_cmd.c -o parcing/split_cmd.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" parcing/split_cmd.c
+ 
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c parcing/struct_cmd.c -o parcing/struct_cmd.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" parcing/struct_cmd.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c parcing/split_args.c -o parcing/split_args.o
@@ -12,6 +13,7 @@ cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c parcing/remov
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" parcing/remove_quotes.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c parcing/checker.c -o parcing/checker.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" parcing/checker.c
+ 
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c parcing/get_redir.c -o parcing/get_redir.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" parcing/get_redir.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c parcing/expand_variable.c -o parcing/expand_variable.o
@@ -92,7 +94,6 @@ cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/wd_repl
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" libft/wd_replace.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/all_wrds_replace.c -o libft/all_wrds_replace.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" libft/all_wrds_replace.c
- 
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_strcpy.c -o libft/ft_strcpy.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" libft/ft_strcpy.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_isspace.c -o libft/ft_isspace.o
@@ -105,6 +106,7 @@ cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_lsta
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" libft/ft_lstadd_front_bonus.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_lstsize_bonus.c -o libft/ft_lstsize_bonus.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" libft/ft_lstsize_bonus.c
+ 
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_lstlast_bonus.c -o libft/ft_lstlast_bonus.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" libft/ft_lstlast_bonus.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_lstadd_back_bonus.c -o libft/ft_lstadd_back_bonus.o
@@ -133,7 +135,6 @@ cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c builting/ft_u
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" builting/ft_unset.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c execute_unit/ft_execute.c -o execute_unit/ft_execute.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" execute_unit/ft_execute.c
- 
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c execute_unit/ft_search_path.c -o execute_unit/ft_search_path.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" execute_unit/ft_search_path.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c execute_unit/ft_redirection.c -o execute_unit/ft_redirection.o

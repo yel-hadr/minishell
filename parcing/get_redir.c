@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 11:17:38 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/20 06:28:12 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/20 07:03:51 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,14 @@ char	*ft_get_heredoc(char *heredoc)
 	char *tmp;
 	char *line;
 	
-	if (!heredoc)
+	if (!heredoc || g_sig == -2)
 		return (NULL);
 	tmp = NULL;
 	line = NULL;
 	while (1)
 	{
 		line = readline("> ");
-		if (!ft_strcmp(line, heredoc) || !line )
+		if (!ft_strcmp(line, heredoc) || !line || g_sig == -2)
 			break ;
 		tmp = ft_strjoin(tmp, line);
 		tmp = ft_strjoin(tmp, "\n");
