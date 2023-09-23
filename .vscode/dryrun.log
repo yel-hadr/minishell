@@ -13,11 +13,11 @@ cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c parcing/remov
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" parcing/remove_quotes.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c parcing/checker.c -o parcing/checker.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" parcing/checker.c
- 
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c parcing/get_redir.c -o parcing/get_redir.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" parcing/get_redir.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c parcing/expand_variable.c -o parcing/expand_variable.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" parcing/expand_variable.c
+ 
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_isalpha.c -o libft/ft_isalpha.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" libft/ft_isalpha.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_isdigit.c -o libft/ft_isdigit.o
@@ -28,6 +28,7 @@ cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_isas
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" libft/ft_isascii.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_isprint.c -o libft/ft_isprint.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" libft/ft_isprint.c
+ 
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_putchar_fd.c -o libft/ft_putchar_fd.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" libft/ft_putchar_fd.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_putstr_fd.c -o libft/ft_putstr_fd.o
@@ -40,6 +41,7 @@ cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_memc
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" libft/ft_memcpy.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_strdup.c -o libft/ft_strdup.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" libft/ft_strdup.c
+ 
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_toupper.c -o libft/ft_toupper.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" libft/ft_toupper.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_bzero.c -o libft/ft_bzero.o
@@ -62,6 +64,7 @@ cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_tolo
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" libft/ft_tolower.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_strchr.c -o libft/ft_strchr.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" libft/ft_strchr.c
+ 
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_atoi.c -o libft/ft_atoi.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" libft/ft_atoi.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_strtrim.c -o libft/ft_strtrim.o
@@ -82,6 +85,7 @@ cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_putn
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" libft/ft_putnbr_fd.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_striteri.c -o libft/ft_striteri.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" libft/ft_striteri.c
+ 
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_strncmp.c -o libft/ft_strncmp.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" libft/ft_strncmp.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_strmapi.c -o libft/ft_strmapi.o
@@ -106,7 +110,6 @@ cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_lsta
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" libft/ft_lstadd_front_bonus.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_lstsize_bonus.c -o libft/ft_lstsize_bonus.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" libft/ft_lstsize_bonus.c
- 
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_lstlast_bonus.c -o libft/ft_lstlast_bonus.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" libft/ft_lstlast_bonus.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_lstadd_back_bonus.c -o libft/ft_lstadd_back_bonus.o
@@ -119,6 +122,7 @@ cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_lsti
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" libft/ft_lstiter_bonus.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c libft/ft_lstmap_bonus.c -o libft/ft_lstmap_bonus.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" libft/ft_lstmap_bonus.c
+ 
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c builting/ft_pwd.c -o builting/ft_pwd.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" builting/ft_pwd.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c builting/ft_exit.c -o builting/ft_exit.o
@@ -145,6 +149,7 @@ cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c execute_unit/
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" execute_unit/ft_strjoin_free.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c execute_unit/ft_dupenvp.c -o execute_unit/ft_dupenvp.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" execute_unit/ft_dupenvp.c
+ 
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c execute_unit/ft_is_builting.c -o execute_unit/ft_is_builting.o
 printf "\033[0;32mCompilation [OK]\033[0m %s\n" execute_unit/ft_is_builting.c
 cc -Werror -Wextra -Wall -O3   -I ~/.brew/opt/readline/include/ -c execute_unit/ft_pipe.c -o execute_unit/ft_pipe.o
