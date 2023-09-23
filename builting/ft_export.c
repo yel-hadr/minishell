@@ -6,16 +6,15 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 14:23:40 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/11 02:41:35 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/23 23:38:38 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/builting.h"
 
-
 static int	ft_print_export(t_list *env)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	tmp = env;
 	while (tmp)
@@ -23,7 +22,8 @@ static int	ft_print_export(t_list *env)
 		ft_putstr_fd("declare -x ", 1);
 		if (ft_strchr(tmp->content, '='))
 		{
-			write(1, tmp->content, ft_strchr(tmp->content, '=') - (char *)tmp->content + 1);
+			write(1, tmp->content, ft_strchr(tmp->content, '=') \
+				- (char *)tmp->content + 1);
 			ft_putstr_fd("\"", 1);
 			ft_putstr_fd(ft_strchr(tmp->content, '=') + 1, 1);
 			ft_putstr_fd("\"", 1);
@@ -38,6 +38,8 @@ static int	ft_print_export(t_list *env)
 
 static int	check_var(char *var)
 {
+	if (!var)
+		return (1);
 	if (!ft_isalpha(*var) && *var != '_')
 		return (1);
 	while (*var && *var != '=')
@@ -49,12 +51,23 @@ static int	check_var(char *var)
 	return (0);
 }
 
-
-int    ft_export(char **args, t_list *env)
+static int	ft_set_export(char *args, t_list *env)
 {
-	int i;
-	char *var;
-	char *value;
+	char	*var;
+	char	*value;
+
+	var = ft_substr(args, 0, ft_strchr(args, '=') - args);
+	value = ft_substr(args, ft_strchr(args, '=') \
+			- args + 1, ft_strlen(args));
+	ft_setenv(var, value, env);
+	free(var);
+	free(value);
+	return (0);
+}
+
+int	ft_export(char **args, t_list *env)
+{
+	int		i;
 
 	i = 1;
 	if (!args[1])
@@ -67,17 +80,10 @@ int    ft_export(char **args, t_list *env)
 			return (1);
 		}
 		if (ft_strchr(args[i], '='))
-		{
-			var = ft_substr(args[i], 0, ft_strchr(args[i], '=') - args[i]);
-			value = ft_substr(args[i], ft_strchr(args[i], '=') - args[i] + 1, ft_strlen(args[i]));
-			ft_setenv(var, value, env);
-			free(var);
-			free(value);
-		}
+			ft_set_export(args[i], env);
 		else
 			ft_setenv(args[i], NULL, env);
 		i++;
 	}
 	return (0);
 }
-

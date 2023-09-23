@@ -6,16 +6,15 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 08:33:05 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/09 08:22:08 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/23 23:43:49 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/builting.h"
 
-
-int ft_env(t_list *env)
+int	ft_env(t_list *env)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	tmp = env;
 	while (tmp)
