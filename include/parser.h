@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:13:04 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/21 00:31:44 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/24 07:23:14 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,9 @@ char	*remove_quotes(char *cmd);
 // get_redirections is a function that get the redirections from the command and return a table of redirections !
 char	**get_redirections(char *input);
 t_redir_type	get_redir_type(char *input);
-int				ft_redir_open(char *file, t_redir_type type, t_cmd *cmd);
+int				ft_redir_open(char *file, t_redir_type type);
 char			*expand_variable(char *str, t_list *env);
+char	*ft_get_heredoc(char *heredoc, t_list *env);
 
 // char	*prompt(void);
 char	*replace_all_words(char *str, char *w0, char *w1, int usefree);

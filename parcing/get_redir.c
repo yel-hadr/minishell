@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 11:17:38 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/20 07:03:51 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/24 07:21:08 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,29 +48,7 @@ t_redir_type get_redir_type(char *input)
 	return (type);
 }
 
-char	*ft_get_heredoc(char *heredoc)
-{
-	char *tmp;
-	char *line;
-	
-	if (!heredoc || g_sig == -2)
-		return (NULL);
-	tmp = NULL;
-	line = NULL;
-	while (1)
-	{
-		line = readline("> ");
-		if (!ft_strcmp(line, heredoc) || !line || g_sig == -2)
-			break ;
-		tmp = ft_strjoin(tmp, line);
-		tmp = ft_strjoin(tmp, "\n");
-		if (line)
-			free(line);
-	}
-	return (tmp);
-}
-
-int ft_redir_open(char *file, t_redir_type type, t_cmd *cmd)
+int ft_redir_open(char *file, t_redir_type type)
 {
 	int fd;
 
@@ -81,10 +59,6 @@ int ft_redir_open(char *file, t_redir_type type, t_cmd *cmd)
 		fd = open(file, O_WRONLY | O_CREAT | O_APPEND, 0644);
 	else if (type == REDIR_IN)
 		fd = open(file, O_RDONLY);
-	else if (type == HEREDOC)
-		cmd->redir_in.file = ft_get_heredoc(file);
-	if (type == HEREDOC)
-		free(file);
 	if (fd != -1 && type != HEREDOC)
 		close(fd);
 	return (fd);

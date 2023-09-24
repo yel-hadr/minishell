@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:41:52 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/20 22:46:20 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/24 07:24:12 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static int	args_count(char *cmd)
 	return (count);
 }
 
-int ft_get_redir_file(char *input, t_cmd *cmd, t_redir_type type)
+int ft_get_redir_file(char *input, t_cmd *cmd, t_redir_type type, t_list *env)
 {
 	char *tmp;
 	int i;
@@ -71,13 +71,15 @@ int ft_get_redir_file(char *input, t_cmd *cmd, t_redir_type type)
 	if (type == REDIR_OUT || type == APPEND)
 	{
 		cmd->redir_out.file = remove_quotes(tmp);
-		i = ft_redir_open(cmd->redir_out.file, type, cmd);
+		i = ft_redir_open(cmd->redir_out.file, type);
 	}
-	else if (type == REDIR_IN || type == HEREDOC)
+	else if (type == REDIR_IN)
 	{
 		cmd->redir_in.file = remove_quotes(tmp);
-		i = ft_redir_open(cmd->redir_in.file, type, cmd);
+		i = ft_redir_open(cmd->redir_in.file, type);
 	}
+	else if (type == HEREDOC)
+		cmd->redir_in.file = ft_get_heredoc(tmp, env);
 	return (i);
 }
 
@@ -129,7 +131,7 @@ char	**split_args(char *cmd , t_cmd *command, t_list *env)
 			command->redir_out.type = get_redir_type(cmd);
 			while (ft_strchr("> \t", *cmd))
 				cmd++;
-			ft_get_redir_file(cmd, command, command->redir_out.type);
+			ft_get_redir_file(cmd, command, command->redir_out.type, env);
 			count--;
 		}
 		else if (ft_strchr("<", *cmd))
@@ -137,7 +139,7 @@ char	**split_args(char *cmd , t_cmd *command, t_list *env)
 			command->redir_in.type = get_redir_type(cmd);
 			while (ft_strchr("< \t", *cmd))
 				cmd++;
-			ft_get_redir_file(cmd, command, command->redir_in.type);
+			ft_get_redir_file(cmd, command, command->redir_in.type, env);
 			count--;
 		}
 		else
