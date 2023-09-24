@@ -10,7 +10,7 @@ EXECUTION_SRCS	=	execute_unit/ft_execute.c execute_unit/ft_search_path.c execute
 
 PARCING_SRCS	=	parcing/split_cmd.c parcing/struct_cmd.c parcing/split_args.c\
 					parcing/parser.c parcing/remove_quotes.c parcing/checker.c\
-					parcing/get_redir.c parcing/expand_variable.c
+					parcing/get_redir.c parcing/expand_variable.c parcing/ft_get_herdoc.c\
 
 LIBFT_SRCS		=	libft/ft_isalpha.c libft/ft_isdigit.c libft/ft_isalnum.c libft/ft_isascii.c libft/ft_isprint.c\
 					libft/ft_putchar_fd.c libft/ft_putstr_fd.c libft/ft_putendl_fd.c libft/ft_strlen.c libft/ft_memcpy.c\
