@@ -6,13 +6,13 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 08:39:16 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/15 09:03:24 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/23 23:43:14 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/builting.h"
 
-static int ft_check_if_var(char *str)
+static int	ft_check_if_var(char *str)
 {
 	if (!ft_isalpha(*str) && *str != '_')
 		return (1);
@@ -25,17 +25,19 @@ static int ft_check_if_var(char *str)
 	return (0);
 }
 
-static int ft_varcmp(char *s1, char *s2)
+static int	ft_varcmp(char *s1, char *s2)
 {
-	if (!ft_strncmp(s1, s2, ft_strlen(s2)) && (s1[ft_strlen(s2)] == '=' || !s1[ft_strlen(s2)]))
+	if (!ft_strncmp(s1, s2, ft_strlen(s2)) && \
+			(s1[ft_strlen(s2)] == '=' || !s1[ft_strlen(s2)]))
 		return (0);
 	return (1);
 }
 
-static int ft_lstremove_if(t_list **head, void *data_ref, int (*cmp)(), void (*free_fct)(void *))
+static int	ft_lstremove_if(t_list **head, void *data_ref, int (*cmp)(), \
+		void (*free_fct)(void *))
 {
-	t_list *tmp;
-	t_list *prev;
+	t_list	*tmp;
+	t_list	*prev;
 
 	tmp = *head;
 	prev = NULL;
@@ -57,9 +59,9 @@ static int ft_lstremove_if(t_list **head, void *data_ref, int (*cmp)(), void (*f
 	return (0);
 }
 
-int ft_unset(char **args, t_list **env)
+int	ft_unset(char **args, t_list **env)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	while (args[i])

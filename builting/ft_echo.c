@@ -6,22 +6,15 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 12:19:21 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/20 04:38:53 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/23 23:06:25 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/builting.h"
 
-/*
-	ft_echo: print the args
-	@cmd: the cmd
-	@envp: the envp
-	return: 0 if success
-*/
-
-int ft_echo(char **args)
+int	ft_echo(char **args)
 {
-	int flag;
+	int	flag;
 
 	flag = 0;
 	args++;

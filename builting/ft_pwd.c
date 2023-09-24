@@ -6,15 +6,15 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 12:38:14 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/09 08:22:08 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/23 23:41:08 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/builting.h"
 
-int ft_pwd(void)
+int	ft_pwd(void)
 {
-	char *pwd;
+	char	*pwd;
 
 	pwd = getcwd(NULL, 0);
 	ft_putendl_fd(pwd, 1);
