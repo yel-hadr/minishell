@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 09:52:20 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/22 01:35:45 by elakhfif         ###   ########.fr       */
+/*   Updated: 2023/09/25 01:45:37 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ char		*expand_variable(char *str, t_list *env)
 	
 	i = 0;
 	j = 0;
+	if (!str || !env || !ft_strchr(str, '$'))
+		return (NULL);
 	new_str = ft_strdup("");
 	while (str[i])
 	{
@@ -80,8 +82,8 @@ char		*expand_variable(char *str, t_list *env)
 			&& str[i + 1] != '\"' && str[i + 1] != '\'' && str[i + 1] != '\\'
 			&& str[i + 1] != '\n')
 		{
-			if (str[i + 1] == '?')
-				return (&exit_status);
+			// if (str[i + 1] == '?')
+			// 	return (&exit_status);
 			j = i + 1;
 			i = next_var(str, i + 1);
 			var = get_var(str, i, j);

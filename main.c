@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 05:43:33 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/21 02:55:16 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/25 01:46:05 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,6 +136,7 @@ int	main(int argc, char **argv, char **envp)
 		if (cmds)
 			ft_free_cmds(cmds);
 		ft_restore_fd(save_stdin, save_stdout);
+		system("leaks minishell");
 	}
 
 	return (0);
