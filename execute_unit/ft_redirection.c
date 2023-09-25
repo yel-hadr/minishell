@@ -6,25 +6,17 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 20:06:50 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/17 03:24:23 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/25 01:13:55 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/execute.h"
 
-
-/*
-	ft_redaraction: redaraction the input or the output
-	@file: the file
-	@redaraction: the redaraction type
-	@return: the fd of the file
-*/
-
-static int redaraction_input(char *file)
+static int	redaraction_input(char *file)
 {
-	int fd;
+	int	fd;
 
-	fd = open(file, O_RDONLY , 0644);
+	fd = open(file, O_RDONLY, 0644);
 	if (fd > -1)
 	{
 		dup2(fd, STDIN_FILENO);
@@ -33,9 +25,9 @@ static int redaraction_input(char *file)
 	return (fd);
 }
 
-static int redaraction_output(char *file)
+static int	redaraction_output(char *file)
 {
-	int fd;
+	int	fd;
 
 	fd = open(file, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (fd > -1)
@@ -46,10 +38,10 @@ static int redaraction_output(char *file)
 	return (fd);
 }
 
-static int redaraction_append(char *file)
+static int	redaraction_append(char *file)
 {
-	int fd ;
-	
+	int	fd ;
+
 	fd = open(file, O_WRONLY | O_CREAT | O_APPEND, 0644);
 	if (fd > -1)
 	{
@@ -59,23 +51,23 @@ static int redaraction_append(char *file)
 	return (fd);
 }
 
-int redaraction_heredoc(char *herdoc)
+int	redaraction_heredoc(char *herdoc)
 {
-  int fd;
-  int pipefd[2];
+	int	fd;
+	int	pipefd[2];
 
-  pipe(pipefd);
-  write(pipefd[1], herdoc, ft_strlen(herdoc));
-  close(pipefd[1]);
-  fd = pipefd[0];
-  if (fd < 0)
-	return (-1);
-  dup2(fd, STDIN_FILENO);
-  close(fd);
-  return (fd);
+	pipe(pipefd);
+	write(pipefd[1], herdoc, ft_strlen(herdoc));
+	close(pipefd[1]);
+	fd = pipefd[0];
+	if (fd < 0)
+		return (-1);
+	dup2(fd, STDIN_FILENO);
+	close(fd);
+	return (fd);
 }
 
-int ft_redaraction(char *file, t_redir_type redaraction)
+int	ft_redaraction(char *file, t_redir_type redaraction)
 {
 	if (redaraction == REDIR_IN)
 		return (redaraction_input(file));
@@ -87,6 +79,5 @@ int ft_redaraction(char *file, t_redir_type redaraction)
 		return (redaraction_heredoc(file));
 	else if (redaraction == NONE)
 		return (0);
-  return (-1);
+	return (-1);
 }
-
