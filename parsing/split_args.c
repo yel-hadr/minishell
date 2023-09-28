@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:41:52 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/28 05:10:09 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/28 22:37:46 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,8 @@ int ft_get_redir_file(char *input, t_cmd *cmd, t_redir_type type, t_list *env)
 }
 
 
-static char *ft_do_args(char *cmd, int *count, t_list *env)
+static char *ft_do_args(char *cmd, int *count)
 {
-	char *expended;
 	char *tmp;
 	char *result;
 
@@ -102,10 +101,9 @@ static char *ft_do_args(char *cmd, int *count, t_list *env)
 
 int	split_args(t_cmd *command, t_list *env)
 {
-	int		count;
-	char	*tmp;
+	int	count;
 	char	*cmd;
-	int		index;
+	int	index;
 	
 	index = 0;
 	count = args_count(command->cmd);
@@ -139,10 +137,9 @@ int	split_args(t_cmd *command, t_list *env)
 		}
 		else
 		{
-			command->args[index++] = ft_do_args(cmd, &count, env);
+			command->args[index++] = ft_do_args(cmd, &count);
 			next_arg(cmd);
 		}
-		tmp = NULL;
 		cmd = next_arg(cmd);
 	}
 	return (index);
