@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:13:04 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/25 01:06:09 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/28 05:02:48 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ t_cmd			*split_cmd(char *input, int *status);
 //add_cmd is a function that add a command to the linked list of commands !
 t_cmd			*add_cmd(t_cmd *cmd, char *input);
 //split_args is a function that split the command into arguments and return a table of arguments !
-char			**split_args(char *cmd , t_cmd *command, t_list *env);
+int				split_args(t_cmd *command, t_list *env);
 //parser is a function that parse the input and return a linked list of commands !
 t_cmd			*parser(char *line, t_list *env, int *status);
 //check_separator is a function that check if the separator is valid or not !

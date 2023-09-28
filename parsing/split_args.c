@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:41:52 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/24 07:24:12 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/09/28 05:10:09 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,16 +90,9 @@ static char *ft_do_args(char *cmd, int *count, t_list *env)
 	char *tmp;
 	char *result;
 
-	expended = NULL;
 	tmp = NULL;
 	tmp = ft_substr(cmd, 0,
 			(ft_strlen(cmd) - ft_strlen(next_arg(cmd))));
-	if (ft_strchr(tmp, '$'))
-	{
-		expended = expand_variable(tmp, env);
-		free(tmp);
-		tmp = expended;
-	}
 	result = remove_quotes(tmp);
 	free(tmp);
 	(*count)--;
@@ -107,17 +100,17 @@ static char *ft_do_args(char *cmd, int *count, t_list *env)
 }
 
 
-char	**split_args(char *cmd , t_cmd *command, t_list *env)
+int	split_args(t_cmd *command, t_list *env)
 {
 	int		count;
 	char	*tmp;
-	char	**result;
+	char	*cmd;
 	int		index;
-	(void)command;
 	
 	index = 0;
-	count = args_count(cmd);
-	result = ft_calloc(count + 1, sizeof(char *));
+	count = args_count(command->cmd);
+	command->args = ft_calloc(count + 1, sizeof(char *));
+	cmd = ft_strdup(command->cmd);
 	command->redir_in.type = NONE;
 	command->redir_out.type = NONE;
 	command->redir_in.file = NULL;
@@ -132,6 +125,7 @@ char	**split_args(char *cmd , t_cmd *command, t_list *env)
 			while (ft_strchr("> \t", *cmd))
 				cmd++;
 			ft_get_redir_file(cmd, command, command->redir_out.type, env);
+			next_arg(cmd);
 			count--;
 		}
 		else if (ft_strchr("<", *cmd))
@@ -140,17 +134,18 @@ char	**split_args(char *cmd , t_cmd *command, t_list *env)
 			while (ft_strchr("< \t", *cmd))
 				cmd++;
 			ft_get_redir_file(cmd, command, command->redir_in.type, env);
+			next_arg(cmd);
 			count--;
 		}
 		else
 		{
-			result[index++] = ft_do_args(cmd, &count, env);
+			command->args[index++] = ft_do_args(cmd, &count, env);
 			next_arg(cmd);
 		}
 		tmp = NULL;
 		cmd = next_arg(cmd);
 	}
-	return (result);
+	return (index);
 }
 
 // int	main(void)
