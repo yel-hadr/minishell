@@ -86,7 +86,7 @@ t_cmd	*split_cmd(char *input, int *status)
 		if (input[0] == '|')
 			input++;
 	}
-	if (check_quoted(result) || check_separator(result) || checker(result))
+	if (check_quoted(result) || check_separator(result) || checke_redirections(result))
 	{
 		*status = 1;
 		free(result);
