@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:13:04 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/05 15:08:34 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/06 00:16:08 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ t_redir_type	get_redir_type(char *input);
 int				ft_redir_open(char *file, t_redir_type type);
 char			*expand_variable(char *str, t_list *env);
 char			*ft_get_heredoc(char *heredoc, t_list *env);
+int	check_redirections(t_cmd *cmd);
 
 // char	*prompt(void);
 char			*replace_all_words(char *str, char *w0, char *w1, int usefree);
