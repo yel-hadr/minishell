@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
+/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 05:46:27 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/28 22:42:04 by elakhfif         ###   ########.fr       */
+/*   Updated: 2023/10/05 15:33:28 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,17 @@ t_cmd	*parser(char *line, t_list *env, int *status)
 	g_sig = -1;
 	if (ft_strchr(line, '$'))
 	{
-		tmp2 = ft_strdup(line);
+		tmp2 = expand_variable(line, env);
 		free(line);
 		line = tmp2;
 	}
-	result = NULL;
-	if (ft_strchr("\n \t", *line))
-		line = ft_strtrim(line, "\n \t");
+	result = split_cmd(line, status);
 	tmp = result;
 	while (tmp)
 	{
 		split_args(tmp, env);
 		tmp = tmp->next;
 	}
-	if (line[0] != '\0')
-		result = split_cmd(line, status);
 	return (result);
 }
 

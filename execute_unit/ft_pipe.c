@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pipe.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
+/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 09:15:39 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/25 01:26:00 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/05 15:20:35 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,12 @@ int	ft_pipe(t_cmd *cmds, t_list *envp)
 	int		status;
 	t_cmd	*tmp;
 
-	fd_in = 0;
-	tmp = cmds;
-	if (!cmds || !*cmds->args || !cmds->args || g_sig == -2)
+	if (!cmds || !cmds->args || !*cmds->args || g_sig == -2)
 		return (0);
 	if (cmds->next == NULL && is_builting(cmds->args[0]))
 		return (exec_builting(cmds, envp));
+	fd_in = 0;
+	tmp = cmds;
 	g_sig = 1;
 	while (cmds)
 	{
