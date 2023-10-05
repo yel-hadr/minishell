@@ -14,16 +14,16 @@
 
 static char	*get_separator(char *str)
 {
-	int	i;
+	int		i;
 	char	*result;
 
 	i = 0;
-	result = (char *)ft_calloc(sizeof(char) , (ft_strlen(str) + 1));
+	result = ft_calloc(sizeof(char), (ft_strlen(str) + 1));
 	while (str && str[i])
 	{
 		if (ft_strchr("|", str[i]))
 		{
-			result[i] = str[i];
+			ft_strcpy(result, str + i + 1);
 			return (result);
 		}
 		i++;
@@ -37,10 +37,11 @@ int	check_separator(t_cmd *cmd)
 
 	while (cmd)
 	{
+		ft_strtrim(cmd->cmd, " ");
 		tmp = get_separator(cmd->cmd);
-		ft_strtrim(tmp, " ");
 		if (ft_strlen(tmp) == ft_strlen(cmd->cmd)
-			|| (tmp[0] == '|' && ft_strlen(tmp) == 1))
+			|| ft_strchr(tmp, '|') || cmd->cmd[0] == '|'
+			|| cmd->cmd[ft_strlen(cmd->cmd) - 1] == '|')
 		{
 			ft_putstr_fd("mish: syntax error near unexpected token `|'\n", 2);
 			free(tmp);
