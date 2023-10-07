@@ -5,8 +5,8 @@ CFLAGS	=	-Werror -Wextra -Wall -O3  #-g -fsanitize=address
 UTILS	=	minishell_utils.a
 
 EXECUTION_SRCS	=	execute_unit/ft_execute.c execute_unit/ft_search_path.c execute_unit/ft_redirection.c\
-					execute_unit/ft_error.c execute_unit/ft_strjoin_free.c execute_unit/ft_dupenvp.c\
-					execute_unit/ft_is_builting.c execute_unit/ft_pipe.c execute_unit/ft_signal.c
+					execute_unit/ft_strjoin_free.c execute_unit/ft_dupenvp.c execute_unit/ft_is_builting.c\
+					execute_unit/ft_pipe.c execute_unit/ft_signal.c
 
 PARSING_SRCS	=	parsing/split_cmd.c parsing/struct_cmd.c parsing/split_args.c\
 					parsing/parser.c parsing/remove_quotes.c parsing/checker.c\
@@ -22,7 +22,7 @@ LIBFT_SRCS		=	libft/ft_isalpha.c libft/ft_isdigit.c libft/ft_isalnum.c libft/ft_
 					libft/all_wrds_replace.c libft/ft_isspace.c libft/ft_strnew.c libft/ft_lstnew_bonus.c\
 					libft/ft_lstadd_front_bonus.c libft/ft_lstsize_bonus.c libft/ft_lstlast_bonus.c\
 					libft/ft_lstadd_back_bonus.c libft/ft_lstdelone_bonus.c libft/ft_lstclear_bonus.c\
-					libft/ft_lstiter_bonus.c libft/ft_lstmap_bonus.c
+					libft/ft_lstiter_bonus.c libft/ft_lstmap_bonus.c libft/ft_error.c
 
 BUILTING_SRCS	=	builting/ft_pwd.c builting/ft_exit.c builting/ft_export.c builting/ft_echo.c builting/ft_cd.c\
 					builting/ft_env.c builting/ft_unset.c

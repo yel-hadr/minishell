@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 04:15:24 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/10/07 04:24:49 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/08 00:04:24 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ char	*ft_strjoin_free(char *s1, char *s2);
 char	*ft_getval(char *var, t_list *envp);
 int		ft_execute(t_cmd *cmd, t_list *envp);
 int		ft_setenv(char *var, char *value, t_list *envp);
-int		ft_error(char *cmd, char *error);
 int		is_builting(char *cmd);
 int		exec_builting(t_cmd *cmd, t_list *envp);
 int		ft_redaraction(char *file, t_redir_type redaraction);

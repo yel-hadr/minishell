@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:41:52 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/07 08:14:02 by elakhfif         ###   ########.fr       */
+/*   Updated: 2023/10/08 00:10:01 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ int	split_args(t_cmd *command, t_list *env)
 	index = 0;
 	count = args_count(command->cmd);
 	command->args = ft_calloc(count + 1, sizeof(char *));
-	cmd = ft_strdup(command->cmd);
+	cmd = command->cmd;
 	command->redir_in.type = NONE;
 	command->redir_out.type = NONE;
 	command->redir_in.file = NULL;
@@ -120,7 +120,11 @@ int	split_args(t_cmd *command, t_list *env)
 			command->redir_out.type = get_redir_type(cmd);
 			while (ft_strchr("> \t", *cmd))
 				cmd++;
-			ft_get_redir_file(cmd, command, command->redir_out.type, env);
+			if (ft_get_redir_file(cmd, command, command->redir_out.type, env) == -1)
+			{
+				ft_error(command->redir_out.file, strerror(errno));
+				return(1);
+			}
 			next_arg(cmd);
 			count--;
 		}
@@ -129,7 +133,11 @@ int	split_args(t_cmd *command, t_list *env)
 			command->redir_in.type = get_redir_type(cmd);
 			while (ft_strchr("< \t", *cmd))
 				cmd++;
-			ft_get_redir_file(cmd, command, command->redir_in.type, env);
+			if (ft_get_redir_file(cmd, command, command->redir_in.type, env) == -1)
+			{
+				ft_error(command->redir_in.file, strerror(errno));
+				return(1);
+			}
 			next_arg(cmd);
 			count--;
 		}
@@ -140,7 +148,7 @@ int	split_args(t_cmd *command, t_list *env)
 		}
 		cmd = next_arg(cmd);
 	}
-	return (index);
+	return (0);
 }
 
 // int	main(void)

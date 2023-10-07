@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 05:46:27 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/07 03:36:41 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/08 00:02:53 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_cmd	*parser(char *line, t_list *env, int *status)
 	tmp = result;
 	while (tmp)
 	{
-		split_args(tmp, env);
+		*status = split_args(tmp, env);
 		tmp = tmp->next;
 	}
 	free(line);

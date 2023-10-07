@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:36:25 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/07 04:17:19 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/08 00:04:04 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ char	*wd_replace(char *str, char *fword, char *sword, int free_str);
 char	*ft_strcpy(char *dest, char *src);
 int		ft_isspace(int c);
 char	*ft_strnew(size_t size);
+int		ft_error(char *cmd, char *error);
 
 typedef struct s_list
 {
