@@ -6,12 +6,13 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 14:18:06 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/07 08:29:58 by elakhfif         ###   ########.fr       */
+/*   Updated: 2023/10/08 00:03:34 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/parser.h"
 
+// match is function to check if the wildcard match the filename or not and return 1 if it match and 0 if not !
 static int	ms_match(char *wildcard, char *filename)
 {
 	int	i;
@@ -40,6 +41,7 @@ static int	ms_match(char *wildcard, char *filename)
 	return (0);
 }
 
+// filenumber is function to count the number of files in the directory without the hidden files
 static int	ms_filenumber(void)
 {
 	DIR				*dir;
@@ -59,6 +61,9 @@ static int	ms_filenumber(void)
 	return (i);
 }
 
+// fill the tab is function to fill the tab with the files in the directory without the hidden files
+// DIR is a structure that contains information about a directory,
+	and struct dirent is a structure that contains information about an directory entry.
 static char	**ms_filltab(char **tab, int i)
 {
 	DIR				*dir;
@@ -79,6 +84,7 @@ static char	**ms_filltab(char **tab, int i)
 	return (tab);
 }
 
+// sort the tab is function to sort the tab in alphabetical order
 static char	**ms_sorttab(char **tab)
 {
 	int		i;
@@ -104,6 +110,7 @@ static char	**ms_sorttab(char **tab)
 	return (tab);
 }
 
+// wildcard is function to return the tab of the files that match the wildcard
 char	**ms_wildcard(char *wildcard)
 {
 	char	**tab;
@@ -127,21 +134,17 @@ char	**ms_wildcard(char *wildcard)
 	tab = ms_sorttab(tab);
 	return (tab);
 }
-
-int	main(void)
-{
-	char	**tab;
-	int		i;
-
-	i = 0;
-	tab = ms_wildcard("*.c");
-	while (tab[i])
-	{
-		printf("%s\n", tab[i]);
-		i++;
-	}
-	return (0);
-}
-
-//why when i use * alone dont work but when i use *.* it work ??
-//the problem is in the match function you should add a condition to check if the wildcard is empty or not
+// int	main(void)
+// {
+// 	char	**tab;
+// 	int		i;
+//
+// 	i = 0;
+// 	tab = ms_wildcard("*.c");
+// 	while (tab[i])
+// 	{
+// 		printf("%s\n", tab[i]);
+// 		i++;
+// 	}
+// 	return (0);
+// }

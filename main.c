@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 05:43:33 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/07 23:32:59 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/08 00:04:11 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,7 +136,6 @@ int	main(int argc, char **argv, char **envp)
 		if (cmds)
 			ft_free_cmds(cmds);
 		ft_restore_fd(save_stdin, save_stdout);
-		printf ("status %d\n",status);
 	}
 	return (0);
 }
