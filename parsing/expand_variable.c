@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 09:52:20 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/07 01:23:47 by elakhfif         ###   ########.fr       */
+/*   Updated: 2023/10/07 03:09:19 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,15 @@ static char	*ft_strjoin_char(char *s1, char c)
 	return (str);
 }
 
+// static int	wexitstatus(int status)
+// {
+// 	static int	exit_status;
+//
+// 	if (status != -1)
+// 		exit_status = status;
+// 	return (exit_status);
+// }
+
 char		*expand_variable(char *str, t_list *env)
 {
 	int		i;
@@ -74,8 +83,13 @@ char		*expand_variable(char *str, t_list *env)
 			&& str[i + 1] != '\"' && str[i + 1] != '\'' && str[i + 1] != '\\'
 			&& str[i + 1] != '\n')
 		{
-			// if (str[i + 1] == '?')
-			// 	return (&exit_status);
+			 // if (str[i + 1] == '?')
+			 // {
+				// wexitstatus(ft_atoi(ft_getval("?", env)));
+				// val = ft_itoa(wexitstatus(-1));
+				// new_str = ft_strjoin(new_str, val);
+				// free(val);
+			 // }
 			j = i + 1;
 			i = next_var(str, i + 1);
 			var = get_var(str, i, j);
@@ -92,5 +106,6 @@ char		*expand_variable(char *str, t_list *env)
 			i++;
 		}
 	}
+	free(str);
 	return (new_str);
 }

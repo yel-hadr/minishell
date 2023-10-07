@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 05:56:24 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/09 08:21:37 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/07 03:05:32 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	ft_atoi(const char *str)
 	i = 0;
 	result = 0;
 	sign = 1;
+	if (!str)
+		return (0);
 	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 		i++;
 	if (str[i] == '-' || str[i] == '+')
