@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:06:49 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/07 03:28:21 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/07 04:30:44 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,25 +99,3 @@ t_cmd	*split_cmd(char *input, int *status)
 	*status = 0;
 	return (result);
 }
-
-
-// int	main(int ac, char **av)
-// {
-// 	t_cmd	*cmd;
-// 	int	err;
-//
-// 	err = 0;
-// 	if (ac == 2 && av[1])
-// 	{
-// 		cmd = split_cmd(av[1], &err);
-// 		printf("[whole command is]:\t%s\n", av[1]);
-// 		while (cmd)
-// 		{
-// 			printf("[command is]:\t%s\n", cmd->cmd);
-// 			if (!cmd->next)
-// 				break ;
-// 			cmd = cmd->next;
-// 		}
-// 	}
-// 	return (0);
-// }
