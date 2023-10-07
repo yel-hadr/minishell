@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 04:15:24 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/10/07 04:16:43 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/07 04:24:49 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,23 +30,23 @@
 # include "parser.h"
 # include "builting.h"
 
-char	*is_cmd_exists(char **exe, t_list *envp);
-int		ft_execute(t_cmd *cmd, t_list *envp);
-char	*ft_getenv(char *var, t_list *envp_list);
-int		ft_setenv(char *var, char *value, t_list *envp);
-char	**ft_lst_to_char(t_list *envp_list);
 t_list	*ft_dupenvp(char **envp);
+void	ft_restore_fd(int save_stdin, int save_stdout);
+void	ft_handler(int sig);
+void	ft_save_fd(int *save_stdin, int *save_stdout);
+char	*is_cmd_exists(char **exe, t_list *envp);
+char	*ft_getenv(char *var, t_list *envp_list);
+char	**ft_lst_to_char(t_list *envp_list);
+char	*ft_strjoin_free(char *s1, char *s2);
+char	*ft_getval(char *var, t_list *envp);
+int		ft_execute(t_cmd *cmd, t_list *envp);
+int		ft_setenv(char *var, char *value, t_list *envp);
 int		ft_error(char *cmd, char *error);
 int		is_builting(char *cmd);
 int		exec_builting(t_cmd *cmd, t_list *envp);
 int		ft_redaraction(char *file, t_redir_type redaraction);
-char	*ft_strjoin_free(char *s1, char *s2);
 int		ft_pipe(t_cmd *cmd, t_list *envp);
 int		ft_exec_the_cmd(t_cmd *cmd, t_list *envp);
 int		execute(t_cmd *cmd, t_list *envp);
-void	ft_handler(int sig);
-char	*ft_getval(char *var, t_list *envp);
-void	ft_save_fd(int *save_stdin, int *save_stdout);
-void	ft_restore_fd(int save_stdin, int save_stdout);
 
 #endif
