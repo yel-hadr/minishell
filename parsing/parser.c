@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 05:46:27 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/07 03:32:09 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/07 03:36:41 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_cmd	*parser(char *line, t_list *env, int *status)
 		return (NULL);
 	if (ft_strchr(line, '$'))
 	{
-		tmp2 = expand_variable(line, env);
+		tmp2 = expand_variable(line, env, status);
 		line = tmp2;
 	}
 	result = split_cmd(line, status);

@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 15:10:42 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/13 06:40:48 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/07 04:11:54 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(const char *s1)
 
 	indx = 0;
 	len = ft_strlen(s1);
-	str = ((char *)ft_calloc(sizeof(char) , (len +1)));
+	str = ((char *)ft_calloc(sizeof(char), (len +1)));
 	if (str == NULL)
 		return (NULL);
 	while (indx < len)

@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 07:19:11 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/13 06:42:47 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/07 04:13:49 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ static int	new_strlen(char *str, char *fword, char *sword)
 static char	*replaced_str(char *str, char *fword, char *sword)
 {
 	char	*new_str;
-	int	count;
 	size_t	new_len;
+	int		count;
 
 	new_len = new_strlen(str, fword, sword);
-	new_str = (char *)ft_calloc(sizeof(char) , (new_len + 1));
+	new_str = (char *)ft_calloc(sizeof(char), (new_len + 1));
 	if (!new_str)
 		return (NULL);
 	count = 0;
@@ -57,7 +57,7 @@ static char	*replaced_str(char *str, char *fword, char *sword)
 	return (new_str);
 }
 
-char		*wd_replace(char *str, char *fword, char *sword, int free_str)
+char	*wd_replace(char *str, char *fword, char *sword, int free_str)
 {
 	char	*new_str;
 

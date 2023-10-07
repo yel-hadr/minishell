@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/24 08:19:13 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/13 06:42:56 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/07 04:08:49 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static char	*replaced_str(char *str, char *fwd, char *swd)
 	size_t	len;
 
 	len = new_str_len(str, fwd, swd);
-	res = (char *)ft_calloc(sizeof(char) , (len + 1));
+	res = (char *)ft_calloc(sizeof(char), (len + 1));
 	if (!res)
 		return (NULL);
 	res[len] = '\0';

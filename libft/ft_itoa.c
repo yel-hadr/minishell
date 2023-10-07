@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 20:04:54 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/13 06:42:16 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/07 04:10:03 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_itoa(int n)
 	long	nb;
 
 	lenth = ft_numlen(n);
-	str = ft_calloc(sizeof(char) , lenth + 1);
+	str = ft_calloc(sizeof(char), lenth + 1);
 	nb = n;
 	if (!str)
 		return (NULL);

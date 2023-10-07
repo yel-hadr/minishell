@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 09:52:20 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/07 03:32:01 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/07 03:39:49 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,9 @@ static char	*ft_strjoin_char(char *s1, char c)
 	return (str);
 }
 
-int	check_herdoc_var(char *str, int i)
+int	check_herdoc_var(char *str, int i, int *status)
 {
-	if (!str)
+	if (!str || !status)
 		return (0);
 	if (i && str[i] == '$')
 		i--;
@@ -76,7 +76,7 @@ int	check_herdoc_var(char *str, int i)
 	return (0);
 }
 
-char		*expand_variable(char *str, t_list *env, int exit_status)
+char		*expand_variable(char *str, t_list *env, int *exit_status)
 {
 	int		i;
 	int		j;
@@ -93,12 +93,12 @@ char		*expand_variable(char *str, t_list *env, int exit_status)
 	{
 		if (str[i] == '$' && str[i + 1] && str[i + 1] != ' ' && str[i + 1] != '$'
 			&& str[i + 1] != '\"' && str[i + 1] != '\'' && str[i + 1] != '\\'
-			&& str[i + 1] != '\n' && !check_herdoc_var(str, i))
+			&& str[i + 1] != '\n' && !check_herdoc_var(str, i, exit_status))
 		{
 			j = i + 1;
 			if (str[i + 1] == '?')
 			{
-				val = ft_itoa(exit_status);
+				val = ft_itoa(*exit_status);
 				new_str = ft_strjoin(new_str, val);
 				free(val);
 				i += 2;
