@@ -6,13 +6,13 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 03:21:35 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/10/07 03:38:09 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/07 07:32:22 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/parser.h"
 
-static int ft_chack_expand(char *str)
+static int ft_check_expand(char *str)
 {
 	if (!str)
 		return (0);
@@ -51,7 +51,7 @@ char	*ft_get_heredoc(char *heredoc, t_list *env)
 	expand = 1;
 	tmp = NULL;
 	line = NULL;
-	if (ft_chack_expand(heredoc))
+	if (ft_check_expand(heredoc))
 		expand = 0;
 	heredoc = ft_remove_quotes(heredoc);
 	while (1)
