@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pipe.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 09:15:39 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/10/05 15:20:35 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/07 23:33:17 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,7 @@ static int	ft_child(int *fd, int fd_in, t_cmd *cmds, t_list *envp)
 		ft_error(cmds->args[0], strerror(errno));
 		exit(127);
 	}
-	if (ft_execute(cmds, envp))
-		ft_error(cmds->args[0], strerror(errno));
-	exit(EXIT_FAILURE);
+	ft_execute(cmds, envp);
 	return (0);
 }
 
@@ -43,7 +41,7 @@ static int	ft_wait_pid(int *status, t_cmd *tmp, int pid)
 		tmp = tmp->next;
 	}
 	g_sig = 0;
-	return (*status);
+	return (*status >> 8);
 }
 
 static int	ft_do_parent(int *fd, int fd_in)

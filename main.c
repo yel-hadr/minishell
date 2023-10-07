@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 05:43:33 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/07 04:33:02 by elakhfif         ###   ########.fr       */
+/*   Updated: 2023/10/07 23:32:59 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,10 +131,12 @@ int	main(int argc, char **argv, char **envp)
 		ft_save_fd(&save_stdin, &save_stdout);
 		input = ft_check_error(env);
 		cmds = parser(input, env, &status);
-		status = ft_pipe(cmds, env);
+		if (!status)
+			status = ft_pipe(cmds, env);
 		if (cmds)
 			ft_free_cmds(cmds);
 		ft_restore_fd(save_stdin, save_stdout);
+		printf ("status %d\n",status);
 	}
 	return (0);
 }

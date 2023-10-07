@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Sat Oct  7 02:45:49 2023
+# Make data base, printed on Sat Oct  7 23:10:19 2023
 
 # Variables
 
@@ -35,19 +35,21 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","osLocale":"en","availableLanguages":{},"_
 # environment
 _ = /usr/bin/make
 # makefile (from `Makefile', line 3)
-CFLAGS = -Werror -Wextra -Wall -O3  -g -fsanitize=address
+CFLAGS = -Werror -Wextra -Wall -O3  
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # makefile (from `Makefile', line 37)
 OBJS = $(SRCS:.c=.o)
 # environment
-VSCODE_CWD = /
+VSCODE_CWD = /Users/yel-hadr/Desktop/leaks
 # environment
-PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Users/yel-hadr/.brew/bin
+PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Users/yel-hadr/.brew/bin:/Users/yel-hadr/.brew/bin
 # makefile (from `Makefile', line 33)
 PARSING_OBJS = $(PARSING_SRCS:.c=.o)
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
+# environment
+LaunchInstanceID = 3C8FD1A3-F20C-4AC7-AF60-2187BC2D84E5
 # makefile (from `Makefile', line 7)
 EXECUTION_SRCS = execute_unit/ft_execute.c execute_unit/ft_search_path.c execute_unit/ft_redirection.c execute_unit/ft_error.c execute_unit/ft_strjoin_free.c execute_unit/ft_dupenvp.c execute_unit/ft_is_builting.c execute_unit/ft_pipe.c execute_unit/ft_signal.c
 # environment
@@ -57,7 +59,7 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 LS_COLORS = di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.ZZbIENSXWP/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.RZKfF6TkUG/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -86,14 +88,16 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
 XPC_FLAGS = 0x0
+# environment
+COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
-# default
-MAKECMDGOALS := all
+# environment
+LC_TERMINAL = iTerm2
 # makefile (from `Makefile', line 30)
 SRCS = main.c 
 # environment
-SHLVL = 1
+SHLVL = 2
 # makefile (from `Makefile', line 2)
 CC = cc
 # default
@@ -104,6 +108,10 @@ USER = yel-hadr
 PARSING_SRCS = parsing/split_cmd.c parsing/struct_cmd.c parsing/split_args.c parsing/parser.c parsing/remove_quotes.c parsing/checker.c parsing/get_redir.c parsing/expand_variable.c parsing/ft_get_herdoc.c 
 # makefile
 .DEFAULT_GOAL := all
+# default
+MAKECMDGOALS := all
+# environment
+TERM_SESSION_ID = w0t0p0:58A46763-CA9B-4C94-9615-1677898DB169
 # makefile (from `Makefile', line 1)
 NAME = minishell
 # environment
@@ -112,6 +120,8 @@ LESS = -R
 %D = $(patsubst %/,%,$(dir $%))
 # default
 MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
+# environment
+TERM_PROGRAM = iTerm.app
 # default
 .VARIABLES := 
 # environment
@@ -128,18 +138,28 @@ MAKEFLAGS = Rrqp
 MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
+# environment
+TERM_PROGRAM_VERSION = 3.4.13
 # makefile (from `Makefile', line 34)
 LIBFT_OBJS = $(LIBFT_SRCS:.c=.o)
 # environment
-XPC_SERVICE_NAME = com.microsoft.VSCode.2344
+XPC_SERVICE_NAME = com.microsoft.VSCode.2504.B3A5E689-0D6C-4475-88B0-FD7CDC53D4C7
+# environment
+LC_TERMINAL_VERSION = 3.4.13
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
+# environment
+ITERM_SESSION_ID = w0t0p0:58A46763-CA9B-4C94-9615-1677898DB169
+# environment
+COLORFGBG = 15;0
 # makefile (from `Makefile', line 32)
 EXECUTION_OBJS = $(EXECUTION_SRCS:.c=.o)
 # environment
 __CF_USER_TEXT_ENCODING = 0x18ABA:0x0:0x0
+# environment
+COMMAND_MODE = unix2003
 # default
 MAKEFILES := 
 # makefile (from `Makefile', line 27)
@@ -149,9 +169,13 @@ LIBFT_SRCS = libft/ft_isalpha.c libft/ft_isdigit.c libft/ft_isalnum.c libft/ft_i
 # automatic
 <F = $(notdir $<)
 # environment
+ITERM_PROFILE = Default
+# environment
 PAGER = less
 # environment
 LC_ALL = C
+# environment
+SECURITYSESSIONID = 186a8
 # automatic
 ^F = $(notdir $^)
 # default
@@ -165,9 +189,11 @@ CLICOLOR = 1
 # environment
 LANG = C
 # environment
-VSCODE_PID = 4035
+TERM = xterm-256color
+# environment
+VSCODE_PID = 37126
 # variable set hash-table stats:
-# Load=77/1024=8%, Rehash=0, Collisions=9/117=8%
+# Load=90/1024=9%, Rehash=0, Collisions=12/130=9%
 
 # Pattern-specific Variable Values
 
@@ -175,8 +201,8 @@ VSCODE_PID = 4035
 
 # Directories
 
-# . (device 16777225, inode 6942752): 11 files, no impossibilities.
-# parsing (device 16777225, inode 6942895): 11 files, no impossibilities so far.
+# . (device 16777225, inode 6968075): 11 files, no impossibilities.
+# parsing (device 16777225, inode 6968223): 11 files, no impossibilities so far.
 
 # 22 files, no impossibilities in 2 directories.
 
@@ -246,6 +272,7 @@ libft/ft_memcpy.o:
 #  File has not been updated.
 
 # Not a target:
+ 
 parsing/expand_variable.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -272,7 +299,6 @@ libft/ft_strlen.o:
 # Not a target:
 builting/ft_echo.o:
 #  Implicit rule search has not been done.
- 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -351,7 +377,7 @@ execute_unit/ft_is_builting.o:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2023-10-06 00:13:03
+#  Last modified 2023-10-07 23:01:15
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -502,6 +528,7 @@ libft/ft_lstadd_front_bonus.o:
 # Not a target:
 builting/ft_exit.o:
 #  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -530,7 +557,6 @@ libft/ft_substr.o:
 #  File has not been updated.
 
 # Not a target:
- 
 parsing/split_args.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -635,7 +661,7 @@ libft/ft_strcmp.o:
 # Not a target:
 parsing/split_cmd.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-10-06 00:15:17
+#  Last modified 2023-10-07 23:01:16
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -780,6 +806,6 @@ libft/ft_strtrim.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sat Oct  7 02:45:49 2023
+# Finished Make data base on Sat Oct  7 23:10:19 2023
 
  
