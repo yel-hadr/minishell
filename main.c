@@ -12,9 +12,9 @@
 
 #include "./include/minishell.h"
 
-void ft_free_array(char **array)
+void	ft_free_array(char **array)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (array[i])
@@ -25,17 +25,16 @@ void ft_free_array(char **array)
 	free(array);
 }
 
-char *ft_prompt(t_list *env)
+char	*ft_prompt(t_list *env)
 {
-	char *user;
-	char *dir;
-	char *tmp;
-	char *result;
-	
+	char	*user;
+	char	*dir;
+	char	*tmp;
+	char	*result;
+
 	user = NULL;
 	dir = NULL;
 	result = NULL;
-
 	user = ft_getval("USER", env);
 	tmp = getcwd(NULL, 0);
 	dir = ft_strrchr(tmp, '/');
@@ -44,7 +43,7 @@ char *ft_prompt(t_list *env)
 	else
 		dir++;
 	if (!user || !dir)
-		result = ft_strdup(GRN"minishell > "RESET);
+		result = ft_strdup(GRN "minishell > " RESET);
 	else
 	{
 		result = ft_strjoin(GRN, user);
@@ -60,14 +59,14 @@ char *ft_prompt(t_list *env)
 	if (tmp)
 		free(tmp);
 	return (result);
-} 
+}
 
-char *ft_check_error(t_list *env)
+char	*ft_check_error(t_list *env)
 {
-	char *input;
-	char *result;
-	char *prompt;
-	
+	char	*input;
+	char	*result;
+	char	*prompt;
+
 	input = NULL;
 	result = NULL;
 	if (!env || !env->content)
@@ -91,7 +90,7 @@ char *ft_check_error(t_list *env)
 
 void	ft_free_cmds(t_cmd *cmds)
 {
-	t_cmd *tmp;
+	t_cmd	*tmp;
 
 	while (cmds)
 	{
@@ -109,24 +108,24 @@ void	ft_free_cmds(t_cmd *cmds)
 	}
 }
 
-int g_sig;
+int		g_sig;
 
 int	main(int argc, char **argv, char **envp)
 {
-	(void)argc;
-	(void)argv;
 	t_cmd	*cmds;
 	char	*input;
-	t_list *env;
-	int status=0;
-	int save_stdin;
-	int save_stdout;
+	t_list	*env;
+	int		status;
+	int		save_stdin;
+	int		save_stdout;
 
+	(void)argc;
+	(void)argv;
+	status = 0;
 	signal(SIGINT, ft_handler);
 	signal(SIGQUIT, SIG_IGN);
 	env = ft_dupenvp(envp);
-
-  	while (1)
+	while (1)
 	{
 		g_sig = 0;
 		ft_save_fd(&save_stdin, &save_stdout);

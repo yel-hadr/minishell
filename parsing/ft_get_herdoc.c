@@ -12,7 +12,7 @@
 
 #include "../include/parser.h"
 
-static int ft_check_expand(char *str)
+static int	ft_check_expand(char *str)
 {
 	if (!str)
 		return (0);
@@ -27,10 +27,10 @@ static int ft_check_expand(char *str)
 	return (0);
 }
 
-static char *ft_remove_quotes(char *str)
+static char	*ft_remove_quotes(char *str)
 {
-	char *tmp;
-	
+	char	*tmp;
+
 	if (!str)
 		return (NULL);
 	if (!ft_strchr(str, '\'') && !ft_strchr(str, '\"'))
@@ -42,10 +42,10 @@ static char *ft_remove_quotes(char *str)
 
 char	*ft_get_heredoc(char *heredoc, t_list *env)
 {
-	char *tmp;
-	char *line;
-	int expand;
-	
+	char	*tmp;
+	char	*line;
+	int		expand;
+
 	if (!heredoc || g_sig == -2)
 		return (NULL);
 	expand = 1;

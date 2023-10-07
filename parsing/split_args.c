@@ -55,11 +55,11 @@ static int	args_count(char *cmd)
 	return (count);
 }
 
-int ft_get_redir_file(char *input, t_cmd *cmd, t_redir_type type, t_list *env)
+int	ft_get_redir_file(char *input, t_cmd *cmd, t_redir_type type, t_list *env)
 {
-	char *tmp;
-	int i;
-	
+	char	*tmp;
+	int		i;
+
 	i = 0;
 	if (type == NONE)
 		return (0);
@@ -83,28 +83,25 @@ int ft_get_redir_file(char *input, t_cmd *cmd, t_redir_type type, t_list *env)
 	return (i);
 }
 
-
-static char *ft_do_args(char *cmd, int *count)
+static char	*ft_do_args(char *cmd, int *count)
 {
-	char *tmp;
-	char *result;
+	char	*tmp;
+	char	*result;
 
 	tmp = NULL;
-	tmp = ft_substr(cmd, 0,
-			(ft_strlen(cmd) - ft_strlen(next_arg(cmd))));
+	tmp = ft_substr(cmd, 0, (ft_strlen(cmd) - ft_strlen(next_arg(cmd))));
 	result = remove_quotes(tmp);
 	free(tmp);
 	(*count)--;
 	return (result);
 }
 
-
 int	split_args(t_cmd *command, t_list *env)
 {
-	int	count;
+	int		count;
 	char	*cmd;
-	int	index;
-	
+	int		index;
+
 	index = 0;
 	count = args_count(command->cmd);
 	command->args = ft_calloc(count + 1, sizeof(char *));

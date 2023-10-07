@@ -51,7 +51,6 @@ static int	check_quoted(t_cmd *cmd)
 
 static int	words_count(char *input)
 {
-
 	int	count;
 	int	sq;
 	int	dq;
@@ -90,7 +89,8 @@ t_cmd	*split_cmd(char *input, int *status)
 				result = add_cmd(result, "|");
 		}
 	}
-	if (check_quoted(result) || check_redirections(result) || check_separator(result))
+	if (check_quoted(result) || check_redirections(result)
+		|| check_separator(result))
 	{
 		*status = 1;
 		free(result);

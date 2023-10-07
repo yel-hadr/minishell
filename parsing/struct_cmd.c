@@ -17,7 +17,7 @@ t_cmd	*add_cmd(t_cmd *cmd, char *input)
 	t_cmd	*new;
 	t_cmd	*tmp;
 
-	new = (t_cmd *)ft_calloc(sizeof(t_cmd),1);
+	new = (t_cmd *)ft_calloc(sizeof(t_cmd), 1);
 	if (!new)
 		return (NULL);
 	new->cmd = input;

@@ -39,9 +39,8 @@ int	check_separator(t_cmd *cmd)
 	{
 		ft_strtrim(cmd->cmd, " ");
 		tmp = get_separator(cmd->cmd);
-		if (ft_strlen(tmp) == ft_strlen(cmd->cmd)
-			|| ft_strchr(tmp, '|') || cmd->cmd[0] == '|'
-			|| cmd->cmd[ft_strlen(cmd->cmd) - 1] == '|')
+		if (ft_strlen(tmp) == ft_strlen(cmd->cmd) || ft_strchr(tmp, '|')
+			|| cmd->cmd[0] == '|' || cmd->cmd[ft_strlen(cmd->cmd) - 1] == '|')
 		{
 			ft_putstr_fd("mish: syntax error near unexpected token `|'\n", 2);
 			free(tmp);
@@ -68,9 +67,12 @@ int	check_redirections(t_cmd *cmd)
 				index++;
 			i++;
 		}
-		if ((index == 1 && ((cmd->cmd[0] == '>') || cmd->cmd[0] == '<')) || cmd->cmd[ft_strlen(cmd->cmd) - 1] == '>' || cmd->cmd[ft_strlen(cmd->cmd) - 1] == '<')
+		if ((index == 1 && ((cmd->cmd[0] == '>') || cmd->cmd[0] == '<'))
+			|| cmd->cmd[ft_strlen(cmd->cmd) - 1] == '>'
+			|| cmd->cmd[ft_strlen(cmd->cmd) - 1] == '<')
 		{
-			ft_putstr_fd("mish: syntax error near unexpected token `newline'\n", 2);
+			ft_putstr_fd("mish: syntax error near unexpected token `newline'\n",
+				2);
 			return (1);
 		}
 		index = 0;
@@ -78,4 +80,3 @@ int	check_redirections(t_cmd *cmd)
 	}
 	return (0);
 }
-

@@ -33,9 +33,9 @@ static char	*ft_strjoin_char(char *s1, char c)
 
 char	*remove_quotes(char *cmd)
 {
-	int	i;
-	int	dq;
-	int	sq;
+	int		i;
+	int		dq;
+	int		sq;
 	char	*res;
 
 	i = 0;
@@ -57,7 +57,7 @@ char	*remove_quotes(char *cmd)
 	return (res);
 }
 
-// int	main()
+// int	main(void)
 // {
 // 	char	*cmd;
 // 	char	*res;

@@ -12,12 +12,12 @@
 
 #include "../include/parser.h"
 
-t_redir_type get_redir_type(char *input)
+t_redir_type	get_redir_type(char *input)
 {
-	int		i;
-	int		sq;
-	int		dq;
-	t_redir_type type;
+	int				i;
+	int				sq;
+	int				dq;
+	t_redir_type	type;
 
 	i = 0;
 	sq = 0;
@@ -48,9 +48,9 @@ t_redir_type get_redir_type(char *input)
 	return (type);
 }
 
-int ft_redir_open(char *file, t_redir_type type)
+int	ft_redir_open(char *file, t_redir_type type)
 {
-	int fd;
+	int	fd;
 
 	fd = 0;
 	if (type == REDIR_OUT)

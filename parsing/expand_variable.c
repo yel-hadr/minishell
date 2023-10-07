@@ -26,7 +26,7 @@ static char	*get_var(char *str, int i, int j)
 	int		k;
 
 	k = 0;
-	var = (char *)ft_calloc(sizeof(char) , (i - j + 1));
+	var = (char *)ft_calloc(sizeof(char), (i - j + 1));
 	while (j < i)
 	{
 		var[k] = str[j];
@@ -51,7 +51,7 @@ static char	*ft_strjoin_char(char *s1, char c)
 	int		i;
 
 	i = 0;
-	str = (char *)ft_calloc(sizeof(char) , (ft_strlen(s1) + 2));
+	str = (char *)ft_calloc(sizeof(char), (ft_strlen(s1) + 2));
 	while (s1[i])
 	{
 		str[i] = s1[i];
@@ -76,14 +76,14 @@ int	check_herdoc_var(char *str, int i, int *status)
 	return (0);
 }
 
-char		*expand_variable(char *str, t_list *env, int *exit_status)
+char	*expand_variable(char *str, t_list *env, int *exit_status)
 {
 	int		i;
 	int		j;
 	char	*var;
 	char	*new_str;
 	char	*val;
-	
+
 	i = 0;
 	j = 0;
 	if (!str || !env || !ft_strchr(str, '$'))
@@ -91,9 +91,10 @@ char		*expand_variable(char *str, t_list *env, int *exit_status)
 	new_str = ft_strdup("");
 	while (str[i])
 	{
-		if (str[i] == '$' && str[i + 1] && str[i + 1] != ' ' && str[i + 1] != '$'
-			&& str[i + 1] != '\"' && str[i + 1] != '\'' && str[i + 1] != '\\'
-			&& str[i + 1] != '\n' && !check_herdoc_var(str, i, exit_status))
+		if (str[i] == '$' && str[i + 1] && str[i + 1] != ' ' && str[i
+			+ 1] != '$' && str[i + 1] != '\"' && str[i + 1] != '\'' && str[i
+			+ 1] != '\\' && str[i + 1] != '\n' && !check_herdoc_var(str, i,
+			exit_status))
 		{
 			j = i + 1;
 			if (str[i + 1] == '?')

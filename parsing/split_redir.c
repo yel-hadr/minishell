@@ -27,8 +27,8 @@ static char	*get_redir_symbol(char *symbol)
 
 static int	checking_redir(t_cmd *cmd)
 {
-	int	i;
-	int	len;
+	int		i;
+	int		len;
 	char	*tmp;
 
 	i = -1;
@@ -36,7 +36,8 @@ static int	checking_redir(t_cmd *cmd)
 	while (cmd->redir_symbols[++i] && !tmp)
 	{
 		len = ft_strlen(cmd->redir_symbols[i]);
-		if (len <= 2 && (!ft_strncmp("HEREDOC", cmd->redir_symbols[i], len) || !ft_strncmp("APPEND", cmd->redir_symbols[i], len)))
+		if (len <= 2 && (!ft_strncmp("HEREDOC", cmd->redir_symbols[i], len)
+				|| !ft_strncmp("APPEND", cmd->redir_symbols[i], len)))
 		{
 			if (!ft_strlen(cmd->redir_files[i]))
 				tmp = "syntax error near unexpected token `newline'";
@@ -54,8 +55,8 @@ static int	checking_redir(t_cmd *cmd)
 
 int	split_redir(t_cmd *cmd)
 {
-	int	lenth;
-	int	i;
+	int		lenth;
+	int		i;
 	char	**get_redir;
 
 	i = -1;
@@ -77,9 +78,10 @@ int	split_redir(t_cmd *cmd)
 	return (checking_redir(cmd));
 }
 
-int main()
+int	main(void)
 {
-	t_cmd *cmd;
+	t_cmd	*cmd;
+
 	cmd = (t_cmd *)ft_calloc(sizeof(t_cmd));
 	cmd->cmd = "ls -l > file";
 	split_redir(cmd);

@@ -14,8 +14,8 @@
 
 static int	ms_match(char *wildcard, char *filename)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -105,7 +105,7 @@ static char	**ms_sorttab(char **tab)
 	return (tab);
 }
 
-char		**ms_wildcard(char *wildcard)
+char	**ms_wildcard(char *wildcard)
 {
 	char	**tab;
 	int		i;
@@ -129,15 +129,17 @@ char		**ms_wildcard(char *wildcard)
 	return (tab);
 }
 
-int main()
+int	main(void)
 {
-	char **tab;
-	int i = 0;
+	char	**tab;
+	int		i;
+
+	i = 0;
 	tab = ms_wildcard("*.d");
 	while (tab[i])
 	{
 		printf("%s\n", tab[i]);
 		i++;
 	}
-	return 0;
+	return (0);
 }

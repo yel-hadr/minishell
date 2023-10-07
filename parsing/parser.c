@@ -17,10 +17,8 @@ t_cmd	*parser(char *line, t_list *env, int *status)
 	t_cmd	*result;
 	t_cmd	*tmp;
 	char	*tmp2;
-	
 
 	g_sig = -1;
-	
 	if (!line)
 		return (NULL);
 	if (ft_strchr(line, '$'))
@@ -38,5 +36,3 @@ t_cmd	*parser(char *line, t_list *env, int *status)
 	free(line);
 	return (result);
 }
-
-

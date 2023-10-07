@@ -12,7 +12,6 @@
 
 #include "../include/parser.h"
 
-
 static int	new_str_size(char *str, char *w0, char *w1)
 {
 	size_t	w0_len;
@@ -59,7 +58,7 @@ char	*replace_all_words(char *str, char *w0, char *w1, int usefree)
 {
 	char	*result;
 
-  result = NULL;
+	result = NULL;
 	result = replaced_str(str, w0, w1);
 	if (usefree == 1)
 		free(str);
@@ -77,7 +76,7 @@ char	*extract_branch(char *buff)
 	free(buff);
 	while (temp[++i])
 		branch = temp[i];
-	branch[ft_strlen(branch)-1] = '\0';
+	branch[ft_strlen(branch) - 1] = '\0';
 	branch = replace_all_words(" (b)", "b", branch, 0);
 	free(temp);
 	return (branch);
@@ -117,10 +116,10 @@ char	*get_host_name(void)
 	{
 		buff = ft_calloc(1024, 1);
 		if (read(fd, buff, 1024) < 0)
-      return (NULL);
+			return (NULL);
 	}
 	close(fd);
-	if (buff && buff[ft_strlen(buff)-1] == '\n')
+	if (buff && buff[ft_strlen(buff) - 1] == '\n')
 		buff[ft_strlen(buff) - 1] = '\0';
 	return (buff);
 }
@@ -136,7 +135,7 @@ char	*get_branch_name(void)
 	{
 		buff = ft_calloc(1024, 1);
 		if (read(fd, buff, 1024) < 0)
-      return (NULL);
+			return (NULL);
 	}
 	close(fd);
 	if (buff)
