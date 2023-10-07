@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:06:49 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/06 00:15:17 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/07 02:46:23 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,18 +75,21 @@ static int	words_count(char *input)
 t_cmd	*split_cmd(char *input, int *status)
 {
 	t_cmd	*result;
-	char	*temp;
+	char	*tmp;
 
 	result = NULL;
-	while (input && input[0])
+	while (input && *input)
 	{
-		temp = ft_substr(input, 0, words_count(input));
-		result = add_cmd(result, temp);
+		tmp = ft_substr(input, 0, words_count(input));
+		result = add_cmd(result, tmp);
 		input = input + words_count(input);
-		if (input[0] == '|')
+		if (*input == '|')
+		{
 			input++;
+			result = add_cmd(result, "|");
+		}
 	}
-	if (check_quoted(result) || check_separator(result) || check_redirections(result))
+	if (check_quoted(result) || check_redirections(result) || check_separator(result))
 	{
 		*status = 1;
 		free(result);
@@ -94,6 +97,7 @@ t_cmd	*split_cmd(char *input, int *status)
 	}
 	return (result);
 }
+
 
 // int	main(int ac, char **av)
 // {
@@ -103,7 +107,7 @@ t_cmd	*split_cmd(char *input, int *status)
 // 	err = 0;
 // 	if (ac == 2 && av[1])
 // 	{
-// 		cmd = split_cmd(av[1]);
+// 		cmd = split_cmd(av[1], &err);
 // 		printf("[whole command is]:\t%s\n", av[1]);
 // 		while (cmd)
 // 		{

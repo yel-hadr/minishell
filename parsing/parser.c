@@ -6,7 +6,7 @@
 /*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 05:46:27 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/05 15:33:28 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/07 02:00:05 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ t_cmd	*parser(char *line, t_list *env, int *status)
 	tmp = result;
 	while (tmp)
 	{
+		printf("args : %s\n", tmp->cmd);
 		split_args(tmp, env);
 		tmp = tmp->next;
 	}

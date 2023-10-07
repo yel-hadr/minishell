@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 09:52:20 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/25 01:45:37 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/07 01:23:47 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,6 @@ static char	*get_var(char *str, int i, int j)
 	var[k] = '\0';
 	return (var);
 }
-
-// static char	*skip_var(char *str, int i)
-// {
-// 	while (str[i] && str[i] != ' ' && str[i] != '$' && str[i] != '\"'
-// 		&& str[i] != '\'' && str[i] != '\\' && str[i] != '\n')
-// 		i++;
-// 	return (str + i);
-// }
 
 static char	*ft_strjoin_char(char *s1, char c)
 {
