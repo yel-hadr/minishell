@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 14:18:06 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/08 00:03:34 by elakhfif         ###   ########.fr       */
+/*   Updated: 2023/10/08 00:23:38 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,7 @@ static int	ms_filenumber(void)
 }
 
 // fill the tab is function to fill the tab with the files in the directory without the hidden files
-// DIR is a structure that contains information about a directory,
-	and struct dirent is a structure that contains information about an directory entry.
+// DIR is a structure that contains information about a directory, and struct dirent is a structure that contains information about an directory entry.
 static char	**ms_filltab(char **tab, int i)
 {
 	DIR				*dir;
