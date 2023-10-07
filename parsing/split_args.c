@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:41:52 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/28 22:37:46 by elakhfif         ###   ########.fr       */
+/*   Updated: 2023/10/07 08:14:02 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ int	ft_get_redir_file(char *input, t_cmd *cmd, t_redir_type type, t_list *env)
 	}
 	else if (type == HEREDOC)
 		cmd->redir_in.file = ft_get_heredoc(tmp, env);
+	free(tmp);
 	return (i);
 }
 
@@ -91,8 +92,8 @@ static char	*ft_do_args(char *cmd, int *count)
 	tmp = NULL;
 	tmp = ft_substr(cmd, 0, (ft_strlen(cmd) - ft_strlen(next_arg(cmd))));
 	result = remove_quotes(tmp);
-	free(tmp);
 	(*count)--;
+	free(tmp);
 	return (result);
 }
 
