@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:13:04 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/07 04:24:06 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/07 23:57:54 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,6 @@ int				split_args(t_cmd *command, t_list *env);
 int				check_separator(t_cmd *cmd);
 int				ft_redir_open(char *file, t_redir_type type);
 int				check_redirections(t_cmd *cmd);
+char			**ms_wildcard(char *wildcard);
 
 #endif
