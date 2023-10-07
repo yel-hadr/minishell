@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 14:18:06 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/13 06:39:39 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/07 08:29:58 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ static int	ms_match(char *wildcard, char *filename)
 		{
 			while (wildcard[i] == '*')
 				i++;
+			if (wildcard[i] == '\0')
+				return (1);
 			while (filename[j] && wildcard[i] != filename[j])
 				j++;
 		}
@@ -61,9 +63,7 @@ static char	**ms_filltab(char **tab, int i)
 {
 	DIR				*dir;
 	struct dirent	*sd;
-	int				j;
 
-	j = 0;
 	dir = opendir(".");
 	if (dir == NULL)
 		return (NULL);
@@ -71,11 +71,10 @@ static char	**ms_filltab(char **tab, int i)
 	{
 		if (sd->d_name[0] != '.')
 		{
-			tab[j] = ft_strdup(sd->d_name);
-			j++;
+			tab[i] = ft_strdup(sd->d_name);
+			i++;
 		}
 	}
-	tab[j] = NULL;
 	closedir(dir);
 	return (tab);
 }
@@ -113,7 +112,7 @@ char	**ms_wildcard(char *wildcard)
 
 	i = 0;
 	j = 0;
-	tab = (char **)ft_calloc(sizeof(char *) * (ms_filenumber() + 1));
+	tab = (char **)ft_calloc(sizeof(char *) * (ms_filenumber() + 1), 1);
 	tab = ms_filltab(tab, i);
 	while (tab[i])
 	{
@@ -135,7 +134,7 @@ int	main(void)
 	int		i;
 
 	i = 0;
-	tab = ms_wildcard("*.d");
+	tab = ms_wildcard("*.c");
 	while (tab[i])
 	{
 		printf("%s\n", tab[i]);
@@ -143,3 +142,6 @@ int	main(void)
 	}
 	return (0);
 }
+
+//why when i use * alone dont work but when i use *.* it work ??
+//the problem is in the match function you should add a condition to check if the wildcard is empty or not
