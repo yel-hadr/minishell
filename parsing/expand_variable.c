@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 09:52:20 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/07 03:09:19 by elakhfif         ###   ########.fr       */
+/*   Updated: 2023/10/07 03:32:01 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,14 @@ static char	*get_var(char *str, int i, int j)
 	return (var);
 }
 
+// static char	*skip_var(char *str, int i)
+// {
+// 	while (str[i] && str[i] != ' ' && str[i] != '$' && str[i] != '\"'
+// 		&& str[i] != '\'' && str[i] != '\\' && str[i] != '\n')
+// 		i++;
+// 	return (str + i);
+// }
+
 static char	*ft_strjoin_char(char *s1, char c)
 {
 	char	*str;
@@ -55,16 +63,20 @@ static char	*ft_strjoin_char(char *s1, char c)
 	return (str);
 }
 
-// static int	wexitstatus(int status)
-// {
-// 	static int	exit_status;
-//
-// 	if (status != -1)
-// 		exit_status = status;
-// 	return (exit_status);
-// }
+int	check_herdoc_var(char *str, int i)
+{
+	if (!str)
+		return (0);
+	if (i && str[i] == '$')
+		i--;
+	while (i && ft_strchr(" \t", str[i]))
+		i--;
+	if (i > 0 && str[i] == '<' && str[i - 1] == '<')
+		return (1);
+	return (0);
+}
 
-char		*expand_variable(char *str, t_list *env)
+char		*expand_variable(char *str, t_list *env, int exit_status)
 {
 	int		i;
 	int		j;
@@ -81,16 +93,17 @@ char		*expand_variable(char *str, t_list *env)
 	{
 		if (str[i] == '$' && str[i + 1] && str[i + 1] != ' ' && str[i + 1] != '$'
 			&& str[i + 1] != '\"' && str[i + 1] != '\'' && str[i + 1] != '\\'
-			&& str[i + 1] != '\n')
+			&& str[i + 1] != '\n' && !check_herdoc_var(str, i))
 		{
-			 // if (str[i + 1] == '?')
-			 // {
-				// wexitstatus(ft_atoi(ft_getval("?", env)));
-				// val = ft_itoa(wexitstatus(-1));
-				// new_str = ft_strjoin(new_str, val);
-				// free(val);
-			 // }
 			j = i + 1;
+			if (str[i + 1] == '?')
+			{
+				val = ft_itoa(exit_status);
+				new_str = ft_strjoin(new_str, val);
+				free(val);
+				i += 2;
+				continue ;
+			}
 			i = next_var(str, i + 1);
 			var = get_var(str, i, j);
 			val = ft_getval(var, env);
