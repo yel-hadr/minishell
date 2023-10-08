@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_search_path.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
+/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 16:10:37 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/25 01:11:03 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/08 05:04:15 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static char	*ft_search_path(char **exe, char **path_split)
 	while (*path_split)
 	{
 		tmp = ft_strjoin(*path_split, "/");
-		tmp = ft_strjoin(tmp, *exe);
+		tmp = ft_strjoin_free(tmp, *exe);
 		if (!access(tmp, F_OK))
 		{
 			if (!access(tmp, X_OK))

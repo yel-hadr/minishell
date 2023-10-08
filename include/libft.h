@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
+/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:36:25 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/08 00:04:04 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/08 04:59:02 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ char	*ft_strcpy(char *dest, char *src);
 int		ft_isspace(int c);
 char	*ft_strnew(size_t size);
 int		ft_error(char *cmd, char *error);
+char	*ft_strjoin_free(char *s1, char *s2);
 
 typedef struct s_list
 {

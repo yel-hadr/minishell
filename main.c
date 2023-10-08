@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
+/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 05:43:33 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/08 00:12:12 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/08 05:25:47 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ char	*ft_prompt(t_list *env)
 	char	*tmp;
 	char	*result;
 
-	user = NULL;
 	dir = NULL;
 	result = NULL;
 	user = ft_getval("USER", env);
@@ -47,12 +46,12 @@ char	*ft_prompt(t_list *env)
 	else
 	{
 		result = ft_strjoin(GRN, user);
-		result = ft_strjoin(result, RESET);
-		result = ft_strjoin(result, " : ");
-		result = ft_strjoin(result, BLU);
-		result = ft_strjoin(result, dir);
-		result = ft_strjoin(result, RESET);
-		result = ft_strjoin(result, " > ");
+		result = ft_strjoin_free(result, RESET);
+		result = ft_strjoin_free(result, " : ");
+		result = ft_strjoin_free(result, BLU);
+		result = ft_strjoin_free(result, dir);
+		result = ft_strjoin_free(result, RESET);
+		result = ft_strjoin_free(result, " > ");
 	}
 	if (user)
 		free(user);
@@ -85,6 +84,8 @@ char	*ft_check_error(t_list *env)
 	result = ft_strtrim(input, " \t");
 	if (input)
 		free(input);
+	if (prompt)
+		free(prompt);
 	return (result);
 }
 
