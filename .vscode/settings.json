@@ -1,7 +1,0 @@
-{
-	"makefile.extensionOutputFolder": "./.vscode",
-	"files.associations": {
-		"execute.h": "c",
-		"fcntl.h": "c"
-	}
-}
