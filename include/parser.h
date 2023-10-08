@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:13:04 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/07 23:57:54 by elakhfif         ###   ########.fr       */
+/*   Updated: 2023/10/08 09:09:37 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ typedef struct s_cmd
 t_redir_type	get_redir_type(char *input);
 t_cmd			*split_cmd(char *input, int *status);
 t_cmd			*add_cmd(t_cmd *cmd, char *input);
+t_cmd			*add_cmd_back(t_cmd **cmd, t_cmd *new);
+t_cmd			*new_cmd(char *cmd);
 t_cmd			*parser(char *line, t_list *env, int *status);
 char			*remove_quotes(char *cmd);
 char			**get_redirections(char *input);

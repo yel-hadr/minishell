@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:06:49 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/07 23:29:36 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/08 09:09:00 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,30 +73,26 @@ static int	words_count(char *input)
 
 t_cmd	*split_cmd(char *input, int *status)
 {
-	t_cmd	*result;
-	char	*tmp;
+	t_cmd	*cmd;
+	t_cmd	*tmp;
+	int		i;
+	int		j;
 
-	result = NULL;
-	while (input && *input)
+	i = 0;
+	j = 0;
+	cmd = NULL;
+	while (input && input[i])
 	{
-		tmp = ft_substr(input, 0, words_count(input));
-		result = add_cmd(result, tmp);
-		input = input + words_count(input);
-		if (*input == '|')
-		{
-			input++;
-			if (!*input)
-				result = add_cmd(result, "|");
-		}
+		j = words_count(input + i);
+		tmp = new_cmd(ft_substr(input, i, j));
+		if (!tmp)
+			return (NULL);
+		add_cmd_back(&cmd, tmp);
+		i += j;
+		if (input[i] == '|')
+			i++;
 	}
-	if (check_quoted(result) || check_redirections(result)
-		|| check_separator(result))
-	{
+	if (check_quoted(cmd))
 		*status = 1;
-		free(result);
-		return (NULL);
-	}
-	else
-		*status = 0;
-	return (result);
+	return (cmd);
 }
