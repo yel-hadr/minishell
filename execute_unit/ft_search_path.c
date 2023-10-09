@@ -6,7 +6,7 @@
 /*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 16:10:37 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/10/08 05:04:15 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/09 22:49:12 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,14 +64,30 @@ char	*is_cmd_exists(char **exe, t_list *envp)
 {
 	char	*path;
 	char	**path_split;
+	DIR		*dir;
 
 	if (!*exe || !exe)
 		return (NULL);
 	if (**exe == '/' || **exe == '.')
 	{
+		
+		dir = opendir(*exe);
+		if(dir)
+		{
+			ft_error(*exe, "is a directory");
+			exit(255);
+		}
+		closedir(dir);
 		if (!access(*exe, F_OK))
+		{
 			if (!access(*exe, X_OK))
 				return (*exe);
+		}
+		else
+		{
+			ft_error(*exe, strerror(errno));
+			exit(127);
+		}
 		return (NULL);
 	}
 	path = ft_getval("PATH", envp);

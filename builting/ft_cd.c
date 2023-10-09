@@ -6,7 +6,7 @@
 /*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 12:15:48 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/10/09 03:16:53 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/09 17:46:02 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int	ft_cd(char **args, t_list *env)
 	char	*oldpwd;
 	char	*pwd;
 
+	if (!args)
+		return (1);
 	if (args[2])
 		return (ft_error("cd", "too many arguments"));
 	oldpwd = getcwd(NULL, 0);

@@ -38,7 +38,7 @@ BUILTING_OBJS	=	$(BUILTING_SRCS:.c=.o)
 OBJS	=	$(SRCS:.c=.o)
 
 %.o: %.c
-	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
 
 all:	$(NAME)
@@ -46,7 +46,7 @@ all:	$(NAME)
 $(NAME) : $(PARSING_OBJS) $(LIBFT_OBJS) $(BUILTING_OBJS) $(EXECUTION_OBJS) $(OBJS)
 	@ar rc $(UTILS) $(EXECUTION_OBJS) $(PARSING_OBJS) $(LIBFT_OBJS) $(BUILTING_OBJS)
 	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $(UTILS)
-	@$(CC) $(CFLAGS) $(OBJS) $(UTILS) -lreadline -L ~/.brew/opt/readline/lib/ -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) $(UTILS) -lreadline -o $(NAME)
 	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $(NAME)
 
 
