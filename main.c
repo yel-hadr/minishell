@@ -6,7 +6,7 @@
 /*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 05:43:33 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/09 04:13:50 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/09 14:25:24 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ char	*ft_prompt(t_list *env)
 	user = ft_getval("USER", env);
 	tmp = getcwd(NULL, 0);
 	dir = ft_strrchr(tmp, '/');
-	if (!dir)
+	if (!user || !dir)
+		result = ft_strdup(GRN "minishell > " RESET);
+	else if (!*(dir + 1))
 		dir = tmp;
 	else
 		dir++;
-	if (!user || !dir)
-		result = ft_strdup(GRN "minishell > " RESET);
-	else
+	if (!result)
 	{
 		result = ft_strjoin(GRN, user);
 		result = ft_strjoin_free(result, RESET);

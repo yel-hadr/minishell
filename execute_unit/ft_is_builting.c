@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_builting.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
+/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 16:44:35 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/10/09 01:03:45 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/09 16:24:33 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ int	exec_builting(t_cmd *cmd, t_list *envp)
 	int	status;
 
 	status = 0;
-	do_redir(&save_stdin, &save_stdout, cmd);
+	if (do_redir(&save_stdin, &save_stdout, cmd))
+		return(-1);
 	if (!ft_strcmp(cmd->args[0], "echo"))
 		status = ft_echo(cmd->args);
 	else if (!ft_strcmp(cmd->args[0], "cd"))
