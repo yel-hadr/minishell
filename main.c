@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
+/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 05:43:33 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/09 01:25:16 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/09 04:13:50 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,7 +137,6 @@ int	main(int argc, char **argv, char **envp)
 			status = ft_pipe(cmds, env);
 		if (cmds)
 			ft_free_cmds(cmds);
-		system("leaks minishell");
 	}
 	ft_lstclear(&env, free);
 	return (0);

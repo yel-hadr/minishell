@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   expand_variable.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
+/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 09:52:20 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/09 00:58:14 by elakhfif         ###   ########.fr       */
+/*   Updated: 2023/10/09 04:12:55 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,8 +116,8 @@ char	*expand_variable(char *str, t_list *env, int *exit_status)
 		}
 		else
 		{
-			new_str = ft_strjoin_char(new_str, str[i + 1]);
-			i += 2;
+			new_str = ft_strjoin_char(new_str, str[i]);
+			i++;
 		}
 	}
 	free(str);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pipe.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
+/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 09:15:39 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/10/09 01:05:07 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/09 06:03:13 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,12 @@ static int	ft_wait_pid(int *status, t_cmd *tmp, int pid)
 	waitpid(pid, status, 0);
 	while (tmp->next)
 	{
-		waitpid(-1, status, 0);
+		waitpid(-1, NULL, 0);
 		tmp = tmp->next;
 	}
 	g_sig = 0;
+	if (WIFSIGNALED(*status))
+		return(WEXITSTATUS(*status << 8) + 128);
 	return (*status >> 8);
 }
 

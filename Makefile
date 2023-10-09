@@ -1,6 +1,6 @@
 NAME	=	minishell
 CC	=	cc
-CFLAGS	=	#-Werror -Wextra -Wall -O3  #-g -fsanitize=address
+CFLAGS	=	-g #-Werror -Wextra -Wall -O3  #-g -fsanitize=address
 
 UTILS	=	minishell_utils.a
 
