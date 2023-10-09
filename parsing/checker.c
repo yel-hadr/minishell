@@ -6,77 +6,43 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 10:56:11 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/07 02:46:08 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/09 00:14:25 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/parser.h"
 
-static char	*get_separator(char *str)
+void	syntax_error(char *str)
 {
-	int		i;
-	char	*result;
-
-	i = 0;
-	result = ft_calloc(sizeof(char), (ft_strlen(str) + 1));
-	while (str && str[i])
-	{
-		if (ft_strchr("|", str[i]))
-		{
-			ft_strcpy(result, str + i + 1);
-			return (result);
-		}
-		i++;
-	}
-	return (result);
+	ft_putstr_fd("mish: syntax error near unexpected token `", 2);
+	ft_putstr_fd(str, 2);
+	ft_putstr_fd("'\n", 2);
 }
 
 int	check_separator(t_cmd *cmd)
 {
-	char	*tmp;
-
-	while (cmd)
-	{
-		ft_strtrim(cmd->cmd, " ");
-		tmp = get_separator(cmd->cmd);
-		if (ft_strlen(tmp) == ft_strlen(cmd->cmd) || ft_strchr(tmp, '|')
-			|| cmd->cmd[0] == '|' || cmd->cmd[ft_strlen(cmd->cmd) - 1] == '|')
-		{
-			ft_putstr_fd("mish: syntax error near unexpected token `|'\n", 2);
-			free(tmp);
-			return (1);
-		}
-		free(tmp);
-		cmd = cmd->next;
-	}
-	return (0);
-}
-
-int	check_redirections(t_cmd *cmd)
-{
-	int	i;
-	int	index;
+	char	*str;
+	int		i;
 
 	i = 0;
-	index = 0;
-	while (cmd)
+	str = cmd->cmd;
+	while (str[i])
 	{
-		while (cmd->cmd[i])
+		if (str[i] == '|' && str[i + 1] == '|')
 		{
-			if (ft_strchr("><", cmd->cmd[i]))
-				index++;
-			i++;
-		}
-		if ((index == 1 && ((cmd->cmd[0] == '>') || cmd->cmd[0] == '<'))
-			|| cmd->cmd[ft_strlen(cmd->cmd) - 1] == '>'
-			|| cmd->cmd[ft_strlen(cmd->cmd) - 1] == '<')
-		{
-			ft_putstr_fd("mish: syntax error near unexpected token `newline'\n",
-				2);
+			syntax_error("|");
 			return (1);
 		}
-		index = 0;
-		cmd = cmd->next;
+		else if (str[i] == '|')
+		{
+			i++;
+			if (!(*str))
+			{
+				syntax_error("|");
+				return (1);
+			}
+		}
+		i++;
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 02:09:56 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/08 09:11:04 by elakhfif         ###   ########.fr       */
+/*   Updated: 2023/10/09 00:38:58 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ t_cmd	*add_cmd(t_cmd *cmd, char *input)
 
 t_cmd	*add_cmd_back(t_cmd **cmd, t_cmd *new)
 {
-
 	t_cmd	*tmp;
 
 	if (!new)
@@ -60,4 +59,18 @@ t_cmd	*new_cmd(char *cmd)
 	new->cmd = cmd;
 	new->next = NULL;
 	return (new);
+}
+
+t_cmd	*free_cmd(t_cmd *cmd)
+{
+	t_cmd	*tmp;
+
+	while (cmd)
+	{
+		tmp = cmd->next;
+		free(cmd->cmd);
+		free(cmd);
+		cmd = tmp;
+	}
+	return (NULL);
 }

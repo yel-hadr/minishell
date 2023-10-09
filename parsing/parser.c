@@ -6,27 +6,11 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 05:46:27 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/09 00:24:08 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/09 01:20:01 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/parser.h"
-
-//free_cmd frees the cmd struct
-void	free_cmd(t_cmd **cmd)
-{
-	t_cmd	*tmp;
-
-	tmp = *cmd;
-	while (tmp)
-	{
-		*cmd = tmp->next;
-		free(tmp->cmd);
-		free(tmp->args);
-		free(tmp);
-		tmp = *cmd;
-	}
-}
 
 t_cmd	*parser(char *line, t_list *env, int *status)
 {
@@ -49,7 +33,7 @@ t_cmd	*parser(char *line, t_list *env, int *status)
 		*status = split_args(tmp, env);
 		tmp = tmp->next;
 	}
-	free_cmd(&tmp);
+	free_cmd(tmp);
 	free(line);
 	if (g_sig == -1)
 		g_sig = 0;

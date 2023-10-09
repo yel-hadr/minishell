@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 14:18:06 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/08 00:23:38 by elakhfif         ###   ########.fr       */
+/*   Updated: 2023/10/09 01:10:06 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static int	ms_filenumber(void)
 
 // fill the tab is function to fill the tab with the files in the directory without the hidden files
 // DIR is a structure that contains information about a directory, and struct dirent is a structure that contains information about an directory entry.
-static char	**ms_filltab(char **tab, int i)
+static char **ms_filltab(char **tab, int i)
 {
 	DIR				*dir;
 	struct dirent	*sd;
@@ -133,17 +133,17 @@ char	**ms_wildcard(char *wildcard)
 	tab = ms_sorttab(tab);
 	return (tab);
 }
-// int	main(void)
-// {
-// 	char	**tab;
-// 	int		i;
-//
-// 	i = 0;
-// 	tab = ms_wildcard("*.c");
-// 	while (tab[i])
-// 	{
-// 		printf("%s\n", tab[i]);
-// 		i++;
-// 	}
-// 	return (0);
-// }
+int	main(void)
+{
+	char	**tab;
+	int		i;
+
+	i = 0;
+	tab = ms_wildcard("*");
+	while (tab[i])
+	{
+		printf("%s\n", tab[i]);
+		i++;
+	}
+	return (0);
+}

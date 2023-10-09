@@ -120,10 +120,11 @@ int	split_args(t_cmd *command, t_list *env)
 			command->redir_out.type = get_redir_type(cmd);
 			while (ft_strchr("> \t", *cmd))
 				cmd++;
-			if (ft_get_redir_file(cmd, command, command->redir_out.type, env) == -1)
+			if (ft_get_redir_file(cmd, command, command->redir_out.type, env) ==
+				-1)
 			{
 				ft_error(command->redir_out.file, strerror(errno));
-				return(1);
+				return (1);
 			}
 			next_arg(cmd);
 			count--;
@@ -133,10 +134,11 @@ int	split_args(t_cmd *command, t_list *env)
 			command->redir_in.type = get_redir_type(cmd);
 			while (ft_strchr("< \t", *cmd))
 				cmd++;
-			if (ft_get_redir_file(cmd, command, command->redir_in.type, env) == -1)
+			if (ft_get_redir_file(cmd, command, command->redir_in.type, env) ==
+				-1)
 			{
 				ft_error(command->redir_in.file, strerror(errno));
-				return(1);
+				return (1);
 			}
 			next_arg(cmd);
 			count--;

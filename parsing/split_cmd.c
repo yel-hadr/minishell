@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:06:49 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/08 09:09:00 by elakhfif         ###   ########.fr       */
+/*   Updated: 2023/10/09 00:40:11 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ static int	check_quoted(t_cmd *cmd)
 		if (check_quotes_loop(cmd->cmd))
 		{
 			ft_putstr_fd("mish: Warning: quotes not closed\n", 2);
+			free(cmd->cmd);
 			return (1);
 		}
 		if (!cmd->next)
@@ -85,14 +86,26 @@ t_cmd	*split_cmd(char *input, int *status)
 	{
 		j = words_count(input + i);
 		tmp = new_cmd(ft_substr(input, i, j));
-		if (!tmp)
-			return (NULL);
 		add_cmd_back(&cmd, tmp);
 		i += j;
 		if (input[i] == '|')
+		{
 			i++;
+			if (!input[i])
+			{
+				ft_putstr_fd("mish: syntax error near unexpected token `|'\n",
+					2);
+				*status = 1;
+				free_cmd(cmd);
+				return (NULL);
+			}
+		}
 	}
 	if (check_quoted(cmd))
+	{
 		*status = 1;
+		free(cmd);
+		return (NULL);
+	}
 	return (cmd);
 }
