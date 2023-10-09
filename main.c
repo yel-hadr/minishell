@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 05:43:33 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/08 08:50:02 by elakhfif         ###   ########.fr       */
+/*   Updated: 2023/10/09 00:24:25 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,14 +129,14 @@ int	main(int argc, char **argv, char **envp)
 	while (1)
 	{
 		g_sig = 0;
-		ft_save_fd(&save_stdin, &save_stdout);
 		input = ft_check_error(env);
+		ft_save_fd(&save_stdin, &save_stdout);
 		cmds = parser(input, env, &status);
-		if (!status)
+		ft_restore_fd(save_stdin, save_stdout);
+		if (!status && !g_sig)
 			status = ft_pipe(cmds, env);
 		if (cmds)
 			ft_free_cmds(cmds);
-		ft_restore_fd(save_stdin, save_stdout);
 	}
 	ft_lstclear(&env, free);
 	return (0);

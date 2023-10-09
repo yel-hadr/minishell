@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 09:15:39 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/10/07 23:33:17 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/09 01:05:07 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	ft_child(int *fd, int fd_in, t_cmd *cmds, t_list *envp)
 		exit(exec_builting(cmds, envp));
 	if (!is_cmd_exists(&cmds->args[0], envp))
 	{
-		ft_error(cmds->args[0], strerror(errno));
+		ft_error(cmds->args[0], "command not found");
 		exit(127);
 	}
 	ft_execute(cmds, envp);
@@ -61,7 +61,7 @@ int	ft_pipe(t_cmd *cmds, t_list *envp)
 	int		status;
 	t_cmd	*tmp;
 
-	if (!cmds || !cmds->args || !*cmds->args || g_sig == -2)
+	if (!cmds || !cmds->args || !*cmds->args)
 		return (0);
 	if (cmds->next == NULL && is_builting(cmds->args[0]))
 		return (exec_builting(cmds, envp));

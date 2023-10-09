@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 05:46:27 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/08 08:51:20 by elakhfif         ###   ########.fr       */
+/*   Updated: 2023/10/09 00:24:08 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,7 @@ t_cmd	*parser(char *line, t_list *env, int *status)
 	}
 	free_cmd(&tmp);
 	free(line);
+	if (g_sig == -1)
+		g_sig = 0;
 	return (result);
 }
