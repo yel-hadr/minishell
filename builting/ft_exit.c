@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 15:31:05 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/23 23:08:38 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/10 03:26:17 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ static int	check_the_number(char *str)
 {
 	if (!str)
 		return (0);
+	if (*str && ft_strchr("-+", *str))
+		str++;
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
@@ -33,7 +35,10 @@ int	ft_exit(char **args)
 		return (1);
 	}
 	if (check_the_number(args[1]))
+	{
+		ft_error (args[0], "numeric argument required");
 		exit(255);
+	}
 	if (args[1])
 		exit(ft_atoi(args[1]));
 	exit(0);

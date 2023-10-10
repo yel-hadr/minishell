@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pipe.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 09:15:39 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/10/09 18:30:29 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/10 03:35:35 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,14 @@ static int	ft_child(int *fd, int fd_in, t_cmd *cmds, t_list *envp)
 		ft_error(cmds->args[0], "command not found");
 		exit(127);
 	}
-	ft_execute(cmds, envp);
+	exit(ft_execute(cmds, envp));
 	return (0);
 }
 
 static int	ft_wait_pid(int *status, t_cmd *tmp, int pid)
 {
+	int sig_status;
+	
 	waitpid(pid, status, 0);
 	while (tmp->next)
 	{
@@ -42,7 +44,10 @@ static int	ft_wait_pid(int *status, t_cmd *tmp, int pid)
 	}
 	g_sig = 0;
 	if (WIFSIGNALED(*status))
-		return(WEXITSTATUS(*status << 8) + 128);
+	{
+		sig_status = *status >> 8;
+		return (WEXITSTATUS(sig_status) + 128);
+	}
 	return (*status >> 8);
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_search_path.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 16:10:37 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/10/09 22:49:12 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/10 01:58:58 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,18 +70,18 @@ char	*is_cmd_exists(char **exe, t_list *envp)
 		return (NULL);
 	if (**exe == '/' || **exe == '.')
 	{
-		
 		dir = opendir(*exe);
 		if(dir)
 		{
 			ft_error(*exe, "is a directory");
-			exit(255);
+			exit(126);
 		}
-		closedir(dir);
 		if (!access(*exe, F_OK))
 		{
 			if (!access(*exe, X_OK))
 				return (*exe);
+			ft_error(*exe, strerror(errno));
+			exit(126);
 		}
 		else
 		{

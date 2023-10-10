@@ -132,9 +132,9 @@ int	main(int argc, char **argv, char **envp)
 		input = ft_check_error(env);
 		ft_save_fd(&save_stdin, &save_stdout);
 		cmds = parser(input, env, &status);
-		ft_restore_fd(save_stdin, save_stdout);
 		if (!status && !g_sig)
 			status = ft_pipe(cmds, env);
+		ft_restore_fd(save_stdin, save_stdout);
 		if (cmds)
 			ft_free_cmds(cmds);
 	}

@@ -1,6 +1,6 @@
 NAME	=	minishell
 CC	=	cc
-CFLAGS	=	-g #-Werror -Wextra -Wall -O3  #-g -fsanitize=address
+CFLAGS	= -Werror -Wextra -Wall -O3  -g #-fsanitize=address
 
 UTILS	=	minishell_utils.a
 
@@ -38,7 +38,7 @@ BUILTING_OBJS	=	$(BUILTING_SRCS:.c=.o)
 OBJS	=	$(SRCS:.c=.o)
 
 %.o: %.c
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -I ~/.brew/opt/readline/include/ -c $< -o $@
 	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $<
 
 all:	$(NAME)
@@ -46,7 +46,7 @@ all:	$(NAME)
 $(NAME) : $(PARSING_OBJS) $(LIBFT_OBJS) $(BUILTING_OBJS) $(EXECUTION_OBJS) $(OBJS)
 	@ar rc $(UTILS) $(EXECUTION_OBJS) $(PARSING_OBJS) $(LIBFT_OBJS) $(BUILTING_OBJS)
 	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $(UTILS)
-	@$(CC) $(CFLAGS) $(OBJS) $(UTILS) -lreadline -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) $(UTILS) -lreadline -L ~/.brew/opt/readline/lib/ -o $(NAME)
 	@printf "\033[0;32mCompilation [OK]\033[0m %s\n" $(NAME)
 
 

@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 20:06:50 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/09/25 01:13:55 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/10 03:19:20 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ static int	redaraction_input(char *file)
 		dup2(fd, STDIN_FILENO);
 		close(fd);
 	}
+	else
+		close(STDIN_FILENO);
 	return (fd);
 }
 
@@ -35,6 +37,8 @@ static int	redaraction_output(char *file)
 		dup2(fd, STDOUT_FILENO);
 		close(fd);
 	}
+	else
+		close(STDOUT_FILENO);
 	return (fd);
 }
 
@@ -48,6 +52,8 @@ static int	redaraction_append(char *file)
 		dup2(fd, STDOUT_FILENO);
 		close(fd);
 	}
+	else
+		close(STDOUT_FILENO);
 	return (fd);
 }
 
@@ -60,10 +66,13 @@ int	redaraction_heredoc(char *herdoc)
 	write(pipefd[1], herdoc, ft_strlen(herdoc));
 	close(pipefd[1]);
 	fd = pipefd[0];
-	if (fd < 0)
-		return (-1);
-	dup2(fd, STDIN_FILENO);
-	close(fd);
+	if (fd >= 0)
+	{
+		dup2(fd, STDIN_FILENO);
+		close(fd);
+	}
+	else
+		close(STDIN_FILENO);
 	return (fd);
 }
 

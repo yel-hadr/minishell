@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_execute.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 15:34:40 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/10/09 16:27:28 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/10 02:33:33 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ int	ft_execute(t_cmd *cmd, t_list *envp)
 	env = ft_lst_to_char(envp);
 	exit_status = 0;
 	if (ft_redaraction(cmd->redir_in.file, cmd->redir_in.type) == -1)
+	{
 		return (1);
+	}
 	if (ft_redaraction(cmd->redir_out.file, cmd->redir_out.type) == -1)
 		return (1);
 	if (cmd->args[0])
