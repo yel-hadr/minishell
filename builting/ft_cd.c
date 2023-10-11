@@ -52,13 +52,16 @@ int	ft_cd(char **args, t_list *env)
 
 	if (!args)
 		return (1);
-	if (args[2])
-		return (0);
 	oldpwd = getcwd(NULL, 0);
 	if (!args[1] || !ft_strncmp(args[1], "~", 1))
 	{
 		if (ft_do_cd_home(oldpwd, env))
 			return (1);
+	}
+	if (args[2])
+	{
+		ft_error("cd", "too many arguments");
+		return (1);
 	}
 	else if (!ft_strncmp(args[1], "-", 1))
 	{

@@ -37,7 +37,7 @@ int	ft_exit(char **args)
 	if (check_the_number(args[1]))
 	{
 		ft_error (args[0], "numeric argument required");
-		exit(255);
+		exit(2);
 	}
 	if (args[1])
 		exit(ft_atoi(args[1]));

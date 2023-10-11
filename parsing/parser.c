@@ -21,7 +21,7 @@ t_cmd	*parser(char *line, t_list *env, int *status)
 	g_sig = -1;
 	if (!line)
 		return (NULL);
-	if (ft_strchr(line, '$'))
+	if (ft_strchr(line, '$') && !ft_strchr(line, '\''))
 	{
 		tmp2 = expand_variable(line, env, status);
 		line = tmp2;

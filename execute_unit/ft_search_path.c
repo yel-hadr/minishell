@@ -73,7 +73,7 @@ char	*is_cmd_exists(char **exe, t_list *envp)
 		dir = opendir(*exe);
 		if(dir)
 		{
-			ft_error(*exe, "is a directory");
+			ft_error(*exe, "Is a directory");
 			exit(126);
 		}
 		if (!access(*exe, F_OK))

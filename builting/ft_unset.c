@@ -46,11 +46,12 @@ static int	ft_lstremove_if(t_list **head, void *data_ref, int (*cmp)(), \
 		if (!cmp(tmp->content, data_ref))
 		{
 			if (prev)
+			{
 				prev->next = tmp->next;
+				ft_lstdelone(tmp,free);
+			}
 			else
 				*head = tmp->next;
-			free_fct(tmp->content);
-			free(tmp);
 			return (1);
 		}
 		prev = tmp;
