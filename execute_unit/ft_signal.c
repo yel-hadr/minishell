@@ -32,24 +32,24 @@
 // 		rl_redisplay();
 // }
 
-void    ft_handler(int sig)
+void	ft_handler(int sig)
 {
-    (void)sig;
-    if (g_sig > 0)
-    {
-        rl_on_new_line();
-        //rl_replace_line("", 0);
-    }
-    else
-    {
+	(void)sig;
+	if (g_sig > 0)
+	{
+		rl_on_new_line();
+		// rl_replace_line("", 0);
+	}
+	else
+	{
 		if (g_sig == -1)
 		{
 			close(STDIN_FILENO);
 			g_sig = -2;
 		}
-        printf("\n");
-        rl_on_new_line();
-        //rl_replace_line("", 0);
-        rl_redisplay();
-    }
+		printf("\n");
+		rl_on_new_line();
+		// rl_replace_line("", 0);
+		rl_redisplay();
+	}
 }

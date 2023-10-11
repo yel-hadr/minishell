@@ -27,8 +27,8 @@ static int	ft_check_if_var(char *str)
 
 static int	ft_varcmp(char *s1, char *s2)
 {
-	if (!ft_strncmp(s1, s2, ft_strlen(s2)) && \
-			(s1[ft_strlen(s2)] == '=' || !s1[ft_strlen(s2)]))
+	if (!ft_strncmp(s1, s2, ft_strlen(s2)) && (s1[ft_strlen(s2)] == '='
+			|| !s1[ft_strlen(s2)]))
 		return (0);
 	return (1);
 }
@@ -47,7 +47,7 @@ static int	ft_lstremove_if(t_list **head, void *data_ref, int (*cmp)())
 			if (prev)
 			{
 				prev->next = tmp->next;
-				ft_lstdelone(tmp,free);
+				ft_lstdelone(tmp, free);
 			}
 			else
 				*head = tmp->next;

@@ -71,7 +71,7 @@ char	*is_cmd_exists(char **exe, t_list *envp)
 	if (**exe == '/' || **exe == '.')
 	{
 		dir = opendir(*exe);
-		if(dir)
+		if (dir)
 		{
 			ft_error(*exe, "Is a directory");
 			exit(126);

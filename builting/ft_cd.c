@@ -15,6 +15,7 @@
 static int	ft_do_cd_home(char *oldpwd, t_list *env)
 {
 	char	*home;
+
 	if (chdir(ft_getenv("HOME", env) + 5) == -1)
 	{
 		ft_error("cd", strerror(errno));

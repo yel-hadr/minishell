@@ -34,8 +34,8 @@ static int	ft_child(int *fd, int fd_in, t_cmd *cmds, t_list *envp)
 
 static int	ft_wait_pid(int *status, t_cmd *tmp, int pid)
 {
-	int sig_status;
-	
+	int	sig_status;
+
 	waitpid(pid, status, 0);
 	while (tmp->next)
 	{

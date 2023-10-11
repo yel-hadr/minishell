@@ -62,8 +62,9 @@ static int	ms_filenumber(void)
 }
 
 // fill the tab is function to fill the tab with the files in the directory without the hidden files
-// DIR is a structure that contains information about a directory, and struct dirent is a structure that contains information about an directory entry.
-static char **ms_filltab(char **tab, int i)
+// DIR is a structure that contains information about a directory,
+and struct dirent is a structure that contains information about an directory entry.static char **ms_filltab(char **tab,
+	int i)
 {
 	DIR				*dir;
 	struct dirent	*sd;

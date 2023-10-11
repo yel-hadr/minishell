@@ -30,7 +30,7 @@ int	exec_builting(t_cmd *cmd, t_list *envp)
 
 	status = 0;
 	if (do_redir(&save_stdin, &save_stdout, cmd))
-		return(-1);
+		return (-1);
 	if (!ft_strcmp(cmd->args[0], "echo"))
 		status = ft_echo(cmd->args);
 	else if (!ft_strcmp(cmd->args[0], "cd"))
