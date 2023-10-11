@@ -6,7 +6,7 @@
 /*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 03:49:40 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/10/09 18:19:37 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/11 07:20:41 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void    ft_handler(int sig)
     if (g_sig > 0)
     {
         rl_on_new_line();
-        rl_replace_line("", 0);
+        //rl_replace_line("", 0);
     }
     else
     {
@@ -49,7 +49,7 @@ void    ft_handler(int sig)
 		}
         printf("\n");
         rl_on_new_line();
-        rl_replace_line("", 0);
+        //rl_replace_line("", 0);
         rl_redisplay();
     }
 }
