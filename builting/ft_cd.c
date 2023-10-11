@@ -78,6 +78,7 @@ int	ft_cd(char **args, t_list *env)
 	if (args[2])
 	{
 		ft_error("cd", "too many arguments");
+		free(oldpwd);
 		return (1);
 	}
 	else if (!ft_strncmp(args[1], "-", 1))

@@ -60,36 +60,41 @@ static char	*ft_search_path(char **exe, char **path_split)
 	return (NULL);
 }
 
+static char	*ft_do_abspath(char **exe)
+{
+	DIR	*dir;
+
+	dir = opendir(*exe);
+	if (dir)
+	{
+		ft_error(*exe, "Is a directory");
+		closedir(dir);
+		exit(126);
+	}
+	if (!access(*exe, F_OK))
+	{
+		if (!access(*exe, X_OK))
+			return (*exe);
+		ft_error(*exe, strerror(errno));
+		exit(126);
+	}
+	else
+	{
+		ft_error(*exe, strerror(errno));
+		exit(127);
+	}
+	return (NULL);
+}
+
 char	*is_cmd_exists(char **exe, t_list *envp)
 {
 	char	*path;
 	char	**path_split;
-	DIR		*dir;
 
 	if (!*exe || !exe)
 		return (NULL);
 	if (**exe == '/' || **exe == '.')
-	{
-		dir = opendir(*exe);
-		if (dir)
-		{
-			ft_error(*exe, "Is a directory");
-			exit(126);
-		}
-		if (!access(*exe, F_OK))
-		{
-			if (!access(*exe, X_OK))
-				return (*exe);
-			ft_error(*exe, strerror(errno));
-			exit(126);
-		}
-		else
-		{
-			ft_error(*exe, strerror(errno));
-			exit(127);
-		}
-		return (NULL);
-	}
+		return (ft_do_abspath(exe));
 	path = ft_getval("PATH", envp);
 	path_split = ft_split(path, ':');
 	free(path);

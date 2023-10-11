@@ -31,7 +31,6 @@ int	ft_execute(t_cmd *cmd, t_list *envp)
 	char	**env;
 	int		exit_status;
 
-	env = ft_lst_to_char(envp);
 	exit_status = 0;
 	if (ft_redaraction(cmd->redir_in.file, cmd->redir_in.type) == -1)
 	{
@@ -40,7 +39,10 @@ int	ft_execute(t_cmd *cmd, t_list *envp)
 	if (ft_redaraction(cmd->redir_out.file, cmd->redir_out.type) == -1)
 		return (1);
 	if (cmd->args[0])
+	{
+		env = ft_lst_to_char(envp);
 		exit_status = execve(cmd->args[0], cmd->args, env);
+	}
 	ft_error(cmd->args[0], strerror(errno));
 	exit(exit_status);
 	return (1);

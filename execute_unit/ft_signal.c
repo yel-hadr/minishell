@@ -12,33 +12,13 @@
 
 #include "../include/execute.h"
 
-// void	ft_handler(int sig)
-// {
-// 	(void)sig;
-// 	if (g_sig > 0)
-// 	{
-// 		kill(0, SIGINT);
-// 		g_sig = 0;
-// 	}
-// 	printf("\n");
-// 	rl_on_new_line();
-// 	rl_replace_line("", 0);
-// 	if (g_sig == -1)
-// 	{
-// 		close(STDIN_FILENO);
-// 		g_sig = -2;
-// 	}
-// 	else if (g_sig >= 0)
-// 		rl_redisplay();
-// }
-
 void	ft_handler(int sig)
 {
 	(void)sig;
 	if (g_sig > 0)
 	{
 		rl_on_new_line();
-		// rl_replace_line("", 0);
+		rl_replace_line("", 0);
 	}
 	else
 	{
@@ -49,7 +29,7 @@ void	ft_handler(int sig)
 		}
 		printf("\n");
 		rl_on_new_line();
-		// rl_replace_line("", 0);
+		rl_replace_line("", 0);
 		rl_redisplay();
 	}
 }
