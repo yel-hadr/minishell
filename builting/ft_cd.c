@@ -46,10 +46,26 @@ static int	ft_cd_oldpwd(char *oldpwd, t_list *env)
 	return (0);
 }
 
+static int	ft_do_cd(char *args, char *oldpwd, t_list *env)
+{
+	char	*pwd;
+
+	if (chdir(args) == -1)
+	{
+		ft_error("cd", strerror(errno));
+		free(oldpwd);
+		return (1);
+	}
+	pwd = getcwd(NULL, 0);
+	ft_setenv("OLDPWD", oldpwd, env);
+	ft_setenv("PWD", pwd, env);
+	free(pwd);
+	return (0);
+}
+
 int	ft_cd(char **args, t_list *env)
 {
 	char	*oldpwd;
-	char	*pwd;
 
 	if (!args)
 		return (1);
@@ -70,18 +86,8 @@ int	ft_cd(char **args, t_list *env)
 			return (1);
 	}
 	else
-	{
-		if (chdir(args[1]) == -1)
-		{
-			ft_error("cd", strerror(errno));
-			free(oldpwd);
+		if (ft_do_cd(args[1], oldpwd, env))
 			return (1);
-		}
-		pwd = getcwd(NULL, 0);
-		ft_setenv("OLDPWD", oldpwd, env);
-		ft_setenv("PWD", pwd, env);
-		free(pwd);
-	}
 	free(oldpwd);
 	return (0);
 }
