@@ -6,7 +6,7 @@
 /*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 09:52:20 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/09 16:21:03 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/11 07:11:32 by lhorbax          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ char    *expand_variable(char *str, t_list *env, int *exit_status)
             if (str[i + 1] == '?')
             {
                 val = ft_itoa(*exit_status);
-                new_str = ft_strjoin(new_str, val);
+                new_str = ft_strjoin_free(new_str, val);
                 free(val);
                 i += 2;
                 continue ;
@@ -99,7 +99,7 @@ char    *expand_variable(char *str, t_list *env, int *exit_status)
             val = ft_getval(var, env);
             if (!val)
                 val = strdup("");
-            new_str = ft_strjoin(new_str, val);
+            new_str = ft_strjoin_free(new_str, val);
             free(var);
             free(val);
         }
