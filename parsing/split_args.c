@@ -6,7 +6,7 @@
 /*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:41:52 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/12 05:37:55 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/12 06:25:39 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,11 @@ static int	ft_get_outfile(char **tmp, t_cmd *command, t_list *env, int *count)
 
 	cmd = *tmp;
 	command->redir_out.type = get_redir_type(cmd);
+	if (command->redir_out.type == ERROR)
+	{
+		ft_putstr_fd("minishell: syntax error near unexpected token `>'\n", 2);
+		return (1);
+	}
 	while (ft_strchr("> \t", *cmd))
 		cmd++;
 	if (ft_get_redir_file(cmd, command, command->redir_out.type, \
@@ -50,6 +55,11 @@ static int	ft_get_infile(char **tmp, t_cmd *command, t_list *env, int *count)
 
 	cmd = *tmp;
 	command->redir_in.type = get_redir_type(cmd);
+	if (command->redir_in.type == ERROR)
+	{
+		ft_putstr_fd("minishell: syntax error near unexpected token `<'\n", 2);
+		return (1);
+	}
 	while (ft_strchr("< \t", *cmd))
 		cmd++;
 	if (ft_get_redir_file(cmd, command, command->redir_in.type, \
