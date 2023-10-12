@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 05:43:33 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/09 14:25:24 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/12 01:45:29 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,8 +117,7 @@ int	main(int argc, char **argv, char **envp)
 	char	*input;
 	t_list	*env;
 	int		status;
-	int		save_stdin;
-	int		save_stdout;
+	int		fd[2];
 
 	(void)argc;
 	(void)argv;
@@ -130,13 +129,14 @@ int	main(int argc, char **argv, char **envp)
 	{
 		g_sig = 0;
 		input = ft_check_error(env);
-		ft_save_fd(&save_stdin, &save_stdout);
+		ft_save_fd(&fd[0], &fd[1]);
 		cmds = parser(input, env, &status);
 		if (!status && !g_sig)
 			status = ft_pipe(cmds, env);
-		ft_restore_fd(save_stdin, save_stdout);
+		ft_restore_fd(fd[0], fd[1]);
 		if (cmds)
 			ft_free_cmds(cmds);
+		system("leaks minishell");
 	}
 	ft_lstclear(&env, free);
 	return (0);
