@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_redir.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
+/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 11:17:38 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/09/24 07:21:08 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/12 06:04:45 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,10 @@ t_redir_type	get_redir_type(char *input)
 		if (input[i] == '>' && !sq && !dq)
 		{
 			type = REDIR_OUT;
-			if (input[i + 1] == '>')
+			i++;
+			if (input[i] == '>')
 				type = APPEND;
+			
 			return (type);
 		}
 		if (input[i] == '<' && !sq && !dq)

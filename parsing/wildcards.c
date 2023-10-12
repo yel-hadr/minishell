@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   wildcards.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
+/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 14:18:06 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/09 01:10:06 by elakhfif         ###   ########.fr       */
+/*   Updated: 2023/10/12 06:05:10 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,18 +133,4 @@ char	**ms_wildcard(char *wildcard)
 	tab[j] = NULL;
 	tab = ms_sorttab(tab);
 	return (tab);
-}
-int	main(void)
-{
-	char	**tab;
-	int		i;
-
-	i = 0;
-	tab = ms_wildcard("*");
-	while (tab[i])
-	{
-		printf("%s\n", tab[i]);
-		i++;
-	}
-	return (0);
 }

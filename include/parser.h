@@ -6,7 +6,7 @@
 /*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:13:04 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/12 05:28:26 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/12 05:44:10 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef enum e_redir
 	REDIR_OUT,
 	APPEND,
 	HEREDOC,
+	ERROR,
 	NONE,
 }	t_redir_type;
 
