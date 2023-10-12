@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 05:43:33 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/12 01:46:36 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/12 01:49:13 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,26 +38,19 @@ char	*ft_prompt(t_list *env)
 	tmp = getcwd(NULL, 0);
 	dir = ft_strrchr(tmp, '/');
 	if (!user || !dir)
-		result = ft_strdup(GRN "minishell > " RESET);
+		return (ft_strdup(GRN "minishell > " RESET));
 	else if (!*(dir + 1))
 		dir = tmp;
 	else
 		dir++;
-	if (!result)
-	{
-		result = ft_strjoin(GRN, user);
-		result = ft_strjoin_free(result, RESET);
-		result = ft_strjoin_free(result, " : ");
-		result = ft_strjoin_free(result, BLU);
-		result = ft_strjoin_free(result, dir);
-		result = ft_strjoin_free(result, RESET);
-		result = ft_strjoin_free(result, " > ");
-	}
-	if (user)
-		free(user);
-	if (tmp)
-		free(tmp);
-	return (result);
+	result = ft_strjoin(GRN, user);
+	result = ft_strjoin_free(result, RESET);
+	result = ft_strjoin_free(result, " : ");
+	result = ft_strjoin_free(result, BLU);
+	result = ft_strjoin_free(result, dir);
+	result = ft_strjoin_free(result, RESET);
+	result = ft_strjoin_free(result, " > ");
+	return (free(user), free(tmp), result);
 }
 
 char	*ft_check_error(t_list *env)
