@@ -24,6 +24,7 @@ LIBFT_SRCS		=	libft/ft_isalpha.c libft/ft_isdigit.c libft/ft_isalnum.c libft/ft_
 					libft/ft_lstadd_front_bonus.c libft/ft_lstsize_bonus.c libft/ft_lstlast_bonus.c\
 					libft/ft_lstadd_back_bonus.c libft/ft_lstdelone_bonus.c libft/ft_lstclear_bonus.c\
 					libft/ft_lstiter_bonus.c libft/ft_lstmap_bonus.c libft/ft_error.c libft/ft_strjoin_free.c\
+					libft/ft_strjoin_char.c
 
 BUILTING_SRCS	=	builting/ft_pwd.c builting/ft_exit.c builting/ft_export.c builting/ft_echo.c builting/ft_cd.c\
 					builting/ft_env.c builting/ft_unset.c

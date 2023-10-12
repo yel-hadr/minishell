@@ -6,7 +6,7 @@
 /*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:36:25 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/08 04:59:02 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/12 04:17:04 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ int		ft_isspace(int c);
 char	*ft_strnew(size_t size);
 int		ft_error(char *cmd, char *error);
 char	*ft_strjoin_free(char *s1, char *s2);
+char	*ft_strjoin_char(char *s1, char c);
+int		next_var(char *str, int i);
 
 typedef struct s_list
 {

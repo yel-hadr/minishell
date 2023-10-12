@@ -127,7 +127,6 @@ int	main(int argc, char **argv, char **envp)
 		ft_restore_fd(fd[0], fd[1]);
 		if (cmds)
 			ft_free_cmds(cmds);
-		system("leaks minishell");
 	}
 	ft_lstclear(&env, free);
 	return (0);
