@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 05:43:33 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/12 01:45:29 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/12 01:46:36 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,6 @@ int		g_sig;
 int	main(int argc, char **argv, char **envp)
 {
 	t_cmd	*cmds;
-	char	*input;
 	t_list	*env;
 	int		status;
 	int		fd[2];
@@ -128,9 +127,8 @@ int	main(int argc, char **argv, char **envp)
 	while (1)
 	{
 		g_sig = 0;
-		input = ft_check_error(env);
 		ft_save_fd(&fd[0], &fd[1]);
-		cmds = parser(input, env, &status);
+		cmds = parser(ft_check_error(env), env, &status);
 		if (!status && !g_sig)
 			status = ft_pipe(cmds, env);
 		ft_restore_fd(fd[0], fd[1]);
