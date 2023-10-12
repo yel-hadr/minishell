@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 16:10:37 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/10/10 01:58:58 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/12 01:13:44 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,8 @@ char	*is_cmd_exists(char **exe, t_list *envp)
 	if (**exe == '/' || **exe == '.')
 		return (ft_do_abspath(exe));
 	path = ft_getval("PATH", envp);
+	if (!path)
+		return (NULL);
 	path_split = ft_split(path, ':');
 	free(path);
 	path = ft_search_path(exe, path_split);
