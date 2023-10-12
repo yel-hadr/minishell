@@ -58,7 +58,10 @@ char	*ft_get_heredoc(char *heredoc, t_list *env)
 	{
 		line = readline("> ");
 		if (!ft_strcmp(line, heredoc) || !line || g_sig == -2)
+		{
+			free(line);
 			break ;
+		}
 		if (expand && ft_strchr(line, '$'))
 			line = expand_variable(line, env, NULL);
 		tmp = ft_strjoin_free(tmp, line);
