@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:06:49 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/09 00:40:11 by elakhfif         ###   ########.fr       */
+/*   Updated: 2023/10/13 07:44:06 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static int	check_quotes_loop(char *str)
 {
-	int	i;
-	int	sq;
-	int	dq;
+	int		i;
+	int    sq;
+	int    dq;
 
 	i = 0;
 	sq = 0;
@@ -32,7 +32,7 @@ static int	check_quotes_loop(char *str)
 	return (sq || dq);
 }
 
-static int	check_quoted(t_cmd *cmd)
+static int    check_quoted(t_cmd *cmd)
 {
 	while (cmd)
 	{
@@ -50,11 +50,11 @@ static int	check_quoted(t_cmd *cmd)
 	return (0);
 }
 
-static int	words_count(char *input)
+static int    words_count(char *input)
 {
-	int	count;
-	int	sq;
-	int	dq;
+	int    count;
+	int    sq;
+	int    dq;
 
 	count = 0;
 	sq = 0;
@@ -72,40 +72,39 @@ static int	words_count(char *input)
 	return (count);
 }
 
-t_cmd	*split_cmd(char *input, int *status)
+void    skip_wspaces(char *input, int *i)
 {
-	t_cmd	*cmd;
-	t_cmd	*tmp;
-	int		i;
-	int		j;
+	while (input[*i] == ' ' || input[*i] == '\t')
+		(*i)++;
+}
+
+t_cmd    *split_cmd(char *input)
+{
+	t_cmd 		*cmd;
+	int			i;
+	int			j;
 
 	i = 0;
-	j = 0;
 	cmd = NULL;
+	skip_wspaces(input, &i);
+	if (input[i] == '|')
+		return (free(cmd), NULL);
 	while (input && input[i])
 	{
 		j = words_count(input + i);
-		tmp = new_cmd(ft_substr(input, i, j));
-		add_cmd_back(&cmd, tmp);
+		add_cmd_back(&cmd, new_cmd(ft_substr(input, i, j)));
 		i += j;
-		if (input[i] == '|')
+		if (input[i] == '|' && i++)
 		{
-			i++;
-			if (!input[i])
+			skip_wspaces(input, &i);
+			if (!input[i] || input[i] == '|')
 			{
-				ft_putstr_fd("mish: syntax error near unexpected token `|'\n",
-					2);
-				*status = 1;
-				free_cmd(cmd);
-				return (NULL);
+				ft_putstr_fd(TOKENERR, 2);
+				return (free_cmd(cmd), NULL);
 			}
 		}
 	}
 	if (check_quoted(cmd))
-	{
-		*status = 1;
-		free(cmd);
-		return (NULL);
-	}
+		return (free(cmd), NULL);
 	return (cmd);
 }

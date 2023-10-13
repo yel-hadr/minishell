@@ -6,13 +6,13 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 05:46:27 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/13 05:31:13 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/13 07:43:30 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/parser.h"
 
-void	init_cmd(t_cmd *cmd)
+static void	init_cmd(t_cmd *cmd)
 {
 	cmd->args = NULL;
 	cmd->redir_in.file = NULL;
@@ -21,21 +21,35 @@ void	init_cmd(t_cmd *cmd)
 	cmd->redir_out.type = NONE;
 }
 
+static int	expand_cmd(t_cmd **result, char **line, t_list *env, int *status)
+{
+	char	*tmp;
+	int		i;
+
+	i = 0;
+	if (ft_strchr(*line, '$') && !ft_strchr(*line, '\''))
+	{
+		tmp = expand_variable(*line, env, status);
+		*line = tmp;
+		i = 1;
+	}
+	*result = split_cmd(*line);
+	if (*result)
+		i = 1;
+	return (i);
+}
+
 t_cmd	*parser(char *line, t_list *env, int *status)
 {
 	t_cmd	*result;
 	t_cmd	*tmp;
-	char	*tmp2;
 
 	g_sig = -1;
-	if (!line)
+	if (!line || *line == '\0')
 		return (NULL);
-	if (ft_strchr(line, '$') && !ft_strchr(line, '\''))
-	{
-		tmp2 = expand_variable(line, env, status);
-		line = tmp2;
-	}
-	result = split_cmd(line, status);
+	result = NULL;
+	if (!expand_cmd(&result, &line, env, status))
+		ft_putstr_fd(TOKENERR, 2);
 	tmp = result;
 	while (tmp)
 	{

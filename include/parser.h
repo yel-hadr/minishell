@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:13:04 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/13 06:01:55 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/13 06:37:33 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@
 # include <errno.h>
 
 extern int	g_sig;
+
+# define TOKENERR "mish: syntax error near unexpected token `|'\n"
 
 typedef enum e_redir
 {
@@ -52,7 +54,7 @@ typedef struct s_cmd
 }				t_cmd;
 
 t_redir_type	get_redir_type(char *input);
-t_cmd			*split_cmd(char *input, int *status);
+t_cmd			*split_cmd(char *input);
 t_cmd			*add_cmd(t_cmd *cmd, char *input);
 t_cmd			*add_cmd_back(t_cmd **cmd, t_cmd *new);
 t_cmd			*new_cmd(char *cmd);
