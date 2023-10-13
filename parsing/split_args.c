@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   split_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:41:52 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/12 06:25:39 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/13 02:53:38 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,5 +108,7 @@ int	split_args(t_cmd *command, t_list *env)
 		}
 		cmd = next_arg(cmd);
 	}
+	if (*cmd && get_redir_type(cmd)==ERROR)
+		return (1);
 	return (0);
 }

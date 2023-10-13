@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 16:10:37 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/10/12 01:13:44 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/13 02:07:57 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static char	*ft_do_abspath(char **exe)
 	dir = opendir(*exe);
 	if (dir)
 	{
-		ft_error(*exe, "Is a directory");
+		ft_error(*exe, "is a directory");
 		closedir(dir);
 		exit(126);
 	}

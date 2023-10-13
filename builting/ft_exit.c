@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 15:31:05 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/10/10 03:26:17 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/13 02:04:52 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	ft_exit(char **args)
 	if (check_the_number(args[1]))
 	{
 		ft_error (args[0], "numeric argument required");
-		exit(2);
+		exit(255);
 	}
 	if (args[1])
 		exit(ft_atoi(args[1]));

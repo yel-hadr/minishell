@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   execute.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 04:15:24 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/10/08 04:59:49 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/13 02:23:17 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*ft_getval(char *var, t_list *envp);
 int		ft_execute(t_cmd *cmd, t_list *envp);
 int		ft_setenv(char *var, char *value, t_list *envp);
 int		is_builting(char *cmd);
-int		exec_builting(t_cmd *cmd, t_list *envp);
+int		exec_builting(t_cmd *cmd, t_list **envp);
 int		ft_redaraction(char *file, t_redir_type redaraction);
 int		ft_pipe(t_cmd *cmd, t_list *envp);
 int		ft_exec_the_cmd(t_cmd *cmd, t_list *envp);

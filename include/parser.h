@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:13:04 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/12 05:44:10 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/13 03:17:04 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int				check_redirections(t_cmd *cmd);
 char			**ms_wildcard(char *wildcard);
 char			*next_arg(char *cmd);
 int				args_count(char *cmd);
-int				ft_get_redir_file(char *input, t_cmd *cmd, t_redir_type type, t_list *env);
-
+int				ft_get_redir_file(char *input, t_cmd *cmd, t_redir_type type, \
+					t_list *env);
 
 #endif

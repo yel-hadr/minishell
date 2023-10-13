@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_builting.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 16:44:35 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/10/09 16:24:33 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/13 02:24:06 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	do_redir(int *in, int *out, t_cmd *cmd)
 	return (0);
 }
 
-int	exec_builting(t_cmd *cmd, t_list *envp)
+int	exec_builting(t_cmd *cmd, t_list **envp)
 {
 	int	save_stdin;
 	int	save_stdout;
@@ -34,17 +34,17 @@ int	exec_builting(t_cmd *cmd, t_list *envp)
 	if (!ft_strcmp(cmd->args[0], "echo"))
 		status = ft_echo(cmd->args);
 	else if (!ft_strcmp(cmd->args[0], "cd"))
-		status = ft_cd(cmd->args, envp);
+		status = ft_cd(cmd->args, *envp);
 	else if (!ft_strcmp(cmd->args[0], "pwd"))
 		status = ft_pwd();
 	else if (!ft_strcmp(cmd->args[0], "export"))
-		status = ft_export(cmd->args, envp);
+		status = ft_export(cmd->args, *envp);
 	else if (!ft_strcmp(cmd->args[0], "exit"))
 		status = ft_exit(cmd->args);
 	else if (!ft_strcmp(cmd->args[0], "env"))
-		status = ft_env(envp);
+		status = ft_env(*envp);
 	else if (!ft_strcmp(cmd->args[0], "unset"))
-		status = ft_unset(cmd->args, &envp);
+		status = ft_unset(cmd->args, envp);
 	else
 		status = 127;
 	ft_restore_fd(save_stdin, save_stdout);
