@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_get_herdoc.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 03:21:35 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/10/09 15:52:41 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/13 04:56:31 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,20 +40,11 @@ static char	*ft_remove_quotes(char *str)
 	return (tmp);
 }
 
-char	*ft_get_heredoc(char *heredoc, t_list *env)
+static char *ft_getline_h(char *heredoc, int expand, t_list *env)
 {
 	char	*tmp;
 	char	*line;
-	int		expand;
 
-	if (!heredoc || g_sig == -2)
-		return (NULL);
-	expand = 1;
-	tmp = NULL;
-	line = NULL;
-	if (ft_check_expand(heredoc))
-		expand = 0;
-	heredoc = ft_remove_quotes(heredoc);
 	while (1)
 	{
 		line = readline("> ");
@@ -69,5 +60,20 @@ char	*ft_get_heredoc(char *heredoc, t_list *env)
 		if (line)
 			free(line);
 	}
+	return (tmp);
+}
+
+char	*ft_get_heredoc(char *heredoc, t_list *env)
+{
+	char	*tmp;
+	int		expand;
+
+	if (!heredoc || g_sig == -2)
+		return (NULL);
+	expand = 1;
+	if (ft_check_expand(heredoc))
+		expand = 0;
+	heredoc = ft_remove_quotes(heredoc);
+	ft_getline_h(heredoc, expand, env);
 	return (tmp);
 }
