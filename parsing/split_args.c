@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 15:41:52 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/13 05:00:06 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/13 06:30:49 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,32 +83,19 @@ int	split_args(t_cmd *command, t_list *env)
 	count = args_count(command->cmd);
 	command->args = ft_calloc(count + 1, sizeof(char *));
 	cmd = command->cmd;
-	command->redir_in.type = NONE;
-	command->redir_out.type = NONE;
-	command->redir_in.file = NULL;
-	command->redir_out.file = NULL;
 	while (count)
 	{
-		while (cmd[0] && ft_strchr("\t ", cmd[0]))
-			cmd++;
-		if (ft_strchr(">", *cmd))
+		cmd += skip_wspace(cmd, 0);
+		if (ft_strchr("><", *cmd))
 		{
-			if (ft_get_outfile(&cmd, command, env, &count))
-				return (1);
-		}
-		else if (ft_strchr("<", *cmd))
-		{
-			if (ft_get_infile(&cmd, command, env, &count))
+			if (((*cmd == '>' && ft_get_outfile(&cmd, command, env, &count))
+					|| (*cmd == '<' && ft_get_infile(&cmd, command, env, \
+					&count))))
 				return (1);
 		}
 		else
-		{
 			command->args[index++] = ft_do_args(cmd, &count);
-			next_arg(cmd);
-		}
 		cmd = next_arg(cmd);
 	}
-	if (*cmd && get_redir_type(cmd) == ERROR)
-		return (1);
 	return (0);
 }

@@ -3,14 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yel-hadr <yel-hadr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 05:46:27 by elakhfif          #+#    #+#             */
-/*   Updated: 2023/10/09 04:14:52 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/13 05:31:13 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/parser.h"
+
+void	init_cmd(t_cmd *cmd)
+{
+	cmd->args = NULL;
+	cmd->redir_in.file = NULL;
+	cmd->redir_out.file = NULL;
+	cmd->redir_in.type = NONE;
+	cmd->redir_out.type = NONE;
+}
 
 t_cmd	*parser(char *line, t_list *env, int *status)
 {
@@ -30,6 +39,7 @@ t_cmd	*parser(char *line, t_list *env, int *status)
 	tmp = result;
 	while (tmp)
 	{
+		init_cmd(tmp);
 		*status = split_args(tmp, env);
 		tmp = tmp->next;
 	}
