@@ -6,7 +6,7 @@
 /*   By: yel-hadr < yel-hadr@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 03:21:35 by yel-hadr          #+#    #+#             */
-/*   Updated: 2023/10/13 04:56:31 by yel-hadr         ###   ########.fr       */
+/*   Updated: 2023/10/13 05:00:40 by yel-hadr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static char	*ft_remove_quotes(char *str)
 	return (tmp);
 }
 
-static char *ft_getline_h(char *heredoc, int expand, t_list *env)
+static char	*ft_getline_h(char *heredoc, int expand, t_list *env)
 {
 	char	*tmp;
 	char	*line;
@@ -74,6 +74,6 @@ char	*ft_get_heredoc(char *heredoc, t_list *env)
 	if (ft_check_expand(heredoc))
 		expand = 0;
 	heredoc = ft_remove_quotes(heredoc);
-	ft_getline_h(heredoc, expand, env);
+	tmp = ft_getline_h(heredoc, expand, env);
 	return (tmp);
 }
