@@ -42,7 +42,7 @@ static char	*ft_remove_quotes(char *str)
 
 static char	*ft_getline_h(char *heredoc, int expand, t_list *env)
 {
-	char	*tmp;
+	char	*tmp = NULL;
 	char	*line;
 
 	while (1)
@@ -65,7 +65,7 @@ static char	*ft_getline_h(char *heredoc, int expand, t_list *env)
 
 char	*ft_get_heredoc(char *heredoc, t_list *env)
 {
-	char	*tmp;
+	char	*tmp = NULL;
 	int		expand;
 
 	if (!heredoc || g_sig == -2)
