@@ -16,12 +16,73 @@ Minishell is a lightweight shell designed to demonstrate basic shell operations 
 
 ## Features
 
-- Command execution
+- Efficient executable search based on the PATH variable
+- Support for launching executables with relative or absolute paths
+- Basic shell functionalities (e.g., command execution, input/output redirection, pipelines)
 - Simple built-in commands (e.g., `cd`, `echo`, `pwd`, `export`, `unset`)
-- Input/output/appaned/herdoc redirection
+- Input/output/appended/heredoc redirection
 - Pipeline support
-- error handling
-- ctrl-C, ctrl-D and ctrl-\ handling
+- Basic error handling
+- Signal handling for ctrl-C, ctrl-D, and ctrl-\
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Features](#features)
+  - [Command Execution](#command-execution)
+  - [Built-in Commands](#built-in-commands)
+  - [Redirection](#redirection)
+  - [Pipeline Support](#pipeline-support)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Introduction
+
+Minishell is a lightweight shell designed to demonstrate basic shell operations, with a special emphasis on efficiently searching for and launching executables. It provides a command-line interface that allows users to execute programs either by specifying their absolute or relative path or relying on the system's PATH variable.
+
+## Features
+
+- Efficient executable search based on the PATH variable
+- Support for launching executables with relative or absolute paths
+- Basic shell functionalities (e.g., command execution, input/output redirection, pipelines)
+- Simple built-in commands (e.g., `cd`, `echo`, `pwd`, `export`, `unset`)
+- Input/output/appended/heredoc redirection
+- Pipeline support
+- Basic error handling
+- Signal handling for ctrl-C, ctrl-D, and ctrl-\
+
+### Command Execution
+
+Describe the command execution feature here. Include any details about how Minishell executes commands and any specific behaviors.
+
+### Built-in Commands
+
+Minishell supports various built-in commands. Some examples include:
+
+- `cd`: Change directory
+- `echo`: Print arguments to the standard output
+- `pwd`: Print the current working directory
+- `export`: Set environment variables
+- `unset`: Unset environment variables
+
+### Redirection
+
+Minishell supports input/output/appended/heredoc redirection. Here are examples:
+
+- Input redirection: `command < input.txt`
+- Output redirection: `command > output.txt`
+- Appended redirection: `command >> output.txt`
+- Heredoc redirection: `command << EOF`
+
+### Pipeline Support
+
+Execute commands in a pipeline using the `|` operator:
+
+    ```bash
+    command1 | command2
+    ```
 
 ## Installation
 
